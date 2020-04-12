@@ -398,7 +398,7 @@ gachaValue4 = 1
 --過去31フレームのレバガチャ値。
 -- Rebagacha value of the past 31 frames.
 --１Fあたりの平均レバガチャ値をとる為に使う
-Use in order to take the average Rebagacha value per --1F
+-- Use in order to take the average Rebagacha value per --1F
 previousGachaValue1s = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 previousGachaValue2s = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 previousGachaValue3s = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
