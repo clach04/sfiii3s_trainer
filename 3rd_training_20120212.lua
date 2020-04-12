@@ -576,7 +576,7 @@ function gachaTrainingMode()
 	--過去３１フレームのレバガチャ値合計。
 	-- Rebagacha value the sum of the past 31 frames.
 	--平均値を出すために使う。
-	 use in order to get the average value.
+	-- use in order to get the average value.
 	sumGachaValue1 = 0
 	sumGachaValue2 = 0
 	sumGachaValue3 = 0
@@ -2170,7 +2170,7 @@ gui.register(function()
 
 
 	--2Pが常に屈食らいに
-To --2P always 屈食 leprosy
+	-- 2P is always cruel
 	--memory.writebyte(0x02069312,0x10)
 
 
@@ -2738,7 +2738,7 @@ To --2P always 屈食 leprosy
 					offsetY = offsetY + 28
 					
 					----------------------強百裂脚----------------------
-					---------------------- ---------------------- Jiangbailiejiao
+					---------------------- ---------------------- Jiangbailiejiao  -- Strong crack
 					hyakuretsu(chun_3, kick_3, kick_3_2, offsetX, offsetY, 0x02025A07)
 					
 					offsetY = offsetY + 28
