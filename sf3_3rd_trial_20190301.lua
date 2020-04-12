@@ -1,7 +1,6 @@
---fba-rr専用のトライアルlua(20190101) by crystal_cube99
 timeInGame = 0
 timeInLua = -2
-mode = 0	
+mode = 0
 timeInMode = 0
 timeInMode2 = 0
 comboNum = 0
@@ -32,6 +31,10 @@ assist = 0
 assistMax = 1
 keyDisp = 0
 keyDispMax = 3
+kurai2P = 0
+floatTime = 0
+floatTimeMax = 0
+WorR = "W"
 GAME_PHASE_PLAYING    = 2
 wazaTotalNum = 0
 wazaTotalNumBefore = 0
@@ -116,8 +119,8 @@ kadai[1][2]={
 				}
 difficulty[1][2] = 2
 comboTest[1][3]={
-				 {"L_SlashElbow"				,"H","S003f003f"},
-				 {"SHK"							,"H","A000f000f","A00100010"},
+				 {"L_SlashElbow"				,"HR","S003f003f"},
+				 {"SHK"							,"HR","A000f000f","A00100010","A00110011"},
 				 {"SMP"							,"H","A00030003"},
 				 {"EX_Air Knee Smash"			,"T","T00160015"}
 				}
@@ -300,8 +303,8 @@ kadai[3][8]={
 				}
 difficulty[3][8] = 6
 comboTest[4][2]={
-				 {"H_hakunetsu Hadouken"			,"F","F0870"},
-				 {"M_hakunetsu Hadouken"			,"F","F086f"}
+				 {"H_Shakunetsu Hadouken"			,"F","F0870"},
+				 {"M_Shakunetsu Hadouken"			,"F","F086f"}
 				}
 kadai[4][2]={
 				 {"_COMMON_H","_SP_GOU3"},
@@ -319,9 +322,35 @@ kadai[4][3]={
 				 {"_SA_GOU4"}
 				}
 difficulty[4][3] = 3
+comboTest[4][4]={
+				 {"J2MK"						,"H","A00390039"},
+				 {"SCMK"						,"H","A000c000c"},
+				 {"L_Tatsumaki Zankuu Kyaku"	,"H","S00200020"},
+				 {"SCLP"						,"ANIM2P","A00000000",{0x422A,0x42E9}},
+				 {"Kongou Kokuretsu Zan"		,"H","S003f003f"}
+				}
+kadai[4][4]={
+				 {"_NM_J2MK"},
+				 {"_NM_SCMK"},
+				 {"_COMMON_L","_SP_GOU5"},
+				 {"_NM_SCLP"},
+				 {"_SA_GOU5"}
+				}
+difficulty[4][4] = 4
+comboTest[4][5]={
+				 {"SCHP"						,"H","A00060006"},
+				 {"M_Tatsumaki Zankuu Kyaku"	,"H","S00210021"},
+				 {"Temma Gou Zankuu"			,"F","F0076"}
+				}
+kadai[4][5]={
+				 {"_NM_SCHP"},
+				 {"_COMMON_M","_SP_GOU5"},
+				 {"_SA_GOU1_2"}
+				}
+difficulty[4][5] = 5
 comboTest[4][9]={
 				 {"Air Tatsumaki Zankuu Kyaku"	,"H","S00340034","S00350035","S00360036"},
-				 {"H_Tatsumaki Zankuu Kyaku"	,"H","S00220022",},
+				 {"H_Tatsumaki Zankuu Kyaku"	,"H","S00220022"},
 				 {"Air Tatsumaki Zankuu Kyaku"	,"H","S00340034","S00350035","S00360036"},
 				 {"Messatsu Gou Senpuu"			,"H","S004c004c","S004d004d","S004e004e"}
 				}
@@ -360,6 +389,17 @@ kadai[5][3]={
 				 {"_SA_SEA1"}
 				}
 difficulty[5][3] = 4
+comboTest[5][4]={
+				 {"SCMP"			,"H","A00030003"},
+				 {"SHK"				,"HR","A0003009c"},
+				 {"Hyper Tornado"	,"H","S00280028"}
+				}
+kadai[5][4]={
+				 {"_NM_SCMP"},
+				 {"_NM_SHK"},
+				 {"_SA_SEA3"}
+				}
+difficulty[5][4] = 4
 comboTest[6][1]={
 				 {"SFHK"			,"H","A00100010"},
 				 {"Yami Shigure"	,"H","F0ed5","F0ed6","F0ed7","F0ed8","F0ed9","F0eda","F0edb","F0edc","F0edd"}
@@ -420,6 +460,28 @@ kadai[6][9]={
 				 {"_SA_IBU1"}
 				}
 difficulty[6][9] = 7
+comboTest[7][1]={
+				 {"SCHK"			,"H","A000f000f"},
+				 {"Tensei Ranka"	,"H","S00340034","S00350035","S00350034","S00360036","S00360034"}
+				}
+kadai[7][1]={
+				 {"_NM_SCHK"},
+				 {"_SA_CHU3"}
+				}
+difficulty[7][1] = 1
+comboTest[7][2]={
+				 {"NJHK"				,"H","A002e002e"},
+				 {"CHP"					,"H","A00180018"},
+				 {"EX_Kikouken"			,"F","F00d3"},
+				 {"Tensei Ranka"		,"H","S00340034","S00350035","S00350034","S00360036","S00360034"}
+				}
+kadai[7][2]={
+				 {"_COMMON_JS","_NM_JHK"},
+				 {"_NM_CHP"},
+				 {"_COMMON_EX","_SP_CHU2"},
+				 {"_SA_CHU3"}
+				}
+difficulty[7][2] = 3
 comboTest[7][3]={
 				 {"J2MK"			,"H","A00390039"},
 				 {"J2HP"			,"H","A00350035"},
@@ -433,8 +495,19 @@ kadai[7][3]={
 				 {"_SA_CHU1"}
 				}
 difficulty[7][3] = 4
+comboTest[7][4]={
+				 {"J2MK"						,"H","A00390039"},
+				 {"J2MK"						,"H","A00390039"},
+				 {"J2MK"						,"H","A00390039"},
+				}
+kadai[7][4]={
+				 {"_NM_J2MK"},
+				 {"_NM_J2MK"},
+				 {"_NM_J2MK"}
+				}
+difficulty[7][4] = 4
 comboTest[7][5]={
-				 {"J2HP"						,"H","A00350035"},
+				 {"J2HP"						,"H","A00280028","A00350035"},
 				 {"4MP"							,"H","A00050005"},
 				 {"EX_Spinning Bird Kick"		,"H","S001b001b"},
 				 {"Houyoku Sen"					,"H","S00300030","S00310031","S00320032"}
@@ -446,6 +519,57 @@ kadai[7][5]={
 				 {"_SA_CHU2"}
 				}
 difficulty[7][5] = 4
+comboTest[7][6]={
+				 {"JMK"				,"H","A00440038","A002c002c","A00380038"},
+				 {"L_Hyakuretsu Kyaku"		,"H","S001c0043","S001c0024","S001c0020"},
+				 {"Houyoku Sen"				,"H","S00300030","S00310031","S00320032"}
+				}
+kadai[7][6]={
+				 {"_NM_JMK"},
+				 {"_COMMON_L","_SP_CHU1"},
+				 {"_SA_CHU2"}
+				}
+difficulty[7][6] = 4
+comboTest[7][7]={
+				 {"EX_Kikouken"			,"F","F00d3"},
+				 {"JHK"					,"H","A0046003a","A002e002e","A003a003a"},
+				 {"4MP"					,"H","A00050005"},
+				 {"4MP(2)"				,"HR","A00050005"},
+				 {"Kikouken"			,"F","F00d0","F00d1","F00d2","F00d3"},
+				 {"Houyoku Sen"			,"H","S00300030","S00310031","S00320032"},
+				 {"JHP"					,"H","A00400034","A00280028","A00340034"},
+				 {"JHP"				,"HR","A00400034","A00280028","A00340034"},
+				}
+kadai[7][7]={
+				 {"_COMMON_EX","_SP_CHU2"},
+				 {"_NM_JHK"},
+				 {"_NM_4MP"},
+				 {"_NM_4MP","SPACE16","_HIT2"},
+				 {"_SP_CHU2"},
+				 {"_SA_CHU2"},
+				 {"_NM_JHP"},
+				 {"_NM_JHP"}
+				}
+difficulty[7][7] = 4
+comboTest[7][8]={
+				 {"JMK"				,"H","A00440038","A002c002c","A00380038"},
+				 {"SLP"				,"H","A00000000","A00010001"},
+				 {"SLP"				,"HR","A00000000","A00010001"},
+				 {"CLP"				,"HR","A00120012"},
+				 {"Houyoku Sen"		,"H","S00300030","S00310031","S00320032"},
+				 {"J2MK"			,"H","A00450045","A002d002d","A00390039"},
+				 {"JHK"				,"HR","A0046003a","A002e002e","A003a003a"},
+				}
+kadai[7][8]={
+				 {"_NM_JMK"},
+				 {"_NM_SLP"},
+				 {"_NM_SLP"},
+				 {"_NM_CLP"},
+				 {"_SA_CHU2"},
+				 {"_NM_J2MK"},
+				 {"_NM_JHK"}
+				}
+difficulty[7][8] = 4
 comboTest[8][3]={
 				 {"CMP"				,"H","A00150015"},
 				 {"EX_Spin Scythe"	,"H","S003c003c"},
@@ -463,8 +587,8 @@ comboTest[8][4]={
 				 {"JHP"				,"H","A00400034","A00280028","A00340034"},
 				 {"CMP"				,"H","A00150015"},
 				 {"EX_Spin Scythe"	,"H","S003c003c"},
-				 {"Dash Forward"	,"H","S00240024","S00250025","S00260026"},
-				 {"Dash Forward"	,"H","S00240024","S00250025","S00260026"}
+				 {"Spinning Beat"	,"H","S00240024","S00250025","S00260026"},
+				 {"Spinning Beat"	,"H","S00240024","S00250025","S00260026"}
 				}
 kadai[8][4]={
 				 {"_NM_JHP"},
@@ -474,6 +598,21 @@ kadai[8][4]={
 				 {"_SA_ELE1"}
 				}
 difficulty[8][4] = 4
+comboTest[9][4]={
+				 {"M_Tsurugi"					,"H","S004b004b"},
+				 {"M_Tsurugi"					,"H","S004b004b"},
+				 {"M_Hayate"					,"H","S001d003e","S001d003f","S001d0040"},
+				 {"CMP"							,"H","A00150015"},
+				 {"Seichuu Sen Godan zuki"		,"H","S003a0043","S003b0043","S003c0043"}
+				}
+kadai[9][4]={
+				 {"_COMMON_M","_SP_MAK5"},
+				 {"_COMMON_M","_SP_MAK5"},
+				 {"_COMMON_M","_SP_MAK1"},
+				 {"_NM_CMP"},
+				 {"_SA_MAK1"}
+				}
+difficulty[9][4] = 4
 comboTest[9][5]={
 				 {"NJHP"						,"H","A00280028"},
 				 {"SHP"							,"H","A00060006","A00070007"},
@@ -597,7 +736,7 @@ kadai[9][10]={
 				}
 difficulty[9][10] = 7
 comboTest[10][4]={
-				 {"kobokushi"					,"H","S001c001c","S001d001d","S001e001e"},
+				 {"Kobokushi"					,"H","S001c001c","S001d001d","S001e001e"},
 				 {"L_Tetsuzankou"				,"H","S00570057"},
 				 {"EX_Tetsuzankou"				,"H","S005a005a"},
 				 {"Sourai rengeki"				,"H","S00300030","S00310031","S00320032"}
@@ -683,12 +822,167 @@ kadai[11][6]={
 				 {"_NM_SHP"}
 				}
 difficulty[11][6] = 5
+comboTest[12][1]={
+				 {"JHP"					,"H","A00400034","A00280028","A00340034"},
+				 {"JHP(2)"				,"HR","A00400034","A00280028","A00340034"},
+				 {"CHP"					,"H","A00180018"},
+				 {"Kishin Tsui"			,"T","T000d000d"}
+				}
+kadai[12][1]={
+				 {"_NM_JHP"},
+				 {"_NM_JHP","SPACE32","SPACE16","_HIT2"},
+				 {"_NM_CHP"},
+				 {"_SA_ORO1_3"}
+				}
+difficulty[12][1] = 2
+comboTest[12][4]={
+				 {"SCMP"				,"H","A00030003"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"H_Jinchu Watari"		,"H","S00400040"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"Dash Forward"		,"D","N00040004"},
+				 {"M_Oniyamma"			,"H","S00210021"}
+				}
+kadai[12][4]={
+				 {"_NM_SCMP"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_COMMON_H","_SP_ORO3"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_NM_FDASH"},
+				 {"_COMMON_M","_SP_ORO2"}
+				}
+difficulty[12][4] = 4
+comboTest[12][5]={
+				 {"SCMP"				,"H","A00030003"},
+				 {"Tengu Midareishi"	,"D","S002f002f"},
+				 {"SLP"					,"H","A00000000","A00010001"},
+				 {"SLK"					,"H","A00090009","A000a000a"},
+				 {"SMP"					,"H","A00030003","A00040004"},
+				 {"SMK"					,"H","A000c000c","A000d000d"},
+				 {"SHP"					,"H","A00060006","A00070007"},
+				 {"SHK"					,"H","A000f000f","A00100010"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"SHP"					,"H","A00060006","A00070007"}
+				}
+kadai[12][5]={
+				 {"_NM_SCMP"},
+				 {"_SA_ORO3_2"},
+				 {"_NM_SLP"},
+				 {"_NM_SLK"},
+				 {"_NM_SMP"},
+				 {"_NM_SMK"},
+				 {"_NM_SHP"},
+				 {"_NM_SHK"},
+				 {"_NM_SCMP"},
+				 {"_NM_SHP"}
+				}
+difficulty[12][5] = 4
+comboTest[12][6]={
+				 {"SCMP"							,"H","A00030003"},
+				 {"SCMP"							,"H","A00030003"},
+				 {"SCMP"							,"H","A00030003"},
+				 {"SCMP"							,"H","A00030003"},
+				 {"SCMP"							,"H","A00030003"},
+				 {"Kishin Kuuchuu Jigoku Guruma"	,"T","T00060006"}
+				}
+kadai[12][6]={
+				 {"_NM_SCMP"},
+				 {"_NM_SCMP"},
+				 {"_NM_SCMP"},
+				 {"_NM_SCMP"},
+				 {"_NM_SCMP"},
+				 {"_SA_ORO1_2"}
+				}
+difficulty[12][6] = 5
+comboTest[12][7]={
+				 {"Jinchu Nobori"		,"H","S00390039"},
+				 {"Dash Forward"		,"D","N00040004"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Jinchu Watari"		,"H","S003f003f"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"Dash Forward"		,"D","N00040004"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Oni Yamma"			,"H","S00210021"}
+				}
+kadai[12][7]={
+				 {"_SP_ORO4"},
+				 {"_NM_FDASH"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO3"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_NM_FDASH"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO2"}
+				}
+difficulty[12][7] = 5
+comboTest[12][8]={
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Jinchu Watari"		,"H","S003f003f"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"Yagyou Oodama"		,"F","F0b9f"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Jinchu Watari"		,"H","S003f003f"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Jinchu Watari"		,"H","S003f003f"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"M_Oniyamma"			,"H","S00210021"},
+				}
+kadai[12][8]={
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO3"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_SA_ORO2_2"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO3"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO3"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_M","_SP_ORO2"}
+				}
+difficulty[12][8] = 6
+comboTest[12][9]={
+				 {"JHK"					,"H","A0046003a","A002e002e","A003a003a"},
+				 {"CHP"					,"H","A00180018"},
+				 {"H_Yagyou Dama"		,"F","F0026"},
+				 {"M_Yagyou Dama"		,"F","F0025"},
+				 {"JHP"					,"H","A00400034","A00280028","A00340034"},
+				 {"JHP(2)"				,"HR","A00400034","A00280028","A00340034"},
+				 {"SCMP"				,"H","A00030003"},
+				 {"L_Yagyou Dama"		,"F","F0024"},
+				 {"H_Sun Disk Palm"		,"F","F000e"},
+				 {"M_Sun Disk Palm"		,"F","F000d"},
+				 {"L_Oniyamma"			,"H","S00200020"}
+				}
+kadai[12][9]={
+				 {"_NM_JHK"},
+				 {"_NM_CHP"},
+				 {"_COMMON_H","_SA_ORO2_1"},
+				 {"_COMMON_M","_SA_ORO2_1"},
+				 {"_NM_JHP"},
+				 {"_NM_JHP","SPACE32","SPACE16","_HIT2"},
+				 {"_NM_SCMP"},
+				 {"_COMMON_L","_SA_ORO2_1"},
+				 {"_COMMON_H","_SP_ORO1"},
+				 {"_COMMON_M","_SP_ORO1"},
+				 {"_COMMON_L","_SP_ORO2"}
+				}
+difficulty[12][9] = 6
 comboTest[13][5]={
 				 {"CHK"					,"H","A00210021"},
 				 {"L_Machinegun Blow"	,"H","S00280028"},
 				 {"L_Machinegun Blow"	,"H","S00280028"},
 				 {"L_Machinegun Blow"	,"H","S00280028"},
-				 {"6MK"				,"H","A000e000e"},
+				 {"6MK"					,"H","A000e000e"},
 				 {"H_Jet Upper"			,"H","S001a001a"},
 				 {"Corkscrew Blow"		,"H","S001c001c","S001d001d","S001e001e"}
 				}
@@ -703,11 +997,11 @@ kadai[13][5]={
 				}
 difficulty[13][5] = 5
 comboTest[13][8]={
-				 {"SHK"					,"H","A000f000f"},
+				 {"SHK"								,"H","A000f000f"},
 				 {"(Swing away)L_Punch and Cross"	,"D","S004b004b","S004b0041"},
-				 {"SHK"					,"H","A000f000f"},
-				 {"EX_Machinegun Blow"	,"H","S002b002b"},
-				 {"H_Punch and Cross"	,"H","S004d004d","S004d0043"}
+				 {"SHK"								,"H","A000f000f"},
+				 {"EX_Machinegun Blow"				,"H","S002b002b"},
+				 {"H_Punch and Cross"				,"H","S004d004d","S004d0043"}
 				}
 kadai[13][8]={
 				 {"_NM_SHK"},
@@ -717,6 +1011,19 @@ kadai[13][8]={
 				 {"_COMMON_H","_SP_DUD5"}
 				}
 difficulty[13][8] = 6
+comboTest[14][2]={
+				 {"CHP"						,"H","A00180018"},
+				 {"M_Chariot Tackle"		,"H","S003b003b"},
+				 {"L_Chariot Tackle"		,"H","S003a003a"},
+				 {"L_Dangerous Headbutt"	,"H","S00290029"},
+				}
+kadai[14][2]={
+				 {"_NM_CHP"},
+				 {"_COMMON_M","_SP_URIEN2"},
+				 {"_COMMON_L","_SP_URIEN2"},
+				 {"_COMMON_L","_SP_URIEN4"}
+				}
+difficulty[14][2] = 4
 comboTest[14][3]={
 				 {"CHP"					,"H","A00180018"},
 				 {"L_Chariot Tackle"	,"H","S003a003a"},
@@ -730,6 +1037,38 @@ kadai[14][3]={
 				 {"_COMMON_L","_SP_URIEN2"}
 				}
 difficulty[14][3] = 3
+comboTest[14][4]={
+				 {"EX_Metallic Sphere"		,"F","F0084"},
+				 {"SLP"						,"H","A00000000","A00010001"},
+				 {"SMP"						,"HR","A0000009e","A0001009e"},
+				 {"EX_Chariot Tackle"		,"H","S003d003d"},
+				 {"EX_Chariot Tackle (2)"	,"HR","S003d003d"},
+				 {"Temporal Thunder"		,"F","F0068"}
+				}
+kadai[14][4]={
+				 {"_COMMON_EX","_SP_URIEN1"},
+				 {"_NM_SLP"},
+				 {"_NM_SMP"},
+				 {"_COMMON_EX","_SP_URIEN2"},
+				 {"_COMMON_EX","_SP_URIEN2","SPACE64","SPACE32","SPACE8","_HIT2"},
+				 {"_SA_URIEN2"}
+				}
+difficulty[14][4] = 4
+comboTest[14][6]={
+				 {"SMP"						,"HR","A0000009e","A0001009e","A00030003","A00030003"},
+				 {"M_Dangerous Headbutt"	,"H","S002a002a"},
+				 {"EX_Chariot Tackle"		,"H","S003d003d"},
+				 {"CLK"						,"H","A001b001b"},
+				 {"Temporal Thunder"		,"F","F0068"}
+				}
+kadai[14][6]={
+				 {"_NM_SMP"},
+				 {"_COMMON_M","_SP_URIEN4"},
+				 {"_COMMON_EX","_SP_URIEN2"},
+				 {"_NM_CLK"},
+				 {"_SA_URIEN2"}
+				}
+difficulty[14][6] = 5
 comboTest[14][10]={
 				 {"H_Chariot Tackle"		,"H","S003c003c"},
 				 {"L_Aegis Reflector"		,"F","F077b"},
@@ -829,6 +1168,19 @@ kadai[15][7]={
 				 {"_SP_REM3"}
 				}
 difficulty[15][7] = 4
+comboTest[16][4]={
+				 {"Ultra Throw"				,"T","T00140014","T00150015","T00160016"},
+				 {"EX_Giant Palm Bomber"	,"H","S001b001b"},
+				 {"EX_Giant Palm Bomber"	,"H","S001b001b"},
+				 {"Megaton Press"			,"T","T001c001c"}
+				}
+kadai[16][4]={
+				 {"_SP_HUGO2"},
+				 {"_COMMON_EX","_SP_HUGO5"},
+				 {"_COMMON_EX","_SP_HUGO5"},
+				 {"_SA_HUGO2"}
+				}
+difficulty[16][4] = 4
 comboTest[16][5]={
 				 {"Body Press(Cross-up)"	,"H","A00350029"},
 				 {"CLP"						,"H","A00120012"},
@@ -849,6 +1201,25 @@ kadai[16][6]={
 				 {"_TR_HUGO1"}
 				}
 difficulty[16][6] = 5
+comboTest[16][8]={
+				 {"H_Giant Palm Bomber"		,"H","S001a001a"},
+				 {"M_Giant Palm Bomber"		,"H","S00190019"},
+				 {"L_Giant Palm Bomber"		,"H","S00180018"},
+				 {"Hammer Frenzy"			,"HR","S00340034","S00350034","S00360034"},
+				 {"H_Giant Palm Bomber"		,"H","S001a001a"},
+				 {"M_Giant Palm Bomber"		,"H","S00190019"},
+				 {"6HP"						,"H","A00070007"}
+				}
+kadai[16][8]={
+				 {"_COMMON_H","_SP_HUGO5"},
+				 {"_COMMON_M","_SP_HUGO5"},
+				 {"_COMMON_L","_SP_HUGO5"},
+				 {"_SA_HUGO3"},
+				 {"_COMMON_H","_SP_HUGO5"},
+				 {"_COMMON_M","_SP_HUGO5"},
+				 {"_NM_6HP"}
+				}
+difficulty[16][8] = 5
 comboTest[16][9]={
 				 {"H_Giant Palm Bomber"		,"H","S001a001a"},
 				 {"H_Giant Palm Bomber"		,"H","S001a001a"},
@@ -871,7 +1242,7 @@ kadai[16][9]={
 				 {"_COMMON_EX","_SP_HUGO5"},
 				 {"_COMMON_H","_SP_HUGO5"}
 				}
-difficulty[16][9] = 5
+difficulty[16][9] = 6
 comboTest[17][3]={
 				 {"4LK"		,"H","A000b000b"},
 				 {"4LK"		,"HR","A000b000b"},
@@ -904,6 +1275,132 @@ kadai[17][9]={
 				 {"_SA_NEC1"}
 				}
 difficulty[17][9] = 6
+comboTest[18][1]={
+				 {"6_Throw"		,"ANIM2P","T00000000",{0x3720}},
+				 {"X.N.D.L"		,"F","F01a8","F01a9","F01aa","F01ab","F01ac","F01ae","F01b0","F01b2","F01b4","F01b6","F01b8","F01ba","F01bc","F01be","F01c0","F01c2","F01c3","F01c4","F01c5"}
+				}
+kadai[18][1]={
+				 {"_6_THROW"},
+				 {"_SA_TWE1"}
+				}
+difficulty[18][1] = 1
+comboTest[18][2]={
+				 {"N_Throw"			,"ANIM2P","T00040004",{0x2529}},
+				 {"X.F.L.A.T"		,"H","S00430043"}
+				}
+kadai[18][2]={
+				 {"_N_THROW"},
+				 {"_SA_TWE2"}
+				}
+difficulty[18][2] = 2
+comboTest[18][3]={
+				 {"CLK"		,"H","A001b001b"},
+				 {"CLK"		,"HR","A001b001b"},
+				 {"CLK"		,"HR","A001b001b"},
+				 {"Taunt"	,"D","S003f003f"}
+				}
+kadai[18][3]={
+				 {"_NM_CLK"},
+				 {"_NM_CLK"},
+				 {"_NM_CLK"},
+				 {"_PA"}
+				}
+difficulty[18][3] = 3
+comboTest[18][4]={
+				 {"JHK(Cross Up)"	,"H","A0046003a","A002e002e","A003a003a","A001d00a1","A001c00a1","A004100a1"},
+				 {"4MK"				,"H","A000e000e"},
+				 {"EX_A.X.E."		,"H","S00230023"},
+				 {"X.N.D.L"		,"F","F01a8","F01a9","F01aa","F01ab","F01ac","F01ae","F01b0","F01b2","F01b4","F01b6","F01b8","F01ba","F01bc","F01be","F01c0","F01c2","F01c3","F01c4","F01c5"}
+				}
+kadai[18][4]={
+				 {"_COMMON_ME","_NM_JHK"},
+				 {"_NM_4MK"},
+				 {"_COMMON_EX","_SP_TWE2"},
+				 {"_SA_TWE1"}
+				}
+difficulty[18][4] = 4
+comboTest[18][5]={
+				 {"Don't drop enemy to the ground with combo for 3 seconds!"		,"U","A001b001b"}
+				}
+kadai[18][5]={
+				 {"_SECOND_COMBO_DE","SPACE16","SPACE8","_NUM_3","SPACE-8","_SECOND_FLOAT"}
+				}
+difficulty[18][5] = 4
+comboTest[18][6]={
+				 {"Kakku"				,"K12K","S001c001c","S0041001c","S001d001c",0x6C22,0x6E13},
+				 {"JHK(Cross Up)"		,"H","A001d00a1","A001c00a1","A004100a1"},
+				 {"CMP"					,"H","A00150015"},
+				 {"SLP"					,"H","A00000000","A00010001"},
+				 {"L_A.X.E"			,"H","S00200020"},
+				 {"X.N.D.L"			,"F","F01a8","F01a9","F01aa","F01ab","F01ac","F01ae","F01b0","F01b2","F01b4","F01b6","F01b8","F01ba","F01bc","F01be","F01c0","F01c2","F01c3","F01c4","F01c5"}
+				}
+kadai[18][6]={
+				 {"_SP_TWE5"},
+				 {"_COMMON_ME","_NM_JHK"},
+				 {"_NM_CMP"},
+				 {"_NM_SLP"},
+				 {"_COMMON_L","_SP_TWE2"},
+				 {"_SA_TWE1"}
+				}
+difficulty[18][6] = 4
+comboTest[18][7]={
+				 {"Kakku"				,"K12K","S001c001c","S0041001c","S001d001c",0x6C22,0x6E13},
+				 {"JMP"					,"H","A001d009d","A001c009d","A0041009d"},
+				 {"SMK"					,"H","A000c000c","A000d000d"},
+				 {"X.N.D.L"			,"F","F01a8","F01a9","F01aa","F01ab","F01ac","F01ae","F01b0","F01b2","F01b4","F01b6","F01b8","F01ba","F01bc","F01be","F01c0","F01c2","F01c3","F01c4","F01c5"}
+				}
+kadai[18][7]={
+				 {"_SP_TWE5"},
+				 {"_NM_JMP"},
+				 {"_NM_SMK"},
+				 {"_SA_TWE1"}
+				}
+difficulty[18][7] = 5
+comboTest[18][8]={
+				 {"Kakku"				,"K12K","S001c001c","S0041001c","S001d001c",0x6C22,0x6E13},
+				 {"JHP"					,"H","A001d009e","A001c009e","A0041009e"},
+				 {"SMK"					,"H","A000c000c","A000d000d"},
+				 {"X.F.L.A.T"			,"H","S00430043"}
+				}
+kadai[18][8]={
+				 {"_SP_TWE5"},
+				 {"_NM_JHP"},
+				 {"_NM_SMK"},
+				 {"_SA_TWE2"}
+				}
+difficulty[18][8] = 5
+comboTest[18][9]={
+				 {"A.X.E"					,"HR","S00200020","S00210021","S00220022"},
+				 {"X.C.O.P.Y"				,"D","S00320032"},
+				 {"CLP"						,"H","A00120012"},
+				 {"L_Dangerous Headbutt"	,"H","S00290029"},
+				 {"SMP"						,"H","A00030003"}
+				}
+kadai[18][9]={
+				 {"_SP_TWE2"},
+				 {"_SA_TWE3"},
+				 {"_NM_CLP"},
+				 {"_COMMON_L","_SP_URIEN4"},
+				 {"_NM_SMP"}
+				}
+difficulty[18][9] = 5
+comboTest[18][10]={
+				 {"JHK(Cross Up)"			,"H","A0046003a","A002e002e","A003a003a","A001d00a1","A001c00a1","A004100a1"},
+				 {"X.C.O.P.Y"				,"D","S00320032"},
+				 {"SLP"						,"H","A00000000","A00010001"},
+				 {"CHP"						,"H","A00180018"},
+				 {"Psycho Headbutt"			,"H","S00290029","S002a002a","S002b002b"},
+				 {"Cyber lariat"			,"H","S001d001d","S001e001e","S001f001f"}
+				}
+kadai[18][10]={
+				 {"_COMMON_ME","_NM_JHK"},
+				 {"_SA_TWE3"},
+				 {"_NM_SLP"},
+				 {"_NM_CHP"},
+				 {"_SP_GILL4"},
+				 {"_SP_GILL2"}
+				}
+difficulty[18][10] = 6
 comboTest[19][4]={
 				 {"H_Capture and Deadly Blow"			,"T","T000e000e"},
 				 {"H_Dashing Head Attack (Cross-up)"	,"HR","S001a001a"},
@@ -943,22 +1440,22 @@ gaugeMaxflg = {
 			{1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 1, 1, 0, 0, 1, 0, 0},
 			{1, 1, 0, 0, 0, 0, 1, 0, 0, 0},
-			{0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-			{0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 1, 1, 1, 0, 0, 0, 1, 0},
+			{1, 0, 1, 1, 0, 0, 0, 0, 0, 0},
+			{1, 1, 0, 0, 0, 0, 0, 0, 1, 0},
+			{1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
 			{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
 			{0, 0, 1, 0, 0, 1, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{1, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+			{1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+			{0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+			{0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
 			{0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-			{0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 1, 1, 1, 1, 0, 0, 0}
+			{0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
+			{1, 1, 0, 1, 0, 1, 1, 1, 0, 0},
+			{0, 0, 0, 1, 1, 0, 0, 0, 0, 0} 
 }
 gaugeMaxSeigenVal = {
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
@@ -974,7 +1471,7 @@ gaugeMaxSeigenVal = {
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
-			{0xFFFF, 0xFFFF, 0x0000, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
+			{0xFFFF, 0x0000, 0x0000, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 			{0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
@@ -999,9 +1496,52 @@ input_mkCount = 0
 input_hkCount = 0
 require "gd"
 blank2 = gd.createFromPng("resources/trial/blank2.png"):gdStr()
+R_nums0 = {
+	gd.createFromPng("resources/num/R_num0_0.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_1.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_2.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_3.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_4.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_5.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_6.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_7.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_8.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_9.png"):gdStr(),
+	gd.createFromPng("resources/num/R_num0_P.png"):gdStr()
+}
+Y_nums0 = {
+	gd.createFromPng("resources/num/Y_num0_0.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_1.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_2.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_3.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_4.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_5.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_6.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_7.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_8.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_9.png"):gdStr(),
+	gd.createFromPng("resources/num/Y_num0_P.png"):gdStr()
+}
+W_nums0 = {
+	gd.createFromPng("resources/num/W_num0_0.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_1.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_2.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_3.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_4.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_5.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_6.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_7.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_8.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_9.png"):gdStr(),
+	gd.createFromPng("resources/num/W_num0_P.png"):gdStr()
+}
+W_SECOND_SEC = gd.createFromPng("resources/trial/W_SECOND_SEC.png"):gdStr()
+R_SECOND_SEC = gd.createFromPng("resources/trial/R_SECOND_SEC.png"):gdStr()
+Y_SECOND_SEC = gd.createFromPng("resources/trial/Y_SECOND_SEC.png"):gdStr()
 new_combo_flg = 0 
 saveTimer = -1
 gui.register(function()
+	frameNow = emu.framecount()
 	game_phase = memory.readword(0x020154A6)
 	if game_phase ~= GAME_PHASE_PLAYING 
 		and game_phase ~= 6
@@ -1013,11 +1553,13 @@ gui.register(function()
 			timeInMode2 = 0
 		end
 	end
+	totalscore = 0
 	if timeInLua == -2 then
 		imageLoad()
 		mode = 1
 		timeInMode = 1
 		savestate.load(savestate.create(9999999))
+		loadLog = io.open("loadLog.txt","a")
 		f = io.open("3rdtrial_savedata.txt", "r")
 		for i=1 ,20 , 1 do
 			for k=1,10,1 do
@@ -1037,14 +1579,26 @@ gui.register(function()
 			index = math.floor (lineNum / 10)
 			num = math.floor (lineNum % 10)
 			saveData[index+1][num+1] = line / (oldKey[index+1][num+1] * oldKey2[index+1][num+1])
-				score = saveData[index+1][num+1] - oldKey[index+1][num+1]
+			logStr = "saveData("..(index+1)..","..(num+1)..") "..line.."/"..oldKey[index+1][num+1].." * "..oldKey2[index+1][num+1].." = "..saveData[index+1][num+1].." score:"..(saveData[index+1][num+1] - oldKey[index+1][num+1]).."\n"
+			score = saveData[index+1][num+1] - oldKey[index+1][num+1]
 			saveData[index+1][num+1] = score
 			kaizanFlg = 0
-			if saveData[index+1][num+1] % 1 ~= 0 or saveData[index+1][num+1] < 0 then
-				print("データが壊れています。セーブデータ("..(index+1)..","..(num+1)..")のデータを破棄します")
-				kaizanFlg = 1
-				saveData[index+1][num+1] = 0
-				score = 0
+			if index+1 < 21 then
+				if saveData[index+1][num+1] % 1 ~= 0 or saveData[index+1][num+1] < 0 or saveData[index+1][num+1] > 99 then
+					saveData[index+1][num+1] = 0
+					deleteStr = "データが壊れています。セーブデータ("..(index+1)..","..(num+1)..")のデータを破棄します"
+					print(deleteStr)
+					kaizanFlg = 1
+					score = 0
+					loadLog:write(os.date().."\n")
+					loadLog:write(deleteStr.."\n")
+					loadLog:write(logStr.."\n")
+					loadLog:write("―――――――――――――――――――――――――\n")
+					if index+1 < 20 and #comboTest[index+1][num+1] == 0 then
+						saveData[index+1][num+1] = 0
+						score = 0
+					end
+				end
 			end
 			if lineNum == 190 then
 				language = score
@@ -1059,8 +1613,10 @@ gui.register(function()
 				saveData[index+1][num+1] = 0
 			end
 			lineNum = lineNum + 1
+			totalscore = totalscore + score
 		end
 		f:close()
+		loadLog:close()
 		for i=1 ,20 , 1 do
 			for k=1,10,1 do
 				newKey[i][k] = math.random(0xFF)
@@ -1073,17 +1629,28 @@ gui.register(function()
 		savestate.save(savestate.create(9999999))
 	end
 	if mode == 0 then
-		if keyDisp == 1 then
+		if keyDisp == 1 or keyDisp == 3 then
 			keyDisplay4(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 1)
-		elseif keyDisp == 2 then
-			keyDisplay(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 0x206AA8D, 0x206AA8C)
-		elseif keyDisp == 3 then
-			keyDisplay4(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 1)
+		end
+		if keyDisp == 2 or keyDisp == 3 then
 			keyDisplay(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 0x206AA8D, 0x206AA8C)
 		end
 		if assist == 1 then
 			assistMode()
 		end
+	end
+	if mode == 0 then
+		if timeInMode2 == 2 then
+			timeInLuaSynchroFrame = frameNow
+			clearEnableFlg = 1
+		end
+		timeDeSync = timeInLuaSynchroFrame-frameNow
+		doukiTimer = 15
+		if comboCleared == 0 and timeDeSync > doukiTimer then
+			clearEnableFlg = 0
+		end
+	else
+		timeInLuaSynchroFrame = 0
 	end
 	if mantanFlg == 1 then
 		memory.writebyte(0x02068D0B,0xA0)
@@ -1110,13 +1677,17 @@ gui.register(function()
 			end
 			timeInMode2 = 0
 		else
-			if mode == 0 and input_startCount > 0 and input_startCount < 20 then
+			if mode == 0 and input_startCount > 0 and input_startCount < 30 then
 				savestate.load(savestate.create(trialChara*1000+trialNum+1))
 				saveDataSaveMemory()
 				timeInLua = -1
 				timeInMode2 = 0
 				comboIndex = 1
 				comboCleared = 0
+				floatTime = 0
+				floatTimeMax = 0
+				wazaTotalNum = 0
+				wazaTotalNumBefore = 0
 			end
 			input_startCount = 0
 		end
@@ -1150,6 +1721,7 @@ gui.register(function()
 			end
 			memory.writebyte(0x02068CB1,0x10)
 			memory.writebyte(0x02069149,0x10)
+			memory.writebyte(0x02011377,0x64)
 		end
 		if mode == 0 then
 			if timeInMode == 0 then
@@ -1174,17 +1746,17 @@ gui.register(function()
 			input_upCount = input_upCount + 1
 		else
 			input_upCount = 0
-		end	
+		end
 		if input_down == 1 then
 			input_downCount = input_downCount + 1
 		else
 			input_downCount = 0
-		end	
+		end
 		if input_left == 1 then
 			input_leftCount = input_leftCount + 1
 		else
 			input_leftCount = 0
-		end	
+		end
 		if input_right == 1 then
 			input_rightCount = input_rightCount + 1
 		else
@@ -1225,6 +1797,8 @@ gui.register(function()
 		else
 			input_buttonCount = 0
 		end
+		oshippa = 15
+		oshippa2 = 5
 		if mode == 1 then
 			if (input_lpCount > 0 and input_lpCount < 4) 
 				and  (input_lkCount > 0 and input_lkCount < 4) then
@@ -1259,7 +1833,7 @@ gui.register(function()
 				input_hpCount = 4
 				input_hkCount = 4
 			end
-			if input_rightCount == 1 then
+			if input_rightCount == 1 or (input_rightCount > oshippa and input_rightCount % oshippa2 == 0) then
 				cursor[trialCharaTemp][trialNumTemp] = 0
 				while true do
 					trialNumTemp = trialNumTemp + 1
@@ -1267,12 +1841,14 @@ gui.register(function()
 						trialNumTemp = 1
 					end
 					if #comboTest[trialCharaTemp][trialNumTemp] ~= 0 then
-						break
+						do
+				    		break
+						end
 					end
 				end
 				cursor[trialCharaTemp][trialNumTemp] = 1
 			end
-			if input_leftCount == 1 then
+			if input_leftCount == 1 or (input_leftCount > oshippa and input_leftCount % oshippa2 == 0) then
 				cursor[trialCharaTemp][trialNumTemp] = 0
 				while true do
 					trialNumTemp = trialNumTemp - 1
@@ -1280,12 +1856,14 @@ gui.register(function()
 						trialNumTemp = 10
 					end
 					if #comboTest[trialCharaTemp][trialNumTemp] ~= 0 then
-						break
+						do
+				    		break
+						end
 					end
 				end
 				cursor[trialCharaTemp][trialNumTemp] = 1
 			end
-			if input_upCount == 1 then
+			if input_upCount == 1 or (input_upCount > oshippa and input_upCount % oshippa2 == 0) then
 				cursor[trialCharaTemp][trialNumTemp] = 0
 				while true do
 					trialCharaTemp = trialCharaTemp - 1
@@ -1293,7 +1871,9 @@ gui.register(function()
 						trialCharaTemp = 19
 					end
 					if #comboTest[trialCharaTemp][trialNumTemp] ~= 0 then
-						break
+						do
+				    		break
+						end
 					end
 					breakFlg = 0
 					for i=0, 10, 1 do
@@ -1304,7 +1884,9 @@ gui.register(function()
 						if #comboTest[trialCharaTemp][search] ~= 0 then
 							trialNumTemp = search
 							breakFlg = 1
-							break
+							do
+					    		break
+							end
 						end
 						search = trialNumTemp + i
 						if search > 10 then
@@ -1313,16 +1895,20 @@ gui.register(function()
 						if #comboTest[trialCharaTemp][search] ~= 0 then
 							trialNumTemp = search
 							breakFlg = 1
-							break
+							do
+					    		break
+							end
 						end
 					end
 					if breakFlg == 1 then
-						break
+						do
+				    		break
+						end
 					end
 				end
 				cursor[trialCharaTemp][trialNumTemp] = 1
 			end
-			if input_downCount == 1 then
+			if input_downCount == 1 or (input_downCount > oshippa and input_downCount % oshippa2 == 0) then
 				cursor[trialCharaTemp][trialNumTemp] = 0
 				while true do
 					trialCharaTemp = trialCharaTemp + 1
@@ -1330,7 +1916,9 @@ gui.register(function()
 						trialCharaTemp = 1
 					end
 					if #comboTest[trialCharaTemp][trialNumTemp] ~= 0 then
-						break
+						do
+				    		break
+						end
 					end
 					breakFlg = 0
 					for i=0, 10, 1 do
@@ -1341,7 +1929,9 @@ gui.register(function()
 						if #comboTest[trialCharaTemp][search] ~= 0 then
 							trialNumTemp = search
 							breakFlg = 1
-							break
+							do
+					    		break
+							end
 						end
 						search = trialNumTemp + i
 						if search > 10 then
@@ -1350,11 +1940,15 @@ gui.register(function()
 						if #comboTest[trialCharaTemp][search] ~= 0 then
 							trialNumTemp = search
 							breakFlg = 1
-							break
+							do
+					    		break
+							end
 						end
 					end
 					if breakFlg == 1 then
-						break
+						do
+				    		break
+						end
 					end
 				end
 				cursor[trialCharaTemp][trialNumTemp] = 1
@@ -1401,6 +1995,7 @@ gui.register(function()
 		commandDir2P = readReverse(0x0206910F,0x01)
 		x2P = readReverse(0x02069169,2)
 		y2P = readReverse(0x0206916D,2)
+		kurai2P = memory.readbyte(0x02069312)
 		parryNum1P = readReverse(0x02010CAD,0x01) + readReverse(0x02010CAF,0x01)
 		x1P2PdiffAbs = math.abs(x2P - x1P)
 		x1P2Pdiff = x2P - x1P
@@ -1429,11 +2024,18 @@ gui.register(function()
 		Action1Ptxt = ActionType1PJapanese.." "..string.format("%04x",ActionSub1P).." "..string.format("%04x",Action1P)
 		Action2Ptxt = ActionType2PJapanese.." "..string.format("%04x",ActionSub2P).." "..string.format("%04x",Action2P)
 		ActionDetail1P = ActionType1PJapanese..string.format("%04x",ActionSub1P)..string.format("%04x",Action1P)
+		ActionDetail2PBefore = ActionDetail2P
 		ActionDetail2P = ActionType2PJapanese..string.format("%04x",ActionSub2P)..string.format("%04x",Action2P)
 		if new_combo_flg == 0 then
+			if new_combo_flg == 0 then
+				dontMove2P()
+			end
 			move2P()
 		end
 		jotai()
+		if game_phase ~= 6 then
+			dontShowBonus(4)
+		end
 		dashiteruWaza = ActionType1PJapanese..string.format("%04x",ActionSub1P)..string.format("%04x",Action1P)
 		read_misc_objects(comboTest[trialChara][trialNum][comboIndex])
 		sonota()
@@ -1467,13 +2069,15 @@ gui.register(function()
 			end
 			if comboIndex ~= #comboTest[trialChara][trialNum]+1 then
 				for i=kadaiNum,#comboTest[trialChara][trialNum][comboIndex],1 do
-					if kadaiType == "H" or kadaiType == "T" or kadaiType == "HR" then
+					if kadaiType == "H" or kadaiType == "T" or kadaiType == "ANIM2P" or kadaiType == "HR" then
 						if hitWaza == comboTest[trialChara][trialNum][comboIndex][i] then
-							if ((kadaiType == "H" or kadaiType == "T")and wazaTotalNum ~= wazaTotalNumBefore) or kadaiType == "HR"  then
+							if ((kadaiType == "H" or kadaiType == "T" or kadaiType == "ANIM2P" )and wazaTotalNum ~= wazaTotalNumBefore) or kadaiType == "HR"  then
 								if kadaiTokubetsuJudge() then
 									comboIndex = comboIndex + 1
 									wazaTotalNumBefore = wazaTotalNum
-									break
+									do
+							    		break
+									end
 								end
 							end
 						end
@@ -1482,7 +2086,9 @@ gui.register(function()
 						if hitWaza == comboTest[trialChara][trialNum][comboIndex][i] then
 							if kadaiTokubetsuJudge() then
 								comboIndex = comboIndex + 1
-								break
+								do
+						    		break
+								end
 							end
 						end
 					end
@@ -1495,7 +2101,9 @@ gui.register(function()
 						if dashiteruWaza == comboTest[trialChara][trialNum][comboIndex][i] then
 							if kadaiTokubetsuJudge() then
 								comboIndex = comboIndex + 1
-								break
+								do
+						    		break
+								end
 							end
 						end
 					end
@@ -1505,7 +2113,9 @@ gui.register(function()
 							if kadaiTokubetsuJudge() then
 								trialTimer = comboTest[trialChara][trialNum][comboIndex][kadaiNum+1]
 								comboIndex = comboIndex + 1
-								break
+								do
+						    		break
+								end
 							end
 						end
 					end
@@ -1518,10 +2128,20 @@ gui.register(function()
 							end
 						end
 					end
+				elseif comboTest[trialChara][trialNum][comboIndex][kadaiNum-1] == "K12K" then
+					if dashiteruWaza == comboTest[trialChara][trialNum][comboIndex][kadaiNum] 
+					  or dashiteruWaza == comboTest[trialChara][trialNum][comboIndex][kadaiNum+1] 
+					  or dashiteruWaza == comboTest[trialChara][trialNum][comboIndex][kadaiNum+2] then
+						comboIndex = comboIndex + 1
+					end
+				elseif comboTest[trialChara][trialNum][comboIndex][kadaiNum-1] == "U" then
+					if kadaiTokubetsuJudge() then
+						comboIndex = comboIndex + 1
+					end
 				end
 			end
 			if comboIndex == #comboTest[trialChara][trialNum]+1 then
-				if comboCleared == 0 then
+				if comboCleared == 0 and clearEnableFlg == 1 then
 					if saveData[trialChara][trialNum] < 99 then
 						saveData[trialChara][trialNum] = saveData[trialChara][trialNum] + 1
 					end
@@ -1539,11 +2159,30 @@ gui.register(function()
 			end
 		end
 		if comboIndex > 1 then
+			if comboTest[trialChara][trialNum][comboIndex-1][kadaiNum-1] == "K12K" then
+				if anime1P == comboTest[trialChara][trialNum][comboIndex-1][kadaiNum+3] or anime1P == comboTest[trialChara][trialNum][comboIndex-1][kadaiNum+4] then
+					comboEnd()
+				end
+			end
+		end
+		if comboIndex > 1 then
+			if comboTest[trialChara][trialNum][comboIndex-1][kadaiNum-1] == "ANIM2P"  then
+				for i=1,#comboTest[trialChara][trialNum][comboIndex-1][kadaiNum+1],1 do
+					if anime2P == comboTest[trialChara][trialNum][comboIndex-1][kadaiNum+1][i] then
+						comboEnd()
+						do
+							break
+						end
+					end
+				end
+			end
+		end
+		if comboIndex > 1 then
 			if comboTest[trialChara][trialNum][comboIndex-1][kadaiNum-1] == "J" and trialTimer == 0 then
 				comboEnd()
 			end
 		end
-		if comboNum == 0 and comboNumBefore > 0 then
+		if comboNum == 0 and comboNumBefore > 0 and (comboIndex > 1 and comboTest[trialChara][trialNum][comboIndex-1][kadaiNum-1] ~= "ANIM2P") then
 			comboEnd()
 		end
 		totalHitNum1to2Before = totalHitNum1to2
@@ -1568,6 +2207,10 @@ gui.register(function()
 			end
 		end
 	end
+	timeInLuaSynchroFrame = timeInLuaSynchroFrame + 1
+	if mode == 0 then
+		itsudemo()
+	end
 	kadaiOffset = 12
 	if mode == 0 then
 		gui.text(44,35,"trial "..trialChara.."-"..trialNum.."  cleared:"..saveData[trialChara][trialNum])
@@ -1577,8 +2220,13 @@ gui.register(function()
 			WorR = "W"
 			color = "white"
 			if i < comboIndex then
-				WorR = "R"
-				color = "red"
+					if clearEnableFlg == 1 then
+						WorR = "R"
+						color = "red"
+					else
+						WorR = "Y"
+						color = "orange"
+					end
 			end
 			for k=1,#kadai[trialChara][trialNum][i],1 do
 				if language == 0 then
@@ -1595,6 +2243,18 @@ gui.register(function()
 						offsetX = offsetX + 64
 					elseif kadai[trialChara][trialNum][i][k] == "_COMMON_JS" or kadai[trialChara][trialNum][i][k] == "_COMMON_JN" then
 						offsetX = offsetX + 24
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE8" then
+						offsetX = offsetX + 8
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE16" then
+						offsetX = offsetX + 16
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE32" then
+						offsetX = offsetX + 32
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE64" then
+						offsetX = offsetX + 64
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE-8" then
+						offsetX = offsetX - 8
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE-16" then
+						offsetX = offsetX - 16
 					else
 						offsetX = offsetX + 16
 					end
@@ -1638,6 +2298,18 @@ gui.register(function()
 						offsetX = offsetX + 64
 					elseif kadai[trialCharaTemp][trialNumTemp][i][k] == "_COMMON_JS" or kadai[trialCharaTemp][trialNumTemp][i][k] == "_COMMON_JN" then
 						offsetX = offsetX + 24
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE8" then
+						offsetX = offsetX + 8
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE16" then
+						offsetX = offsetX + 16
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE32" then
+						offsetX = offsetX + 32
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE64" then
+						offsetX = offsetX + 64
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE-8" then
+						offsetX = offsetX - 8
+					elseif kadai[trialChara][trialNum][i][k] == "SPACE-16" then
+						offsetX = offsetX - 16
 					else
 						offsetX = offsetX + 16
 					end
@@ -1727,7 +2399,6 @@ function comboEnd()
 		comboIndex = 1
 	end
 	lifeZeroTimer = 24
-	writeReverse(0x02069612,stunMinimum,0x02)
 	for i=0, 0x200, 1 do
 		memory.writebyte(0x02011000+i,0)
 	end
@@ -1794,7 +2465,7 @@ function viewMemory(addr)
 		for j=0,15,1 do
 			gui.text(48+j*16,4,num2hex(j))
 			gui.text(48+j*16,14+i*8,num2hex(memory.readbyte((addr)+j+(i*0x10))))
-		end	
+		end
 	end
 end
 function num2hex(num)    
@@ -1875,9 +2546,7 @@ function kadaiTokubetsuJudge()
 			return true
 		end
 	elseif trialChara == 3 and trialNum == 7 and comboIndex == 1 then
-		if direction1P == commandDir2P then
-			return true
-		end
+		return crossUpJudge()
 	elseif trialChara == 3 and trialNum == 8 and comboIndex == 1 then
 		if parryNum1P == 15 then
 			return true
@@ -1887,21 +2556,40 @@ function kadaiTokubetsuJudge()
 			return true
 		end
 	elseif trialChara == 16 and trialNum == 5 and comboIndex == 1 then
-		if direction1P == commandDir2P then
-			return true
-		end
+		return crossUpJudge()
 	elseif trialChara == 16 and trialNum == 6 and comboIndex == 1 then
 		if trialFlg == 0 then
 			return true
 		end
+	elseif trialChara == 18 and trialNum == 4 and comboIndex == 1 then
+		return crossUpJudge()
+	elseif trialChara == 18 and trialNum == 6 and comboIndex == 2 then
+		return crossUpJudge()
+	elseif trialChara == 18 and trialNum == 5 then
+		return floatJudge(180)
+	elseif trialChara == 18 and trialNum == 10 and comboIndex == 1 then
+		return crossUpJudge()
 	elseif trialChara == 19 and trialNum == 4 and comboIndex == 2 then
-		if direction1P == commandDir2P then
-			return true
-		end
+		return crossUpJudge()
 	else
 		return true
 	end
 	return false
+end
+function crossUpJudge()
+	if direction1P == 1 then
+		if x1P > x2P then
+			return true
+		else
+			return false
+		end
+	else
+		if x1P < x2P then
+			return true
+		else
+			return false
+		end
+	end
 end
 function countInput(table)
 	count = 0
@@ -1982,13 +2670,23 @@ function move2P()
 			inputAdd(inputList2P,{7, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 5 and trialNum == 3 then
 			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
+		elseif trialChara == 5 and trialNum == 4 then
+			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 7 and trialNum == 3 then
+			inputAdd(inputList2P,{7, 0,0,0, 0,0,0, 0,0,1,1})
+		elseif trialChara == 7 and trialNum == 4 then
+			inputAdd(inputList2P,{8, 0,0,0, 0,0,0, 0,0,1,1})
+		elseif trialChara == 9 and trialNum == 4 then
 			inputAdd(inputList2P,{7, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 13 and trialNum == 8 then
 			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 15 and trialNum == 1 then
-			inputAdd(inputList2P,{8, 0,0,0, 0,0,0, 0,0,1,1})
+			inputAdd(inputList2P,{7, 0,0,0, 0,0,0, 0,0,1,1})
+		elseif trialChara == 16 and trialNum == 8 then
+			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 16 and trialNum == 9 then
+			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
+		elseif trialChara == 18 and trialNum == 6 then
 			inputAdd(inputList2P,{2, 0,0,0, 0,0,0, 0,0,1,1})
 		elseif trialChara == 3 and trialNum == 8 then
 			if timeInMode2 == 40 then
@@ -2017,6 +2715,8 @@ function move2P()
 			sekkin(0x60,0x2E,0)
 		elseif trialChara == 16 and trialNum == 6 then
 			sekkin(0xB0,0x68,0)
+		elseif trialChara == 18 and trialNum == 3 then
+			sekkin(0xB0,0x33,0)
 		end
 	end
 	if timeInLua < startTimer then
@@ -2034,6 +2734,18 @@ function move2P()
 	input_hk = bitReturn(memory.readbyte(0x0202568F-1),2)
 	if inputCount ~= 0 then
 		keytable = {}
+		keytable["P2 Up"]			 = false
+		keytable["P2 Right"]		 = false
+		keytable["P2 Down"]			 = false
+		keytable["P2 Left"]			 = false
+		keytable["P2 Weak Punch"]	 = false
+		keytable["P2 Medium Punch"]	 = false
+		keytable["P2 Strong Punch"]	 = false
+		keytable["P2 Weak Kick"]	 = false
+		keytable["P2 Medium Kick"]	 = false
+		keytable["P2 Strong Kick"]	 = false
+		keytable["P2 Start"]		 = false
+		keytable["P2 Coin"]			 = false
 		if inputList2P[1][1] == 1 then
 			keytable["P2 Down"] = true
 			if commandDir2P == 1 then
@@ -2108,7 +2820,9 @@ function move2P()
 		for i=1, #inputList2P, 1 do
 			if #inputList2P[i] ~= 0 then
 			else
-				break
+				do
+		    		break
+				end
 			end
 		end
 		joypad.set(keytable)
@@ -2128,7 +2842,23 @@ function move2P()
 				end
 			end
 		end
-	end	
+	end
+end
+function dontMove2P()
+	keytable = {}
+	keytable["P2 Up"]			 = false
+	keytable["P2 Right"]		 = false
+	keytable["P2 Down"]			 = false
+	keytable["P2 Left"]			 = false
+	keytable["P2 Weak Punch"]	 = false
+	keytable["P2 Medium Punch"]	 = false
+	keytable["P2 Strong Punch"]	 = false
+	keytable["P2 Weak Kick"]	 = false
+	keytable["P2 Medium Kick"]	 = false
+	keytable["P2 Strong Kick"]	 = false
+	keytable["P2 Start"]		 = false
+	keytable["P2 Coin"]			 = false
+	joypad.set(keytable)
 end
 function sekkin(dash,distance,syagamu)
 	if x1P2PdiffAbs > dash then
@@ -2158,7 +2888,9 @@ function inputAdd(table,input)
 	for i=1, #table, 1 do
 		if #table[i] == 0 then
 			table[i] = input
-			break
+			do
+	    		break
+			end
 		end
 	end
 end
@@ -2203,8 +2935,9 @@ function jotai()
 		stunMinimum = 0x0000
 	end
 	if comboNum == 0 then
-		if readReverse(0x02069612,0x02) <= stunMinimum then
 			writeReverse(0x02069612,stunMinimum,0x02)
+		if comboNumBefore ~= 0 then
+			lifeZeroTimer = 24
 		end
 	end
 end
@@ -2242,6 +2975,60 @@ function sonota()
 				trialFlg = 0
 			end
 		end
+	elseif trialChara == 18 and trialNum == 5 then
+		floatCallange({"N00000013"})
+	end
+end
+function itsudemo()
+	if trialChara == 18 and trialNum == 5 then
+		floatTimeSecond = math.floor(floatTimeMax * 1.67)
+		floatTimeSecondLeft = math.floor(floatTimeSecond / 100)
+		floatTimeSecondRight = floatTimeSecond % 100
+		numXL = 171
+		numXP = numXL + 10
+		numXR = numXP + 5
+		secX = numXR + 24
+		numY = 70
+		secY = numY + 5
+		diff = 10
+		if WorR == "W" then
+			drawOriginNum(W_nums0,numXL,numY,floatTimeSecondLeft,1,diff)
+			gui.image(numXP,numY,W_nums0[11])
+			drawOriginNum(W_nums0,numXR,numY,floatTimeSecondRight,2,diff)
+			gui.image(secX,secY,W_SECOND_SEC)
+		elseif WorR == "R" then
+			drawOriginNum(R_nums0,numXL,numY,floatTimeSecondLeft,1,diff)
+			gui.image(numXP,numY,R_nums0[11])
+			drawOriginNum(R_nums0,numXR,numY,floatTimeSecondRight,2,diff)
+			gui.image(secX,secY,R_SECOND_SEC)
+		else
+			drawOriginNum(Y_nums0,numXL,numY,floatTimeSecondLeft,1,diff)
+			gui.image(numXP,numY,Y_nums0[11])
+			drawOriginNum(Y_nums0,numXR,numY,floatTimeSecondRight,2,diff)
+			gui.image(secX,secY,Y_SECOND_SEC)
+		end
+	end
+end
+function floatCallange(action)
+	zokkouFlg = 1
+	for i=1, #action, 1 do
+		if ActionDetail2P == action[i] then
+			floatTime = 0
+			zokkouFlg = 0
+		end
+	end
+	if zokkouFlg == 1 then
+		if kurai2P == 0x18 then
+			floatTime = floatTime + 1
+			floatTimeMax = floatTime
+		elseif kurai2P == 0x26 then
+			floatTime = 0
+		end
+	end
+end
+function floatJudge(num)
+	if floatTime >= num then
+		return true
 	end
 end
 function imageLoad()
@@ -2345,6 +3132,9 @@ function imageLoad()
 	R_SA_ELE1 = gd.createFromPng("resources/trial/R_SA_ELE1.png"):gdStr()
 	R_SA_ELE2 = gd.createFromPng("resources/trial/R_SA_ELE2.png"):gdStr()
 	R_SA_ELE3 = gd.createFromPng("resources/trial/R_SA_ELE3.png"):gdStr()
+	R_SA_GILL1 = gd.createFromPng("resources/trial/R_SA_GILL1.png"):gdStr()
+	R_SA_GILL2 = gd.createFromPng("resources/trial/R_SA_GILL2.png"):gdStr()
+	R_SA_GILL3 = gd.createFromPng("resources/trial/R_SA_GILL3.png"):gdStr()
 	R_SA_GOU1_1 = gd.createFromPng("resources/trial/R_SA_GOU1_1.png"):gdStr()
 	R_SA_GOU1_2 = gd.createFromPng("resources/trial/R_SA_GOU1_2.png"):gdStr()
 	R_SA_GOU2 = gd.createFromPng("resources/trial/R_SA_GOU2.png"):gdStr()
@@ -2435,6 +3225,10 @@ function imageLoad()
 	R_SP_ELE3 = gd.createFromPng("resources/trial/R_SP_ELE3.png"):gdStr()
 	R_SP_ELE4 = gd.createFromPng("resources/trial/R_SP_ELE4.png"):gdStr()
 	R_SP_ELE5 = gd.createFromPng("resources/trial/R_SP_ELE5.png"):gdStr()
+	R_SP_GILL1 = gd.createFromPng("resources/trial/R_SP_GILL1.png"):gdStr()
+	R_SP_GILL2 = gd.createFromPng("resources/trial/R_SP_GILL2.png"):gdStr()
+	R_SP_GILL3 = gd.createFromPng("resources/trial/R_SP_GILL3.png"):gdStr()
+	R_SP_GILL4 = gd.createFromPng("resources/trial/R_SP_GILL4.png"):gdStr()
 	R_SP_GOU1 = gd.createFromPng("resources/trial/R_SP_GOU1.png"):gdStr()
 	R_SP_GOU2 = gd.createFromPng("resources/trial/R_SP_GOU2.png"):gdStr()
 	R_SP_GOU3 = gd.createFromPng("resources/trial/R_SP_GOU3.png"):gdStr()
@@ -2500,6 +3294,7 @@ function imageLoad()
 	R_SP_TWE2 = gd.createFromPng("resources/trial/R_SP_TWE2.png"):gdStr()
 	R_SP_TWE3 = gd.createFromPng("resources/trial/R_SP_TWE3.png"):gdStr()
 	R_SP_TWE4 = gd.createFromPng("resources/trial/R_SP_TWE4.png"):gdStr()
+	R_SP_TWE5 = gd.createFromPng("resources/trial/R_SP_TWE5.png"):gdStr()
 	R_SP_URIEN1 = gd.createFromPng("resources/trial/R_SP_URIEN1.png"):gdStr()
 	R_SP_URIEN2 = gd.createFromPng("resources/trial/R_SP_URIEN2.png"):gdStr()
 	R_SP_URIEN3 = gd.createFromPng("resources/trial/R_SP_URIEN3.png"):gdStr()
@@ -2525,6 +3320,324 @@ function imageLoad()
 	R_N_THROW = gd.createFromPng("resources/trial/R_N_THROW.png"):gdStr()
 	R_NM_BDASH = gd.createFromPng("resources/trial/R_NM_BDASH.png"):gdStr()
 	R_NM_FDASH = gd.createFromPng("resources/trial/R_NM_FDASH.png"):gdStr()
+	R_NM_FORWARD = gd.createFromPng("resources/trial/R_NM_FORWARD.png"):gdStr()
+	R_HIT2 = gd.createFromPng("resources/trial/R_HIT2.png"):gdStr()
+	R_NUM_1 = gd.createFromPng("resources/trial/R_NUM_1.png"):gdStr()
+	R_NUM_2 = gd.createFromPng("resources/trial/R_NUM_2.png"):gdStr()
+	R_NUM_3 = gd.createFromPng("resources/trial/R_NUM_3.png"):gdStr()
+	R_NUM_4 = gd.createFromPng("resources/trial/R_NUM_4.png"):gdStr()
+	R_NUM_5 = gd.createFromPng("resources/trial/R_NUM_5.png"):gdStr()
+	R_NUM_6 = gd.createFromPng("resources/trial/R_NUM_6.png"):gdStr()
+	R_NUM_7 = gd.createFromPng("resources/trial/R_NUM_7.png"):gdStr()
+	R_NUM_8 = gd.createFromPng("resources/trial/R_NUM_8.png"):gdStr()
+	R_NUM_0 = gd.createFromPng("resources/trial/R_NUM_0.png"):gdStr()
+	R_NUM_9 = gd.createFromPng("resources/trial/R_NUM_9.png"):gdStr()
+	R_NUM_P = gd.createFromPng("resources/trial/R_NUM_P.png"):gdStr()
+	R_SECOND_COMBO_DE = gd.createFromPng("resources/trial/R_SECOND_COMBO_DE.png"):gdStr()
+	R_SECOND_FLOAT = gd.createFromPng("resources/trial/R_SECOND_FLOAT.png"):gdStr()
+	Y_COMMON_OR = gd.createFromPng("resources/trial/Y_COMMON_OR.png"):gdStr()
+	Y_COMMON_EX = gd.createFromPng("resources/trial/Y_COMMON_EX.png"):gdStr()
+	Y_COMMON_H = gd.createFromPng("resources/trial/Y_COMMON_H.png"):gdStr()
+	Y_COMMON_L = gd.createFromPng("resources/trial/Y_COMMON_L.png"):gdStr()
+	Y_COMMON_M = gd.createFromPng("resources/trial/Y_COMMON_M.png"):gdStr()
+	Y_COMMON_ME = gd.createFromPng("resources/trial/Y_COMMON_ME.png"):gdStr()
+	Y_COMMON_URA = gd.createFromPng("resources/trial/Y_COMMON_URA.png"):gdStr()
+	Y_COMMON_KARACAN = gd.createFromPng("resources/trial/Y_COMMON_KARACAN.png"):gdStr()
+	Y_COMMON_JS = gd.createFromPng("resources/trial/Y_COMMON_JS.png"):gdStr()
+	Y_COMMON_JN = gd.createFromPng("resources/trial/Y_COMMON_JN.png"):gdStr()
+	Y_COMMON_ANTI_AIR = gd.createFromPng("resources/trial/Y_COMMON_ANTI_AIR.png"):gdStr()
+	Y_COMMON_KARABURI = gd.createFromPng("resources/trial/Y_COMMON_KARABURI.png"):gdStr()
+	Y_LEAP = gd.createFromPng("resources/trial/Y_LEAP.png"):gdStr()
+	Y_NM_1HK = gd.createFromPng("resources/trial/Y_NM_1HK.png"):gdStr()
+	Y_NM_1HP = gd.createFromPng("resources/trial/Y_NM_1HP.png"):gdStr()
+	Y_NM_1LK = gd.createFromPng("resources/trial/Y_NM_1LK.png"):gdStr()
+	Y_NM_1LP = gd.createFromPng("resources/trial/Y_NM_1LP.png"):gdStr()
+	Y_NM_1MK = gd.createFromPng("resources/trial/Y_NM_1MK.png"):gdStr()
+	Y_NM_1MP = gd.createFromPng("resources/trial/Y_NM_1MP.png"):gdStr()
+	Y_NM_3HK = gd.createFromPng("resources/trial/Y_NM_3HK.png"):gdStr()
+	Y_NM_3HP = gd.createFromPng("resources/trial/Y_NM_3HP.png"):gdStr()
+	Y_NM_3LK = gd.createFromPng("resources/trial/Y_NM_3LK.png"):gdStr()
+	Y_NM_3LP = gd.createFromPng("resources/trial/Y_NM_3LP.png"):gdStr()
+	Y_NM_3MK = gd.createFromPng("resources/trial/Y_NM_3MK.png"):gdStr()
+	Y_NM_3MP = gd.createFromPng("resources/trial/Y_NM_3MP.png"):gdStr()
+	Y_NM_4HK = gd.createFromPng("resources/trial/Y_NM_4HK.png"):gdStr()
+	Y_NM_4HP = gd.createFromPng("resources/trial/Y_NM_4HP.png"):gdStr()
+	Y_NM_4LK = gd.createFromPng("resources/trial/Y_NM_4LK.png"):gdStr()
+	Y_NM_4LP = gd.createFromPng("resources/trial/Y_NM_4LP.png"):gdStr()
+	Y_NM_4MK = gd.createFromPng("resources/trial/Y_NM_4MK.png"):gdStr()
+	Y_NM_4MP = gd.createFromPng("resources/trial/Y_NM_4MP.png"):gdStr()
+	Y_NM_6HK = gd.createFromPng("resources/trial/Y_NM_6HK.png"):gdStr()
+	Y_NM_6HP = gd.createFromPng("resources/trial/Y_NM_6HP.png"):gdStr()
+	Y_NM_6LK = gd.createFromPng("resources/trial/Y_NM_6LK.png"):gdStr()
+	Y_NM_6LP = gd.createFromPng("resources/trial/Y_NM_6LP.png"):gdStr()
+	Y_NM_6MK = gd.createFromPng("resources/trial/Y_NM_6MK.png"):gdStr()
+	Y_NM_6MP = gd.createFromPng("resources/trial/Y_NM_6MP.png"):gdStr()
+	Y_NM_CHK = gd.createFromPng("resources/trial/Y_NM_CHK.png"):gdStr()
+	Y_NM_CHP = gd.createFromPng("resources/trial/Y_NM_CHP.png"):gdStr()
+	Y_NM_CLK = gd.createFromPng("resources/trial/Y_NM_CLK.png"):gdStr()
+	Y_NM_CLP = gd.createFromPng("resources/trial/Y_NM_CLP.png"):gdStr()
+	Y_NM_CMK = gd.createFromPng("resources/trial/Y_NM_CMK.png"):gdStr()
+	Y_NM_CMP = gd.createFromPng("resources/trial/Y_NM_CMP.png"):gdStr()
+	Y_NM_JHK = gd.createFromPng("resources/trial/Y_NM_JHK.png"):gdStr()
+	Y_NM_JHP = gd.createFromPng("resources/trial/Y_NM_JHP.png"):gdStr()
+	Y_NM_JLK = gd.createFromPng("resources/trial/Y_NM_JLK.png"):gdStr()
+	Y_NM_JLP = gd.createFromPng("resources/trial/Y_NM_JLP.png"):gdStr()
+	Y_NM_JMK = gd.createFromPng("resources/trial/Y_NM_JMK.png"):gdStr()
+	Y_NM_JMP = gd.createFromPng("resources/trial/Y_NM_JMP.png"):gdStr()
+	Y_NM_J2MK = gd.createFromPng("resources/trial/Y_NM_J2MK.png"):gdStr()
+	Y_NM_J3MK = gd.createFromPng("resources/trial/Y_NM_J3MK.png"):gdStr()
+	Y_NM_J6HP = gd.createFromPng("resources/trial/Y_NM_J6HP.png"):gdStr()
+	Y_NM_J2HP = gd.createFromPng("resources/trial/Y_NM_J2HP.png"):gdStr()
+	Y_NM_J6MK = gd.createFromPng("resources/trial/Y_NM_J6MK.png"):gdStr()
+	Y_NM_NJHK = gd.createFromPng("resources/trial/Y_NM_NJHK.png"):gdStr()
+	Y_NM_NJHP = gd.createFromPng("resources/trial/Y_NM_NJHP.png"):gdStr()
+	Y_NM_NJLK = gd.createFromPng("resources/trial/Y_NM_NJLK.png"):gdStr()
+	Y_NM_NJLP = gd.createFromPng("resources/trial/Y_NM_NJLP.png"):gdStr()
+	Y_NM_NJMK = gd.createFromPng("resources/trial/Y_NM_NJMK.png"):gdStr()
+	Y_NM_NJMP = gd.createFromPng("resources/trial/Y_NM_NJMP.png"):gdStr()
+	Y_NM_SCHK = gd.createFromPng("resources/trial/Y_NM_SCHK.png"):gdStr()
+	Y_NM_SCHP = gd.createFromPng("resources/trial/Y_NM_SCHP.png"):gdStr()
+	Y_NM_SCLK = gd.createFromPng("resources/trial/Y_NM_SCLK.png"):gdStr()
+	Y_NM_SCLP = gd.createFromPng("resources/trial/Y_NM_SCLP.png"):gdStr()
+	Y_NM_SCMK = gd.createFromPng("resources/trial/Y_NM_SCMK.png"):gdStr()
+	Y_NM_SCMP = gd.createFromPng("resources/trial/Y_NM_SCMP.png"):gdStr()
+	Y_NM_SDHK = gd.createFromPng("resources/trial/Y_NM_SDHK.png"):gdStr()
+	Y_NM_SDHP = gd.createFromPng("resources/trial/Y_NM_SDHP.png"):gdStr()
+	Y_NM_SDLK = gd.createFromPng("resources/trial/Y_NM_SDLK.png"):gdStr()
+	Y_NM_SDLP = gd.createFromPng("resources/trial/Y_NM_SDLP.png"):gdStr()
+	Y_NM_SDMK = gd.createFromPng("resources/trial/Y_NM_SDMK.png"):gdStr()
+	Y_NM_SDMP = gd.createFromPng("resources/trial/Y_NM_SDMP.png"):gdStr()
+	Y_NM_SHK = gd.createFromPng("resources/trial/Y_NM_SHK.png"):gdStr()
+	Y_NM_SHP = gd.createFromPng("resources/trial/Y_NM_SHP.png"):gdStr()
+	Y_NM_SJHK = gd.createFromPng("resources/trial/Y_NM_SJHK.png"):gdStr()
+	Y_NM_SJHP = gd.createFromPng("resources/trial/Y_NM_SJHP.png"):gdStr()
+	Y_NM_SJLK = gd.createFromPng("resources/trial/Y_NM_SJLK.png"):gdStr()
+	Y_NM_SJLP = gd.createFromPng("resources/trial/Y_NM_SJLP.png"):gdStr()
+	Y_NM_SJMK = gd.createFromPng("resources/trial/Y_NM_SJMK.png"):gdStr()
+	Y_NM_SJMP = gd.createFromPng("resources/trial/Y_NM_SJMP.png"):gdStr()
+	Y_NM_SLK = gd.createFromPng("resources/trial/Y_NM_SLK.png"):gdStr()
+	Y_NM_SLP = gd.createFromPng("resources/trial/Y_NM_SLP.png"):gdStr()
+	Y_NM_SMK = gd.createFromPng("resources/trial/Y_NM_SMK.png"):gdStr()
+	Y_NM_SMP = gd.createFromPng("resources/trial/Y_NM_SMP.png"):gdStr()
+	Y_PA = gd.createFromPng("resources/trial/Y_PA.png"):gdStr()
+	Y_SA_ALEX1 = gd.createFromPng("resources/trial/Y_SA_ALEX1.png"):gdStr()
+	Y_SA_ALEX2 = gd.createFromPng("resources/trial/Y_SA_ALEX2.png"):gdStr()
+	Y_SA_ALEX3 = gd.createFromPng("resources/trial/Y_SA_ALEX3.png"):gdStr()
+	Y_SA_CHU1 = gd.createFromPng("resources/trial/Y_SA_CHU1.png"):gdStr()
+	Y_SA_CHU2 = gd.createFromPng("resources/trial/Y_SA_CHU2.png"):gdStr()
+	Y_SA_CHU3 = gd.createFromPng("resources/trial/Y_SA_CHU3.png"):gdStr()
+	Y_SA_DUD1 = gd.createFromPng("resources/trial/Y_SA_DUD1.png"):gdStr()
+	Y_SA_DUD2 = gd.createFromPng("resources/trial/Y_SA_DUD2.png"):gdStr()
+	Y_SA_DUD3 = gd.createFromPng("resources/trial/Y_SA_DUD3.png"):gdStr()
+	Y_SA_DUDLEY1 = gd.createFromPng("resources/trial/Y_SA_DUDLEY1.png"):gdStr()
+	Y_SA_DUDLEY2 = gd.createFromPng("resources/trial/Y_SA_DUDLEY2.png"):gdStr()
+	Y_SA_DUDLEY3 = gd.createFromPng("resources/trial/Y_SA_DUDLEY3.png"):gdStr()
+	Y_SA_ELE1 = gd.createFromPng("resources/trial/Y_SA_ELE1.png"):gdStr()
+	Y_SA_ELE2 = gd.createFromPng("resources/trial/Y_SA_ELE2.png"):gdStr()
+	Y_SA_ELE3 = gd.createFromPng("resources/trial/Y_SA_ELE3.png"):gdStr()
+	Y_SA_GILL1 = gd.createFromPng("resources/trial/Y_SA_GILL1.png"):gdStr()
+	Y_SA_GILL2 = gd.createFromPng("resources/trial/Y_SA_GILL2.png"):gdStr()
+	Y_SA_GILL3 = gd.createFromPng("resources/trial/Y_SA_GILL3.png"):gdStr()
+	Y_SA_GOU1_1 = gd.createFromPng("resources/trial/Y_SA_GOU1_1.png"):gdStr()
+	Y_SA_GOU1_2 = gd.createFromPng("resources/trial/Y_SA_GOU1_2.png"):gdStr()
+	Y_SA_GOU2 = gd.createFromPng("resources/trial/Y_SA_GOU2.png"):gdStr()
+	Y_SA_GOU3_1 = gd.createFromPng("resources/trial/Y_SA_GOU3_1.png"):gdStr()
+	Y_SA_GOU3_2 = gd.createFromPng("resources/trial/Y_SA_GOU3_2.png"):gdStr()
+	Y_SA_GOU4 = gd.createFromPng("resources/trial/Y_SA_GOU4.png"):gdStr()
+	Y_SA_GOU5 = gd.createFromPng("resources/trial/Y_SA_GOU5.png"):gdStr()
+	Y_SA_HUGO1 = gd.createFromPng("resources/trial/Y_SA_HUGO1.png"):gdStr()
+	Y_SA_HUGO2 = gd.createFromPng("resources/trial/Y_SA_HUGO2.png"):gdStr()
+	Y_SA_HUGO3 = gd.createFromPng("resources/trial/Y_SA_HUGO3.png"):gdStr()
+	Y_SA_IBU1 = gd.createFromPng("resources/trial/Y_SA_IBU1.png"):gdStr()
+	Y_SA_IBU2 = gd.createFromPng("resources/trial/Y_SA_IBU2.png"):gdStr()
+	Y_SA_IBU3 = gd.createFromPng("resources/trial/Y_SA_IBU3.png"):gdStr()
+	Y_SA_KEN1 = gd.createFromPng("resources/trial/Y_SA_KEN1.png"):gdStr()
+	Y_SA_KEN2 = gd.createFromPng("resources/trial/Y_SA_KEN2.png"):gdStr()
+	Y_SA_KEN3 = gd.createFromPng("resources/trial/Y_SA_KEN3.png"):gdStr()
+	Y_SA_MAK1 = gd.createFromPng("resources/trial/Y_SA_MAK1.png"):gdStr()
+	Y_SA_MAK2 = gd.createFromPng("resources/trial/Y_SA_MAK2.png"):gdStr()
+	Y_SA_MAK3 = gd.createFromPng("resources/trial/Y_SA_MAK3.png"):gdStr()
+	Y_SA_NEC1 = gd.createFromPng("resources/trial/Y_SA_NEC1.png"):gdStr()
+	Y_SA_NEC2 = gd.createFromPng("resources/trial/Y_SA_NEC2.png"):gdStr()
+	Y_SA_NEC3 = gd.createFromPng("resources/trial/Y_SA_NEC3.png"):gdStr()
+	Y_SA_ORO1_1 = gd.createFromPng("resources/trial/Y_SA_ORO1_1.png"):gdStr()
+	Y_SA_ORO1_2 = gd.createFromPng("resources/trial/Y_SA_ORO1_2.png"):gdStr()
+	Y_SA_ORO1_3 = gd.createFromPng("resources/trial/Y_SA_ORO1_3.png"):gdStr()
+	Y_SA_ORO2_1 = gd.createFromPng("resources/trial/Y_SA_ORO2_1.png"):gdStr()
+	Y_SA_ORO2_2 = gd.createFromPng("resources/trial/Y_SA_ORO2_2.png"):gdStr()
+	Y_SA_ORO3_1 = gd.createFromPng("resources/trial/Y_SA_ORO3_1.png"):gdStr()
+	Y_SA_ORO3_2 = gd.createFromPng("resources/trial/Y_SA_ORO3_2.png"):gdStr()
+	Y_SA_Q1 = gd.createFromPng("resources/trial/Y_SA_Q1.png"):gdStr()
+	Y_SA_Q2 = gd.createFromPng("resources/trial/Y_SA_Q2.png"):gdStr()
+	Y_SA_Q3 = gd.createFromPng("resources/trial/Y_SA_Q3.png"):gdStr()
+	Y_SA_Q3_1 = gd.createFromPng("resources/trial/Y_SA_Q3_1.png"):gdStr()
+	Y_SA_Q3_2 = gd.createFromPng("resources/trial/Y_SA_Q3_2.png"):gdStr()
+	Y_SA_REM1 = gd.createFromPng("resources/trial/Y_SA_REM1.png"):gdStr()
+	Y_SA_REM2 = gd.createFromPng("resources/trial/Y_SA_REM2.png"):gdStr()
+	Y_SA_REM3 = gd.createFromPng("resources/trial/Y_SA_REM3.png"):gdStr()
+	Y_SA_RYU1 = gd.createFromPng("resources/trial/Y_SA_RYU1.png"):gdStr()
+	Y_SA_RYU2 = gd.createFromPng("resources/trial/Y_SA_RYU2.png"):gdStr()
+	Y_SA_RYU3_1 = gd.createFromPng("resources/trial/Y_SA_RYU3_1.png"):gdStr()
+	Y_SA_RYU3_2 = gd.createFromPng("resources/trial/Y_SA_RYU3_2.png"):gdStr()
+	Y_SA_RYU3_3 = gd.createFromPng("resources/trial/Y_SA_RYU3_3.png"):gdStr()
+	Y_SA_RYU3_4 = gd.createFromPng("resources/trial/Y_SA_RYU3_4.png"):gdStr()
+	Y_SA_RYU3_5 = gd.createFromPng("resources/trial/Y_SA_RYU3_5.png"):gdStr()
+	Y_SA_SEA1 = gd.createFromPng("resources/trial/Y_SA_SEA1.png"):gdStr()
+	Y_SA_SEA2 = gd.createFromPng("resources/trial/Y_SA_SEA2.png"):gdStr()
+	Y_SA_SEA3 = gd.createFromPng("resources/trial/Y_SA_SEA3.png"):gdStr()
+	Y_SA_TWE1 = gd.createFromPng("resources/trial/Y_SA_TWE1.png"):gdStr()
+	Y_SA_TWE2 = gd.createFromPng("resources/trial/Y_SA_TWE2.png"):gdStr()
+	Y_SA_TWE3 = gd.createFromPng("resources/trial/Y_SA_TWE3.png"):gdStr()
+	Y_SA_URIEN1 = gd.createFromPng("resources/trial/Y_SA_URIEN1.png"):gdStr()
+	Y_SA_URIEN2 = gd.createFromPng("resources/trial/Y_SA_URIEN2.png"):gdStr()
+	Y_SA_URIEN3 = gd.createFromPng("resources/trial/Y_SA_URIEN3.png"):gdStr()
+	Y_SA_YANG1 = gd.createFromPng("resources/trial/Y_SA_YANG1.png"):gdStr()
+	Y_SA_YANG2 = gd.createFromPng("resources/trial/Y_SA_YANG2.png"):gdStr()
+	Y_SA_YANG3 = gd.createFromPng("resources/trial/Y_SA_YANG3.png"):gdStr()
+	Y_SA_YUN1 = gd.createFromPng("resources/trial/Y_SA_YUN1.png"):gdStr()
+	Y_SA_YUN2 = gd.createFromPng("resources/trial/Y_SA_YUN2.png"):gdStr()
+	Y_SA_YUN3 = gd.createFromPng("resources/trial/Y_SA_YUN3.png"):gdStr()
+	Y_SP_ALEX1 = gd.createFromPng("resources/trial/Y_SP_ALEX1.png"):gdStr()
+	Y_SP_ALEX2 = gd.createFromPng("resources/trial/Y_SP_ALEX2.png"):gdStr()
+	Y_SP_ALEX3 = gd.createFromPng("resources/trial/Y_SP_ALEX3.png"):gdStr()
+	Y_SP_ALEX4 = gd.createFromPng("resources/trial/Y_SP_ALEX4.png"):gdStr()
+	Y_SP_ALEX5 = gd.createFromPng("resources/trial/Y_SP_ALEX5.png"):gdStr()
+	Y_SP_ALEX6 = gd.createFromPng("resources/trial/Y_SP_ALEX6.png"):gdStr()
+	Y_SP_CHU1 = gd.createFromPng("resources/trial/Y_SP_CHU1.png"):gdStr()
+	Y_SP_CHU2 = gd.createFromPng("resources/trial/Y_SP_CHU2.png"):gdStr()
+	Y_SP_CHU3 = gd.createFromPng("resources/trial/Y_SP_CHU3.png"):gdStr()
+	Y_SP_CHU4 = gd.createFromPng("resources/trial/Y_SP_CHU4.png"):gdStr()
+	Y_SP_DUD1 = gd.createFromPng("resources/trial/Y_SP_DUD1.png"):gdStr()
+	Y_SP_DUD2_1 = gd.createFromPng("resources/trial/Y_SP_DUD2_1.png"):gdStr()
+	Y_SP_DUD2_2 = gd.createFromPng("resources/trial/Y_SP_DUD2_2.png"):gdStr()
+	Y_SP_DUD2_3 = gd.createFromPng("resources/trial/Y_SP_DUD2_3.png"):gdStr()
+	Y_SP_DUD3 = gd.createFromPng("resources/trial/Y_SP_DUD3.png"):gdStr()
+	Y_SP_DUD4 = gd.createFromPng("resources/trial/Y_SP_DUD4.png"):gdStr()
+	Y_SP_DUD5 = gd.createFromPng("resources/trial/Y_SP_DUD5.png"):gdStr()
+	Y_SP_DUD6 = gd.createFromPng("resources/trial/Y_SP_DUD6.png"):gdStr()
+	Y_SP_DUDLEY1 = gd.createFromPng("resources/trial/Y_SP_DUDLEY1.png"):gdStr()
+	Y_SP_DUDLEY2 = gd.createFromPng("resources/trial/Y_SP_DUDLEY2.png"):gdStr()
+	Y_SP_DUDLEY3 = gd.createFromPng("resources/trial/Y_SP_DUDLEY3.png"):gdStr()
+	Y_SP_DUDLEY4 = gd.createFromPng("resources/trial/Y_SP_DUDLEY4.png"):gdStr()
+	Y_SP_DUDLEY5 = gd.createFromPng("resources/trial/Y_SP_DUDLEY5.png"):gdStr()
+	Y_SP_DUDLEY6 = gd.createFromPng("resources/trial/Y_SP_DUDLEY6.png"):gdStr()
+	Y_SP_DUDLEY7 = gd.createFromPng("resources/trial/Y_SP_DUDLEY7.png"):gdStr()
+	Y_SP_DUDLEY8 = gd.createFromPng("resources/trial/Y_SP_DUDLEY8.png"):gdStr()
+	Y_SP_ELE1 = gd.createFromPng("resources/trial/Y_SP_ELE1.png"):gdStr()
+	Y_SP_ELE2 = gd.createFromPng("resources/trial/Y_SP_ELE2.png"):gdStr()
+	Y_SP_ELE3 = gd.createFromPng("resources/trial/Y_SP_ELE3.png"):gdStr()
+	Y_SP_ELE4 = gd.createFromPng("resources/trial/Y_SP_ELE4.png"):gdStr()
+	Y_SP_ELE5 = gd.createFromPng("resources/trial/Y_SP_ELE5.png"):gdStr()
+	Y_SP_GILL1 = gd.createFromPng("resources/trial/Y_SP_GILL1.png"):gdStr()
+	Y_SP_GILL2 = gd.createFromPng("resources/trial/Y_SP_GILL2.png"):gdStr()
+	Y_SP_GILL3 = gd.createFromPng("resources/trial/Y_SP_GILL3.png"):gdStr()
+	Y_SP_GILL4 = gd.createFromPng("resources/trial/Y_SP_GILL4.png"):gdStr()
+	Y_SP_GOU1 = gd.createFromPng("resources/trial/Y_SP_GOU1.png"):gdStr()
+	Y_SP_GOU2 = gd.createFromPng("resources/trial/Y_SP_GOU2.png"):gdStr()
+	Y_SP_GOU3 = gd.createFromPng("resources/trial/Y_SP_GOU3.png"):gdStr()
+	Y_SP_GOU4 = gd.createFromPng("resources/trial/Y_SP_GOU4.png"):gdStr()
+	Y_SP_GOU5 = gd.createFromPng("resources/trial/Y_SP_GOU5.png"):gdStr()
+	Y_SP_GOU6 = gd.createFromPng("resources/trial/Y_SP_GOU6.png"):gdStr()
+	Y_SP_GOU7_1 = gd.createFromPng("resources/trial/Y_SP_GOU7_1.png"):gdStr()
+	Y_SP_GOU7_2 = gd.createFromPng("resources/trial/Y_SP_GOU7_2.png"):gdStr()
+	Y_SP_GOU7_3 = gd.createFromPng("resources/trial/Y_SP_GOU7_3.png"):gdStr()
+	Y_SP_GOU7_4 = gd.createFromPng("resources/trial/Y_SP_GOU7_4.png"):gdStr()
+	Y_SP_GOU7_5 = gd.createFromPng("resources/trial/Y_SP_GOU7_5.png"):gdStr()
+	Y_SP_GOU8 = gd.createFromPng("resources/trial/Y_SP_GOU8.png"):gdStr()
+	Y_SP_HUGO1 = gd.createFromPng("resources/trial/Y_SP_HUGO1.png"):gdStr()
+	Y_SP_HUGO2 = gd.createFromPng("resources/trial/Y_SP_HUGO2.png"):gdStr()
+	Y_SP_HUGO3 = gd.createFromPng("resources/trial/Y_SP_HUGO3.png"):gdStr()
+	Y_SP_HUGO4 = gd.createFromPng("resources/trial/Y_SP_HUGO4.png"):gdStr()
+	Y_SP_HUGO5 = gd.createFromPng("resources/trial/Y_SP_HUGO5.png"):gdStr()
+	Y_SP_HUGO6 = gd.createFromPng("resources/trial/Y_SP_HUGO6.png"):gdStr()
+	Y_SP_IBU1 = gd.createFromPng("resources/trial/Y_SP_IBU1.png"):gdStr()
+	Y_SP_IBU2 = gd.createFromPng("resources/trial/Y_SP_IBU2.png"):gdStr()
+	Y_SP_IBU3 = gd.createFromPng("resources/trial/Y_SP_IBU3.png"):gdStr()
+	Y_SP_IBU4 = gd.createFromPng("resources/trial/Y_SP_IBU4.png"):gdStr()
+	Y_SP_IBU5 = gd.createFromPng("resources/trial/Y_SP_IBU5.png"):gdStr()
+	Y_SP_IBU6 = gd.createFromPng("resources/trial/Y_SP_IBU6.png"):gdStr()
+	Y_SP_IBU7 = gd.createFromPng("resources/trial/Y_SP_IBU7.png"):gdStr()
+	Y_SP_IBU8 = gd.createFromPng("resources/trial/Y_SP_IBU8.png"):gdStr()
+	Y_SP_MAK1 = gd.createFromPng("resources/trial/Y_SP_MAK1.png"):gdStr()
+	Y_SP_MAK2 = gd.createFromPng("resources/trial/Y_SP_MAK2.png"):gdStr()
+	Y_SP_MAK3 = gd.createFromPng("resources/trial/Y_SP_MAK3.png"):gdStr()
+	Y_SP_MAK4 = gd.createFromPng("resources/trial/Y_SP_MAK4.png"):gdStr()
+	Y_SP_MAK5 = gd.createFromPng("resources/trial/Y_SP_MAK5.png"):gdStr()
+	Y_SP_NEC1 = gd.createFromPng("resources/trial/Y_SP_NEC1.png"):gdStr()
+	Y_SP_NEC2 = gd.createFromPng("resources/trial/Y_SP_NEC2.png"):gdStr()
+	Y_SP_NEC3 = gd.createFromPng("resources/trial/Y_SP_NEC3.png"):gdStr()
+	Y_SP_NEC4 = gd.createFromPng("resources/trial/Y_SP_NEC4.png"):gdStr()
+	Y_SP_NEC5 = gd.createFromPng("resources/trial/Y_SP_NEC5.png"):gdStr()
+	Y_SP_NEC6 = gd.createFromPng("resources/trial/Y_SP_NEC6.png"):gdStr()
+	Y_SP_ORO1 = gd.createFromPng("resources/trial/Y_SP_ORO1.png"):gdStr()
+	Y_SP_ORO2 = gd.createFromPng("resources/trial/Y_SP_ORO2.png"):gdStr()
+	Y_SP_ORO3 = gd.createFromPng("resources/trial/Y_SP_ORO3.png"):gdStr()
+	Y_SP_ORO4 = gd.createFromPng("resources/trial/Y_SP_ORO4.png"):gdStr()
+	Y_SP_ORO5 = gd.createFromPng("resources/trial/Y_SP_ORO5.png"):gdStr()
+	Y_SP_Q1 = gd.createFromPng("resources/trial/Y_SP_Q1.png"):gdStr()
+	Y_SP_Q2 = gd.createFromPng("resources/trial/Y_SP_Q2.png"):gdStr()
+	Y_SP_Q3 = gd.createFromPng("resources/trial/Y_SP_Q3.png"):gdStr()
+	Y_SP_Q4 = gd.createFromPng("resources/trial/Y_SP_Q4.png"):gdStr()
+	Y_SP_Q5 = gd.createFromPng("resources/trial/Y_SP_Q5.png"):gdStr()
+	Y_SP_REM1 = gd.createFromPng("resources/trial/Y_SP_REM1.png"):gdStr()
+	Y_SP_REM2 = gd.createFromPng("resources/trial/Y_SP_REM2.png"):gdStr()
+	Y_SP_REM3 = gd.createFromPng("resources/trial/Y_SP_REM3.png"):gdStr()
+	Y_SP_REM4 = gd.createFromPng("resources/trial/Y_SP_REM4.png"):gdStr()
+	Y_SP_RYU1 = gd.createFromPng("resources/trial/Y_SP_RYU1.png"):gdStr()
+	Y_SP_RYU2 = gd.createFromPng("resources/trial/Y_SP_RYU2.png"):gdStr()
+	Y_SP_RYU3 = gd.createFromPng("resources/trial/Y_SP_RYU3.png"):gdStr()
+	Y_SP_RYU4 = gd.createFromPng("resources/trial/Y_SP_RYU4.png"):gdStr()
+	Y_SP_RYU5 = gd.createFromPng("resources/trial/Y_SP_RYU5.png"):gdStr()
+	Y_SP_SEA1 = gd.createFromPng("resources/trial/Y_SP_SEA1.png"):gdStr()
+	Y_SP_SEA2 = gd.createFromPng("resources/trial/Y_SP_SEA2.png"):gdStr()
+	Y_SP_SEA3 = gd.createFromPng("resources/trial/Y_SP_SEA3.png"):gdStr()
+	Y_SP_SEA4 = gd.createFromPng("resources/trial/Y_SP_SEA4.png"):gdStr()
+	Y_SP_SEA5 = gd.createFromPng("resources/trial/Y_SP_SEA5.png"):gdStr()
+	Y_SP_TWE1 = gd.createFromPng("resources/trial/Y_SP_TWE1.png"):gdStr()
+	Y_SP_TWE2 = gd.createFromPng("resources/trial/Y_SP_TWE2.png"):gdStr()
+	Y_SP_TWE3 = gd.createFromPng("resources/trial/Y_SP_TWE3.png"):gdStr()
+	Y_SP_TWE4 = gd.createFromPng("resources/trial/Y_SP_TWE4.png"):gdStr()
+	Y_SP_TWE5 = gd.createFromPng("resources/trial/Y_SP_TWE5.png"):gdStr()
+	Y_SP_URIEN1 = gd.createFromPng("resources/trial/Y_SP_URIEN1.png"):gdStr()
+	Y_SP_URIEN2 = gd.createFromPng("resources/trial/Y_SP_URIEN2.png"):gdStr()
+	Y_SP_URIEN3 = gd.createFromPng("resources/trial/Y_SP_URIEN3.png"):gdStr()
+	Y_SP_URIEN4 = gd.createFromPng("resources/trial/Y_SP_URIEN4.png"):gdStr()
+	Y_SP_YANG1 = gd.createFromPng("resources/trial/Y_SP_YANG1.png"):gdStr()
+	Y_SP_YANG2 = gd.createFromPng("resources/trial/Y_SP_YANG2.png"):gdStr()
+	Y_SP_YANG3 = gd.createFromPng("resources/trial/Y_SP_YANG3.png"):gdStr()
+	Y_SP_YANG4 = gd.createFromPng("resources/trial/Y_SP_YANG4.png"):gdStr()
+	Y_SP_YANG5 = gd.createFromPng("resources/trial/Y_SP_YANG5.png"):gdStr()
+	Y_SP_YUN1 = gd.createFromPng("resources/trial/Y_SP_YUN1.png"):gdStr()
+	Y_SP_YUN2 = gd.createFromPng("resources/trial/Y_SP_YUN2.png"):gdStr()
+	Y_SP_YUN3 = gd.createFromPng("resources/trial/Y_SP_YUN3.png"):gdStr()
+	Y_SP_YUN4 = gd.createFromPng("resources/trial/Y_SP_YUN4.png"):gdStr()
+	Y_SP_YUN5 = gd.createFromPng("resources/trial/Y_SP_YUN5.png"):gdStr()
+	Y_TK_HUGO1 = gd.createFromPng("resources/trial/Y_TK_HUGO1.png"):gdStr()
+	Y_TR_ALEX1 = gd.createFromPng("resources/trial/Y_TR_ALEX1.png"):gdStr()
+	Y_TR_ALEX2 = gd.createFromPng("resources/trial/Y_TR_ALEX2.png"):gdStr()
+	Y_TR_KEN1 = gd.createFromPng("resources/trial/Y_TR_KEN1.png"):gdStr()
+	Y_TR_KEN2 = gd.createFromPng("resources/trial/Y_TR_KEN2.png"):gdStr()
+	Y_TR_HUGO1 = gd.createFromPng("resources/trial/Y_TR_HUGO1.png"):gdStr()
+	Y_4_THROW = gd.createFromPng("resources/trial/Y_4_THROW.png"):gdStr()
+	Y_6_THROW = gd.createFromPng("resources/trial/Y_6_THROW.png"):gdStr()
+	Y_N_THROW = gd.createFromPng("resources/trial/Y_N_THROW.png"):gdStr()
+	Y_NM_BDASH = gd.createFromPng("resources/trial/Y_NM_BDASH.png"):gdStr()
+	Y_NM_FDASH = gd.createFromPng("resources/trial/Y_NM_FDASH.png"):gdStr()
+	Y_NM_FORWARD = gd.createFromPng("resources/trial/Y_NM_FORWARD.png"):gdStr()
+	Y_HIT2 = gd.createFromPng("resources/trial/Y_HIT2.png"):gdStr()
+	Y_NUM_0 = gd.createFromPng("resources/trial/Y_NUM_0.png"):gdStr()
+	Y_NUM_1 = gd.createFromPng("resources/trial/Y_NUM_1.png"):gdStr()
+	Y_NUM_2 = gd.createFromPng("resources/trial/Y_NUM_2.png"):gdStr()
+	Y_NUM_3 = gd.createFromPng("resources/trial/Y_NUM_3.png"):gdStr()
+	Y_NUM_4 = gd.createFromPng("resources/trial/Y_NUM_4.png"):gdStr()
+	Y_NUM_5 = gd.createFromPng("resources/trial/Y_NUM_5.png"):gdStr()
+	Y_NUM_6 = gd.createFromPng("resources/trial/Y_NUM_6.png"):gdStr()
+	Y_NUM_7 = gd.createFromPng("resources/trial/Y_NUM_7.png"):gdStr()
+	Y_NUM_8 = gd.createFromPng("resources/trial/Y_NUM_8.png"):gdStr()
+	Y_NUM_9 = gd.createFromPng("resources/trial/Y_NUM_9.png"):gdStr()
+	Y_NUM_P = gd.createFromPng("resources/trial/Y_NUM_P.png"):gdStr()
+	Y_SECOND_COMBO_DE = gd.createFromPng("resources/trial/Y_SECOND_COMBO_DE.png"):gdStr()
+	Y_SECOND_FLOAT = gd.createFromPng("resources/trial/Y_SECOND_FLOAT.png"):gdStr()
 	W_COMMON_OR = gd.createFromPng("resources/trial/W_COMMON_OR.png"):gdStr()
 	W_COMMON_EX = gd.createFromPng("resources/trial/W_COMMON_EX.png"):gdStr()
 	W_COMMON_H = gd.createFromPng("resources/trial/W_COMMON_H.png"):gdStr()
@@ -2625,6 +3738,9 @@ function imageLoad()
 	W_SA_ELE1 = gd.createFromPng("resources/trial/W_SA_ELE1.png"):gdStr()
 	W_SA_ELE2 = gd.createFromPng("resources/trial/W_SA_ELE2.png"):gdStr()
 	W_SA_ELE3 = gd.createFromPng("resources/trial/W_SA_ELE3.png"):gdStr()
+	W_SA_GILL1 = gd.createFromPng("resources/trial/W_SA_GILL1.png"):gdStr()
+	W_SA_GILL2 = gd.createFromPng("resources/trial/W_SA_GILL2.png"):gdStr()
+	W_SA_GILL3 = gd.createFromPng("resources/trial/W_SA_GILL3.png"):gdStr()
 	W_SA_GOU1_1 = gd.createFromPng("resources/trial/W_SA_GOU1_1.png"):gdStr()
 	W_SA_GOU1_2 = gd.createFromPng("resources/trial/W_SA_GOU1_2.png"):gdStr()
 	W_SA_GOU2 = gd.createFromPng("resources/trial/W_SA_GOU2.png"):gdStr()
@@ -2715,6 +3831,10 @@ function imageLoad()
 	W_SP_ELE3 = gd.createFromPng("resources/trial/W_SP_ELE3.png"):gdStr()
 	W_SP_ELE4 = gd.createFromPng("resources/trial/W_SP_ELE4.png"):gdStr()
 	W_SP_ELE5 = gd.createFromPng("resources/trial/W_SP_ELE5.png"):gdStr()
+	W_SP_GILL1 = gd.createFromPng("resources/trial/W_SP_GILL1.png"):gdStr()
+	W_SP_GILL2 = gd.createFromPng("resources/trial/W_SP_GILL2.png"):gdStr()
+	W_SP_GILL3 = gd.createFromPng("resources/trial/W_SP_GILL3.png"):gdStr()
+	W_SP_GILL4 = gd.createFromPng("resources/trial/W_SP_GILL4.png"):gdStr()
 	W_SP_GOU1 = gd.createFromPng("resources/trial/W_SP_GOU1.png"):gdStr()
 	W_SP_GOU2 = gd.createFromPng("resources/trial/W_SP_GOU2.png"):gdStr()
 	W_SP_GOU3 = gd.createFromPng("resources/trial/W_SP_GOU3.png"):gdStr()
@@ -2780,6 +3900,7 @@ function imageLoad()
 	W_SP_TWE2 = gd.createFromPng("resources/trial/W_SP_TWE2.png"):gdStr()
 	W_SP_TWE3 = gd.createFromPng("resources/trial/W_SP_TWE3.png"):gdStr()
 	W_SP_TWE4 = gd.createFromPng("resources/trial/W_SP_TWE4.png"):gdStr()
+	W_SP_TWE5 = gd.createFromPng("resources/trial/W_SP_TWE5.png"):gdStr()
 	W_SP_URIEN1 = gd.createFromPng("resources/trial/W_SP_URIEN1.png"):gdStr()
 	W_SP_URIEN2 = gd.createFromPng("resources/trial/W_SP_URIEN2.png"):gdStr()
 	W_SP_URIEN3 = gd.createFromPng("resources/trial/W_SP_URIEN3.png"):gdStr()
@@ -2805,11 +3926,26 @@ function imageLoad()
 	W_N_THROW = gd.createFromPng("resources/trial/W_N_THROW.png"):gdStr()
 	W_NM_BDASH = gd.createFromPng("resources/trial/W_NM_BDASH.png"):gdStr()
 	W_NM_FDASH = gd.createFromPng("resources/trial/W_NM_FDASH.png"):gdStr()
+	W_NM_FORWARD = gd.createFromPng("resources/trial/W_NM_FORWARD.png"):gdStr()
+	W_HIT2 = gd.createFromPng("resources/trial/W_HIT2.png"):gdStr()
+	W_NUM_0 = gd.createFromPng("resources/trial/W_NUM_0.png"):gdStr()
+	W_NUM_1 = gd.createFromPng("resources/trial/W_NUM_1.png"):gdStr()
+	W_NUM_2 = gd.createFromPng("resources/trial/W_NUM_2.png"):gdStr()
+	W_NUM_3 = gd.createFromPng("resources/trial/W_NUM_3.png"):gdStr()
+	W_NUM_4 = gd.createFromPng("resources/trial/W_NUM_4.png"):gdStr()
+	W_NUM_5 = gd.createFromPng("resources/trial/W_NUM_5.png"):gdStr()
+	W_NUM_6 = gd.createFromPng("resources/trial/W_NUM_6.png"):gdStr()
+	W_NUM_7 = gd.createFromPng("resources/trial/W_NUM_7.png"):gdStr()
+	W_NUM_8 = gd.createFromPng("resources/trial/W_NUM_8.png"):gdStr()
+	W_NUM_9 = gd.createFromPng("resources/trial/W_NUM_9.png"):gdStr()
+	W_NUM_P = gd.createFromPng("resources/trial/W_NUM_P.png"):gdStr()
+	W_SECOND_COMBO_DE = gd.createFromPng("resources/trial/W_SECOND_COMBO_DE.png"):gdStr()
+	W_SECOND_FLOAT = gd.createFromPng("resources/trial/W_SECOND_FLOAT.png"):gdStr()
 	GAUGE_SEIGEN_J = gd.createFromPng("resources/trial/GAUGE_SEIGEN_J.png"):gdStr()
 	GAUGE_SEIGEN_E = gd.createFromPng("resources/trial/GAUGE_SEIGEN_E.png"):gdStr()
 	GAUGE_INF_J = gd.createFromPng("resources/trial/GAUGE_INF_J.png"):gdStr()
 	GAUGE_INF_E = gd.createFromPng("resources/trial/GAUGE_INF_E.png"):gdStr()
-	MENU_TITLE = gd.createFromPng("resources/trial/MENU_TITLE_20190101.png"):gdStr()
+	MENU_TITLE = gd.createFromPng("resources/trial/MENU_TITLE_20190301.png"):gdStr()
 	MENU = gd.createFromPng("resources/trial/MENU.png"):gdStr()
 	MENU_SHIKAKU = gd.createFromPng("resources/trial/MENU_SHIKAKU.png"):gdStr()
 	MENU_SHIKAKU_CHECKED1_GREEN = gd.createFromPng("resources/trial/MENU_SHIKAKU_CHECKED1_GREEN.png"):gdStr()
@@ -2836,6 +3972,14 @@ function imageLoad()
 	M_C_1_2 = gd.createFromPng("resources/trial/MENU_COMMENT_1_2.png"):gdStr()
 	M_C_1_3 = gd.createFromPng("resources/trial/MENU_COMMENT_1_3.png"):gdStr()
 	M_C_1_4 = gd.createFromPng("resources/trial/MENU_COMMENT_1_4.png"):gdStr()
+	M_C_1_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_1_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_1_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_1_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_1_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_1_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_2_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_2_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_2_3 = gd.createFromPng("resources/trial/MENU_COMMENT_2_3.png"):gdStr()
 	M_C_2_4 = gd.createFromPng("resources/trial/MENU_COMMENT_2_4.png"):gdStr()
 	M_C_2_5 = gd.createFromPng("resources/trial/MENU_COMMENT_2_5.png"):gdStr()
@@ -2843,52 +3987,177 @@ function imageLoad()
 	M_C_2_7 = gd.createFromPng("resources/trial/MENU_COMMENT_2_7.png"):gdStr()
 	M_C_2_8 = gd.createFromPng("resources/trial/MENU_COMMENT_2_8.png"):gdStr()
 	M_C_2_9 = gd.createFromPng("resources/trial/MENU_COMMENT_2_9.png"):gdStr()
+	M_C_2_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_3_1 = gd.createFromPng("resources/trial/MENU_COMMENT_3_1.png"):gdStr()
 	M_C_3_2 = gd.createFromPng("resources/trial/MENU_COMMENT_3_2.png"):gdStr()
+	M_C_3_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_3_4 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_3_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_3_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_3_7 = gd.createFromPng("resources/trial/MENU_COMMENT_3_7.png"):gdStr()
 	M_C_3_8 = gd.createFromPng("resources/trial/MENU_COMMENT_3_8.png"):gdStr()
+	M_C_3_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_3_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_4_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_4_2 = gd.createFromPng("resources/trial/MENU_COMMENT_4_2.png"):gdStr()
 	M_C_4_3 = gd.createFromPng("resources/trial/MENU_COMMENT_4_3.png"):gdStr()
+	M_C_4_4 = gd.createFromPng("resources/trial/MENU_COMMENT_4_4.png"):gdStr()
+	M_C_4_5 = gd.createFromPng("resources/trial/MENU_COMMENT_4_5.png"):gdStr()
+	M_C_4_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_4_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_4_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_4_9 = gd.createFromPng("resources/trial/MENU_COMMENT_4_9.png"):gdStr()
+	M_C_4_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_5_1 = gd.createFromPng("resources/trial/MENU_COMMENT_5_1.png"):gdStr()
+	M_C_5_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_5_3 = gd.createFromPng("resources/trial/MENU_COMMENT_5_3.png"):gdStr()
+	M_C_5_4 = gd.createFromPng("resources/trial/MENU_COMMENT_5_4.png"):gdStr()
+	M_C_5_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_5_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_5_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_5_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_5_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_5_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_6_1 = gd.createFromPng("resources/trial/MENU_COMMENT_6_1.png"):gdStr()
 	M_C_6_2 = gd.createFromPng("resources/trial/MENU_COMMENT_6_2.png"):gdStr()
+	M_C_6_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_6_4 = gd.createFromPng("resources/trial/MENU_COMMENT_6_4.png"):gdStr()
+	M_C_6_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_6_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_6_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_6_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_6_9 = gd.createFromPng("resources/trial/MENU_COMMENT_6_9.png"):gdStr()
+	M_C_6_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_7_1 = gd.createFromPng("resources/trial/MENU_COMMENT_7_1.png"):gdStr()
+	M_C_7_2 = gd.createFromPng("resources/trial/MENU_COMMENT_7_2.png"):gdStr()
 	M_C_7_3 = gd.createFromPng("resources/trial/MENU_COMMENT_7_3.png"):gdStr()
+	M_C_7_4 = gd.createFromPng("resources/trial/MENU_COMMENT_7_4.png"):gdStr()
 	M_C_7_5 = gd.createFromPng("resources/trial/MENU_COMMENT_7_5.png"):gdStr()
+	M_C_7_6 = gd.createFromPng("resources/trial/MENU_COMMENT_7_6.png"):gdStr()
+	M_C_7_7 = gd.createFromPng("resources/trial/MENU_COMMENT_7_7.png"):gdStr()
+	M_C_7_8 = gd.createFromPng("resources/trial/MENU_COMMENT_7_8.png"):gdStr()
+	M_C_7_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_7_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_8_3 = gd.createFromPng("resources/trial/MENU_COMMENT_8_3.png"):gdStr()
 	M_C_8_4 = gd.createFromPng("resources/trial/MENU_COMMENT_8_4.png"):gdStr()
-	M_C_9_10 = gd.createFromPng("resources/trial/MENU_COMMENT_9_10.png"):gdStr()
+	M_C_8_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_8_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_9_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_9_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_9_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_9_4 = gd.createFromPng("resources/trial/MENU_COMMENT_9_4.png"):gdStr()
 	M_C_9_5 = gd.createFromPng("resources/trial/MENU_COMMENT_9_5.png"):gdStr()
 	M_C_9_6 = gd.createFromPng("resources/trial/MENU_COMMENT_9_6.png"):gdStr()
 	M_C_9_7 = gd.createFromPng("resources/trial/MENU_COMMENT_9_7.png"):gdStr()
 	M_C_9_8 = gd.createFromPng("resources/trial/MENU_COMMENT_9_8.png"):gdStr()
 	M_C_9_9 = gd.createFromPng("resources/trial/MENU_COMMENT_9_9.png"):gdStr()
+	M_C_9_10 = gd.createFromPng("resources/trial/MENU_COMMENT_9_10.png"):gdStr()
+	M_C_10_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_10_4 = gd.createFromPng("resources/trial/MENU_COMMENT_10_4.png"):gdStr()
 	M_C_10_5 = gd.createFromPng("resources/trial/MENU_COMMENT_10_5.png"):gdStr()
+	M_C_10_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_10_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_11_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_11_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_11_3 = gd.createFromPng("resources/trial/MENU_COMMENT_11_3.png"):gdStr()
 	M_C_11_4 = gd.createFromPng("resources/trial/MENU_COMMENT_11_4.png"):gdStr()
+	M_C_11_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_11_6 = gd.createFromPng("resources/trial/MENU_COMMENT_11_6.png"):gdStr()
+	M_C_11_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_11_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_11_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_11_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_12_1 = gd.createFromPng("resources/trial/MENU_COMMENT_12_1.png"):gdStr()
+	M_C_12_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_12_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_12_4 = gd.createFromPng("resources/trial/MENU_COMMENT_12_4.png"):gdStr()
+	M_C_12_5 = gd.createFromPng("resources/trial/MENU_COMMENT_12_5.png"):gdStr()
+	M_C_12_6 = gd.createFromPng("resources/trial/MENU_COMMENT_12_6.png"):gdStr()
+	M_C_12_7 = gd.createFromPng("resources/trial/MENU_COMMENT_12_7.png"):gdStr()
+	M_C_12_8 = gd.createFromPng("resources/trial/MENU_COMMENT_12_8.png"):gdStr()
+	M_C_12_9 = gd.createFromPng("resources/trial/MENU_COMMENT_12_9.png"):gdStr()
+	M_C_12_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_4 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_13_5 = gd.createFromPng("resources/trial/MENU_COMMENT_13_5.png"):gdStr()
+	M_C_13_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_13_8 = gd.createFromPng("resources/trial/MENU_COMMENT_13_8.png"):gdStr()
-	M_C_14_10 = gd.createFromPng("resources/trial/MENU_COMMENT_14_10.png"):gdStr()
+	M_C_13_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_13_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_2 = gd.createFromPng("resources/trial/MENU_COMMENT_14_2.png"):gdStr()
 	M_C_14_3 = gd.createFromPng("resources/trial/MENU_COMMENT_14_3.png"):gdStr()
+	M_C_14_4 = gd.createFromPng("resources/trial/MENU_COMMENT_14_4.png"):gdStr()
+	M_C_14_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_6 = gd.createFromPng("resources/trial/MENU_COMMENT_14_6.png"):gdStr()
+	M_C_14_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_14_10 = gd.createFromPng("resources/trial/MENU_COMMENT_14_10.png"):gdStr()
 	M_C_15_1 = gd.createFromPng("resources/trial/MENU_COMMENT_15_1.png"):gdStr()
 	M_C_15_2 = gd.createFromPng("resources/trial/MENU_COMMENT_15_2.png"):gdStr()
 	M_C_15_3 = gd.createFromPng("resources/trial/MENU_COMMENT_15_3.png"):gdStr()
 	M_C_15_4 = gd.createFromPng("resources/trial/MENU_COMMENT_15_4.png"):gdStr()
+	M_C_15_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_15_6 = gd.createFromPng("resources/trial/MENU_COMMENT_15_6.png"):gdStr()
 	M_C_15_7 = gd.createFromPng("resources/trial/MENU_COMMENT_15_7.png"):gdStr()
+	M_C_15_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_15_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_15_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_16_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_16_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_16_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_16_4 = gd.createFromPng("resources/trial/MENU_COMMENT_16_4.png"):gdStr()
 	M_C_16_5 = gd.createFromPng("resources/trial/MENU_COMMENT_16_5.png"):gdStr()
 	M_C_16_6 = gd.createFromPng("resources/trial/MENU_COMMENT_16_6.png"):gdStr()
+	M_C_16_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_16_8 = gd.createFromPng("resources/trial/MENU_COMMENT_16_8.png"):gdStr()
 	M_C_16_9 = gd.createFromPng("resources/trial/MENU_COMMENT_16_9.png"):gdStr()
+	M_C_16_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_17_3 = gd.createFromPng("resources/trial/MENU_COMMENT_17_3.png"):gdStr()
+	M_C_17_4 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_5 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_6 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_17_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_17_9 = gd.createFromPng("resources/trial/MENU_COMMENT_17_9.png"):gdStr()
+	M_C_17_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_18_1 = gd.createFromPng("resources/trial/MENU_COMMENT_18_1.png"):gdStr()
+	M_C_18_2 = gd.createFromPng("resources/trial/MENU_COMMENT_18_2.png"):gdStr()
+	M_C_18_3 = gd.createFromPng("resources/trial/MENU_COMMENT_18_3.png"):gdStr()
+	M_C_18_4 = gd.createFromPng("resources/trial/MENU_COMMENT_18_4.png"):gdStr()
+	M_C_18_5 = gd.createFromPng("resources/trial/MENU_COMMENT_18_5.png"):gdStr()
+	M_C_18_6 = gd.createFromPng("resources/trial/MENU_COMMENT_18_6.png"):gdStr()
+	M_C_18_7 = gd.createFromPng("resources/trial/MENU_COMMENT_18_7.png"):gdStr()
+	M_C_18_8 = gd.createFromPng("resources/trial/MENU_COMMENT_18_8.png"):gdStr()
+	M_C_18_9 = gd.createFromPng("resources/trial/MENU_COMMENT_18_9.png"):gdStr()
+	M_C_18_10 = gd.createFromPng("resources/trial/MENU_COMMENT_18_10.png"):gdStr()
+	M_C_19_1 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_19_2 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_19_3 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	M_C_19_4 = gd.createFromPng("resources/trial/MENU_COMMENT_19_4.png"):gdStr()
 	M_C_19_5 = gd.createFromPng("resources/trial/MENU_COMMENT_19_5.png"):gdStr()
 	M_C_19_6 = gd.createFromPng("resources/trial/MENU_COMMENT_19_6.png"):gdStr()
+	M_C_19_7 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_19_8 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_19_9 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
+	M_C_19_10 = gd.createFromPng("resources/trial/MENU_COMMENT_BLANK.png"):gdStr()
 	button_l1 = gd.createFromPng("resources/command/button_l1.png"):gdStr()
 	button_l2 = gd.createFromPng("resources/command/button_l2.png"):gdStr()
 	button_m1 = gd.createFromPng("resources/command/button_m1.png"):gdStr()
@@ -2907,589 +4176,945 @@ function imageLoad()
 	reba8 = gd.createFromPng("resources/command/reba8.png"):gdStr()
 	reba9 = gd.createFromPng("resources/command/reba9.png"):gdStr()
 	comment = {
-			{M_C_1_1  , M_C_1_2  , M_C_1_3,   M_C_1_4  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_2_3,   M_C_2_4  , M_C_2_5  , M_C_2_6  , M_C_2_7,   M_C_2_8  , M_C_2_9  , M_C_BLANK},
-			{M_C_3_1  , M_C_3_2  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_3_7  , M_C_3_8  , M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_4_2  , M_C_4_3  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_4_9  , M_C_BLANK},
-			{M_C_5_1  , M_C_BLANK, M_C_5_3  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_6_1  , M_C_6_2  , M_C_BLANK, M_C_6_4  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_6_9  , M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_7_3,   M_C_BLANK, M_C_7_5  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_8_3  , M_C_8_4  , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_9_5  , M_C_9_6  , M_C_9_7  , M_C_9_8  , M_C_9_9  , M_C_9_10 },
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_10_4 , M_C_10_5 , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_11_3 , M_C_11_4 , M_C_BLANK, M_C_11_6 , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_13_5 , M_C_BLANK, M_C_BLANK, M_C_13_8 , M_C_BLANK, M_C_BLANK },
-			{M_C_BLANK, M_C_BLANK, M_C_14_3 , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_14_10},
-			{M_C_15_1 , M_C_15_2 , M_C_15_3 , M_C_15_4 , M_C_BLANK, M_C_15_6 , M_C_15_7 , M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_16_5 , M_C_16_6 , M_C_BLANK, M_C_BLANK, M_C_16_9 , M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_17_3 , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_17_9 , M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK},
-			{M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_19_4 , M_C_19_5 , M_C_19_6 , M_C_BLANK, M_C_BLANK, M_C_BLANK, M_C_BLANK}
+			{M_C_1_1   ,M_C_1_2   ,M_C_1_3   ,M_C_1_4   ,M_C_1_5   ,M_C_1_6   ,M_C_1_7   ,M_C_1_8   ,M_C_1_9   ,M_C_1_10   },
+			{M_C_2_1   ,M_C_2_2   ,M_C_2_3   ,M_C_2_4   ,M_C_2_5   ,M_C_2_6   ,M_C_2_7   ,M_C_2_8   ,M_C_2_9   ,M_C_2_10   },
+			{M_C_3_1   ,M_C_3_2   ,M_C_3_3   ,M_C_3_4   ,M_C_3_5   ,M_C_3_6   ,M_C_3_7   ,M_C_3_8   ,M_C_3_9   ,M_C_3_10   },
+			{M_C_4_1   ,M_C_4_2   ,M_C_4_3   ,M_C_4_4   ,M_C_4_5   ,M_C_4_6   ,M_C_4_7   ,M_C_4_8   ,M_C_4_9   ,M_C_4_10   },
+			{M_C_5_1   ,M_C_5_2   ,M_C_5_3   ,M_C_5_4   ,M_C_5_5   ,M_C_5_6   ,M_C_5_7   ,M_C_5_8   ,M_C_5_9   ,M_C_5_10   },
+			{M_C_6_1   ,M_C_6_2   ,M_C_6_3   ,M_C_6_4   ,M_C_6_5   ,M_C_6_6   ,M_C_6_7   ,M_C_6_8   ,M_C_6_9   ,M_C_6_10   },
+			{M_C_7_1   ,M_C_7_2   ,M_C_7_3   ,M_C_7_4   ,M_C_7_5   ,M_C_7_6   ,M_C_7_7   ,M_C_7_8   ,M_C_7_9   ,M_C_7_10   },
+			{M_C_8_1   ,M_C_8_2   ,M_C_8_3   ,M_C_8_4   ,M_C_8_5   ,M_C_8_6   ,M_C_8_7   ,M_C_8_8   ,M_C_8_9   ,M_C_8_10   },
+			{M_C_9_1   ,M_C_9_2   ,M_C_9_3   ,M_C_9_4   ,M_C_9_5   ,M_C_9_6   ,M_C_9_7   ,M_C_9_8   ,M_C_9_9   ,M_C_9_10   },
+			{M_C_10_1  ,M_C_10_2  ,M_C_10_3  ,M_C_10_4  ,M_C_10_5  ,M_C_10_6  ,M_C_10_7  ,M_C_10_8  ,M_C_10_9  ,M_C_10_10  },
+			{M_C_11_1  ,M_C_11_2  ,M_C_11_3  ,M_C_11_4  ,M_C_11_5  ,M_C_11_6  ,M_C_11_7  ,M_C_11_8  ,M_C_11_9  ,M_C_11_10  },
+			{M_C_12_1  ,M_C_12_2  ,M_C_12_3  ,M_C_12_4  ,M_C_12_5  ,M_C_12_6  ,M_C_12_7  ,M_C_12_8  ,M_C_12_9  ,M_C_12_10  },
+			{M_C_13_1  ,M_C_13_2  ,M_C_13_3  ,M_C_13_4  ,M_C_13_5  ,M_C_13_6  ,M_C_13_7  ,M_C_13_8  ,M_C_13_9  ,M_C_13_10  },
+			{M_C_14_1  ,M_C_14_2  ,M_C_14_3  ,M_C_14_4  ,M_C_14_5  ,M_C_14_6  ,M_C_14_7  ,M_C_14_8  ,M_C_14_9  ,M_C_14_10  },
+			{M_C_15_1  ,M_C_15_2  ,M_C_15_3  ,M_C_15_4  ,M_C_15_5  ,M_C_15_6  ,M_C_15_7  ,M_C_15_8  ,M_C_15_9  ,M_C_15_10  },
+			{M_C_16_1  ,M_C_16_2  ,M_C_16_3  ,M_C_16_4  ,M_C_16_5  ,M_C_16_6  ,M_C_16_7  ,M_C_16_8  ,M_C_16_9  ,M_C_16_10  },
+			{M_C_17_1  ,M_C_17_2  ,M_C_17_3  ,M_C_17_4  ,M_C_17_5  ,M_C_17_6  ,M_C_17_7  ,M_C_17_8  ,M_C_17_9  ,M_C_17_10  },
+			{M_C_18_1  ,M_C_18_2  ,M_C_18_3  ,M_C_18_4  ,M_C_18_5  ,M_C_18_6  ,M_C_18_7  ,M_C_18_8  ,M_C_18_9  ,M_C_18_10  },
+			{M_C_19_1  ,M_C_19_2  ,M_C_19_3  ,M_C_19_4  ,M_C_19_5  ,M_C_19_6  ,M_C_19_7  ,M_C_19_8  ,M_C_19_9  ,M_C_19_10  }
 	}
 end
 function kadaiImageDraw(x,y,wr,kadai)
-	str = wr..kadai
-	if str == "R_COMMON_OR" then gui.image(x,y,R_COMMON_OR)
-	elseif str == "R_COMMON_EX" then gui.image(x,y,R_COMMON_EX)
-	elseif str == "R_COMMON_H" then gui.image(x,y,R_COMMON_H)
-	elseif str == "R_COMMON_L" then gui.image(x,y,R_COMMON_L)
-	elseif str == "R_COMMON_M" then gui.image(x,y,R_COMMON_M)
-	elseif str == "R_COMMON_ME" then gui.image(x,y,R_COMMON_ME)
-	elseif str == "R_COMMON_URA" then gui.image(x,y,R_COMMON_URA)
-	elseif str == "R_COMMON_KARACAN" then gui.image(x,y,R_COMMON_KARACAN)
-	elseif str == "R_COMMON_JS" then gui.image(x,y,R_COMMON_JS)
-	elseif str == "R_COMMON_JN" then gui.image(x,y,R_COMMON_JN)
-	elseif str == "R_COMMON_ANTI_AIR" then gui.image(x,y,R_COMMON_ANTI_AIR)
-	elseif str == "R_COMMON_KARABURI" then gui.image(x,y,R_COMMON_KARABURI)
-	elseif str == "R_LEAP" then gui.image(x,y,R_LEAP)
-	elseif str == "R_NM_1HK" then gui.image(x,y,R_NM_1HK)
-	elseif str == "R_NM_1HP" then gui.image(x,y,R_NM_1HP)
-	elseif str == "R_NM_1LK" then gui.image(x,y,R_NM_1LK)
-	elseif str == "R_NM_1LP" then gui.image(x,y,R_NM_1LP)
-	elseif str == "R_NM_1MK" then gui.image(x,y,R_NM_1MK)
-	elseif str == "R_NM_1MP" then gui.image(x,y,R_NM_1MP)
-	elseif str == "R_NM_3HK" then gui.image(x,y,R_NM_3HK)
-	elseif str == "R_NM_3HP" then gui.image(x,y,R_NM_3HP)
-	elseif str == "R_NM_3LK" then gui.image(x,y,R_NM_3LK)
-	elseif str == "R_NM_3LP" then gui.image(x,y,R_NM_3LP)
-	elseif str == "R_NM_3MK" then gui.image(x,y,R_NM_3MK)
-	elseif str == "R_NM_3MP" then gui.image(x,y,R_NM_3MP)
-	elseif str == "R_NM_4HK" then gui.image(x,y,R_NM_4HK)
-	elseif str == "R_NM_4HP" then gui.image(x,y,R_NM_4HP)
-	elseif str == "R_NM_4LK" then gui.image(x,y,R_NM_4LK)
-	elseif str == "R_NM_4LP" then gui.image(x,y,R_NM_4LP)
-	elseif str == "R_NM_4MK" then gui.image(x,y,R_NM_4MK)
-	elseif str == "R_NM_4MP" then gui.image(x,y,R_NM_4MP)
-	elseif str == "R_NM_6HK" then gui.image(x,y,R_NM_6HK)
-	elseif str == "R_NM_6HP" then gui.image(x,y,R_NM_6HP)
-	elseif str == "R_NM_6LK" then gui.image(x,y,R_NM_6LK)
-	elseif str == "R_NM_6LP" then gui.image(x,y,R_NM_6LP)
-	elseif str == "R_NM_6MK" then gui.image(x,y,R_NM_6MK)
-	elseif str == "R_NM_6MP" then gui.image(x,y,R_NM_6MP)
-	elseif str == "R_NM_CHK" then gui.image(x,y,R_NM_CHK)
-	elseif str == "R_NM_CHP" then gui.image(x,y,R_NM_CHP)
-	elseif str == "R_NM_CLK" then gui.image(x,y,R_NM_CLK)
-	elseif str == "R_NM_CLP" then gui.image(x,y,R_NM_CLP)
-	elseif str == "R_NM_CMK" then gui.image(x,y,R_NM_CMK)
-	elseif str == "R_NM_CMP" then gui.image(x,y,R_NM_CMP)
-	elseif str == "R_NM_JHK" then gui.image(x,y,R_NM_JHK)
-	elseif str == "R_NM_JHP" then gui.image(x,y,R_NM_JHP)
-	elseif str == "R_NM_JLK" then gui.image(x,y,R_NM_JLK)
-	elseif str == "R_NM_JLP" then gui.image(x,y,R_NM_JLP)
-	elseif str == "R_NM_JMK" then gui.image(x,y,R_NM_JMK)
-	elseif str == "R_NM_JMP" then gui.image(x,y,R_NM_JMP)
-	elseif str == "R_NM_J2MK" then gui.image(x,y,R_NM_J2MK)
-	elseif str == "R_NM_J3MK" then gui.image(x,y,R_NM_J3MK)
-	elseif str == "R_NM_J6HP" then gui.image(x,y,R_NM_J6HP)
-	elseif str == "R_NM_J2HP" then gui.image(x,y,R_NM_J2HP)
-	elseif str == "R_NM_J6MK" then gui.image(x,y,R_NM_J6MK)
-	elseif str == "R_NM_NJHK" then gui.image(x,y,R_NM_NJHK)
-	elseif str == "R_NM_NJHP" then gui.image(x,y,R_NM_NJHP)
-	elseif str == "R_NM_NJLK" then gui.image(x,y,R_NM_NJLK)
-	elseif str == "R_NM_NJLP" then gui.image(x,y,R_NM_NJLP)
-	elseif str == "R_NM_NJMK" then gui.image(x,y,R_NM_NJMK)
-	elseif str == "R_NM_NJMP" then gui.image(x,y,R_NM_NJMP)
-	elseif str == "R_NM_SCHK" then gui.image(x,y,R_NM_SCHK)
-	elseif str == "R_NM_SCHP" then gui.image(x,y,R_NM_SCHP)
-	elseif str == "R_NM_SCLK" then gui.image(x,y,R_NM_SCLK)
-	elseif str == "R_NM_SCLP" then gui.image(x,y,R_NM_SCLP)
-	elseif str == "R_NM_SCMK" then gui.image(x,y,R_NM_SCMK)
-	elseif str == "R_NM_SCMP" then gui.image(x,y,R_NM_SCMP)
-	elseif str == "R_NM_SDHK" then gui.image(x,y,R_NM_SDHK)
-	elseif str == "R_NM_SDHP" then gui.image(x,y,R_NM_SDHP)
-	elseif str == "R_NM_SDLK" then gui.image(x,y,R_NM_SDLK)
-	elseif str == "R_NM_SDLP" then gui.image(x,y,R_NM_SDLP)
-	elseif str == "R_NM_SDMK" then gui.image(x,y,R_NM_SDMK)
-	elseif str == "R_NM_SDMP" then gui.image(x,y,R_NM_SDMP)
-	elseif str == "R_NM_SHK" then gui.image(x,y,R_NM_SHK)
-	elseif str == "R_NM_SHP" then gui.image(x,y,R_NM_SHP)
-	elseif str == "R_NM_SJHK" then gui.image(x,y,R_NM_SJHK)
-	elseif str == "R_NM_SJHP" then gui.image(x,y,R_NM_SJHP)
-	elseif str == "R_NM_SJLK" then gui.image(x,y,R_NM_SJLK)
-	elseif str == "R_NM_SJLP" then gui.image(x,y,R_NM_SJLP)
-	elseif str == "R_NM_SJMK" then gui.image(x,y,R_NM_SJMK)
-	elseif str == "R_NM_SJMP" then gui.image(x,y,R_NM_SJMP)
-	elseif str == "R_NM_SLK" then gui.image(x,y,R_NM_SLK)
-	elseif str == "R_NM_SLP" then gui.image(x,y,R_NM_SLP)
-	elseif str == "R_NM_SMK" then gui.image(x,y,R_NM_SMK)
-	elseif str == "R_NM_SMP" then gui.image(x,y,R_NM_SMP)
-	elseif str == "R_PA" then gui.image(x,y,R_PA)
-	elseif str == "R_SA_ALEX1" then gui.image(x,y,R_SA_ALEX1)
-	elseif str == "R_SA_ALEX2" then gui.image(x,y,R_SA_ALEX2)
-	elseif str == "R_SA_ALEX3" then gui.image(x,y,R_SA_ALEX3)
-	elseif str == "R_SA_CHU1" then gui.image(x,y,R_SA_CHU1)
-	elseif str == "R_SA_CHU2" then gui.image(x,y,R_SA_CHU2)
-	elseif str == "R_SA_CHU3" then gui.image(x,y,R_SA_CHU3)
-	elseif str == "R_SA_DUD1" then gui.image(x,y,R_SA_DUD1)
-	elseif str == "R_SA_DUD2" then gui.image(x,y,R_SA_DUD2)
-	elseif str == "R_SA_DUD3" then gui.image(x,y,R_SA_DUD3)
-	elseif str == "R_SA_DUDLEY1" then gui.image(x,y,R_SA_DUDLEY1)
-	elseif str == "R_SA_DUDLEY2" then gui.image(x,y,R_SA_DUDLEY2)
-	elseif str == "R_SA_DUDLEY3" then gui.image(x,y,R_SA_DUDLEY3)
-	elseif str == "R_SA_ELE1" then gui.image(x,y,R_SA_ELE1)
-	elseif str == "R_SA_ELE2" then gui.image(x,y,R_SA_ELE2)
-	elseif str == "R_SA_ELE3" then gui.image(x,y,R_SA_ELE3)
-	elseif str == "R_SA_GOU1_1" then gui.image(x,y,R_SA_GOU1_1)
-	elseif str == "R_SA_GOU1_2" then gui.image(x,y,R_SA_GOU1_2)
-	elseif str == "R_SA_GOU2" then gui.image(x,y,R_SA_GOU2)
-	elseif str == "R_SA_GOU3_1" then gui.image(x,y,R_SA_GOU3_1)
-	elseif str == "R_SA_GOU3_2" then gui.image(x,y,R_SA_GOU3_2)
-	elseif str == "R_SA_GOU4" then gui.image(x,y,R_SA_GOU4)
-	elseif str == "R_SA_GOU5" then gui.image(x,y,R_SA_GOU5)
-	elseif str == "R_SA_HUGO1" then gui.image(x,y,R_SA_HUGO1)
-	elseif str == "R_SA_HUGO2" then gui.image(x,y,R_SA_HUGO2)
-	elseif str == "R_SA_HUGO3" then gui.image(x,y,R_SA_HUGO3)
-	elseif str == "R_SA_IBU1" then gui.image(x,y,R_SA_IBU1)
-	elseif str == "R_SA_IBU2" then gui.image(x,y,R_SA_IBU2)
-	elseif str == "R_SA_IBU3" then gui.image(x,y,R_SA_IBU3)
-	elseif str == "R_SA_IBU4" then gui.image(x,y,R_SA_IBU4)
-	elseif str == "R_SA_IBU5" then gui.image(x,y,R_SA_IBU5)
-	elseif str == "R_SA_IBU6" then gui.image(x,y,R_SA_IBU6)
-	elseif str == "R_SA_IBU7" then gui.image(x,y,R_SA_IBU7)
-	elseif str == "R_SA_IBU8" then gui.image(x,y,R_SA_IBU8)
-	elseif str == "R_SA_KEN1" then gui.image(x,y,R_SA_KEN1)
-	elseif str == "R_SA_KEN2" then gui.image(x,y,R_SA_KEN2)
-	elseif str == "R_SA_KEN3" then gui.image(x,y,R_SA_KEN3)
-	elseif str == "R_SA_MAK1" then gui.image(x,y,R_SA_MAK1)
-	elseif str == "R_SA_MAK2" then gui.image(x,y,R_SA_MAK2)
-	elseif str == "R_SA_MAK3" then gui.image(x,y,R_SA_MAK3)
-	elseif str == "R_SA_NEC1" then gui.image(x,y,R_SA_NEC1)
-	elseif str == "R_SA_NEC2" then gui.image(x,y,R_SA_NEC2)
-	elseif str == "R_SA_NEC3" then gui.image(x,y,R_SA_NEC3)
-	elseif str == "R_SA_ORO1_1" then gui.image(x,y,R_SA_ORO1_1)
-	elseif str == "R_SA_ORO1_2" then gui.image(x,y,R_SA_ORO1_2)
-	elseif str == "R_SA_ORO1_3" then gui.image(x,y,R_SA_ORO1_3)
-	elseif str == "R_SA_ORO2_1" then gui.image(x,y,R_SA_ORO2_1)
-	elseif str == "R_SA_ORO2_2" then gui.image(x,y,R_SA_ORO2_2)
-	elseif str == "R_SA_ORO3_1" then gui.image(x,y,R_SA_ORO3_1)
-	elseif str == "R_SA_ORO3_2" then gui.image(x,y,R_SA_ORO3_2)
-	elseif str == "R_SA_Q1" then gui.image(x,y,R_SA_Q1)
-	elseif str == "R_SA_Q2" then gui.image(x,y,R_SA_Q2)
-	elseif str == "R_SA_Q3" then gui.image(x,y,R_SA_Q3)
-	elseif str == "R_SA_Q3_1" then gui.image(x,y,R_SA_Q3_1)
-	elseif str == "R_SA_Q3_2" then gui.image(x,y,R_SA_Q3_2)
-	elseif str == "R_SA_REM1" then gui.image(x,y,R_SA_REM1)
-	elseif str == "R_SA_REM2" then gui.image(x,y,R_SA_REM2)
-	elseif str == "R_SA_REM3" then gui.image(x,y,R_SA_REM3)
-	elseif str == "R_SA_RYU1" then gui.image(x,y,R_SA_RYU1)
-	elseif str == "R_SA_RYU2" then gui.image(x,y,R_SA_RYU2)
-	elseif str == "R_SA_RYU3_1" then gui.image(x,y,R_SA_RYU3_1)
-	elseif str == "R_SA_RYU3_2" then gui.image(x,y,R_SA_RYU3_2)
-	elseif str == "R_SA_RYU3_3" then gui.image(x,y,R_SA_RYU3_3)
-	elseif str == "R_SA_RYU3_4" then gui.image(x,y,R_SA_RYU3_4)
-	elseif str == "R_SA_RYU3_5" then gui.image(x,y,R_SA_RYU3_5)
-	elseif str == "R_SA_SEA1" then gui.image(x,y,R_SA_SEA1)
-	elseif str == "R_SA_SEA2" then gui.image(x,y,R_SA_SEA2)
-	elseif str == "R_SA_SEA3" then gui.image(x,y,R_SA_SEA3)
-	elseif str == "R_SA_TWE1" then gui.image(x,y,R_SA_TWE1)
-	elseif str == "R_SA_TWE2" then gui.image(x,y,R_SA_TWE2)
-	elseif str == "R_SA_TWE3" then gui.image(x,y,R_SA_TWE3)
-	elseif str == "R_SA_URIEN1" then gui.image(x,y,R_SA_URIEN1)
-	elseif str == "R_SA_URIEN2" then gui.image(x,y,R_SA_URIEN2)
-	elseif str == "R_SA_URIEN3" then gui.image(x,y,R_SA_URIEN3)
-	elseif str == "R_SA_YANG1" then gui.image(x,y,R_SA_YANG1)
-	elseif str == "R_SA_YANG2" then gui.image(x,y,R_SA_YANG2)
-	elseif str == "R_SA_YANG3" then gui.image(x,y,R_SA_YANG3)
-	elseif str == "R_SA_YUN1" then gui.image(x,y,R_SA_YUN1)
-	elseif str == "R_SA_YUN2" then gui.image(x,y,R_SA_YUN2)
-	elseif str == "R_SA_YUN3" then gui.image(x,y,R_SA_YUN3)
-	elseif str == "R_SP_ALEX1" then gui.image(x,y,R_SP_ALEX1)
-	elseif str == "R_SP_ALEX2" then gui.image(x,y,R_SP_ALEX2)
-	elseif str == "R_SP_ALEX3" then gui.image(x,y,R_SP_ALEX3)
-	elseif str == "R_SP_ALEX4" then gui.image(x,y,R_SP_ALEX4)
-	elseif str == "R_SP_ALEX5" then gui.image(x,y,R_SP_ALEX5)
-	elseif str == "R_SP_ALEX6" then gui.image(x,y,R_SP_ALEX6)
-	elseif str == "R_SP_CHU1" then gui.image(x,y,R_SP_CHU1)
-	elseif str == "R_SP_CHU2" then gui.image(x,y,R_SP_CHU2)
-	elseif str == "R_SP_CHU3" then gui.image(x,y,R_SP_CHU3)
-	elseif str == "R_SP_CHU4" then gui.image(x,y,R_SP_CHU4)
-	elseif str == "R_SP_DUD1" then gui.image(x,y,R_SP_DUD1)
-	elseif str == "R_SP_DUD2_1" then gui.image(x,y,R_SP_DUD2_1)
-	elseif str == "R_SP_DUD2_2" then gui.image(x,y,R_SP_DUD2_2)
-	elseif str == "R_SP_DUD2_3" then gui.image(x,y,R_SP_DUD2_3)
-	elseif str == "R_SP_DUD3" then gui.image(x,y,R_SP_DUD3)
-	elseif str == "R_SP_DUD4" then gui.image(x,y,R_SP_DUD4)
-	elseif str == "R_SP_DUD5" then gui.image(x,y,R_SP_DUD5)
-	elseif str == "R_SP_DUD6" then gui.image(x,y,R_SP_DUD6)
-	elseif str == "R_SP_DUDLEY1" then gui.image(x,y,R_SP_DUDLEY1)
-	elseif str == "R_SP_DUDLEY2" then gui.image(x,y,R_SP_DUDLEY2)
-	elseif str == "R_SP_DUDLEY3" then gui.image(x,y,R_SP_DUDLEY3)
-	elseif str == "R_SP_DUDLEY4" then gui.image(x,y,R_SP_DUDLEY4)
-	elseif str == "R_SP_DUDLEY5" then gui.image(x,y,R_SP_DUDLEY5)
-	elseif str == "R_SP_DUDLEY6" then gui.image(x,y,R_SP_DUDLEY6)
-	elseif str == "R_SP_DUDLEY7" then gui.image(x,y,R_SP_DUDLEY7)
-	elseif str == "R_SP_DUDLEY8" then gui.image(x,y,R_SP_DUDLEY8)
-	elseif str == "R_SP_ELE1" then gui.image(x,y,R_SP_ELE1)
-	elseif str == "R_SP_ELE2" then gui.image(x,y,R_SP_ELE2)
-	elseif str == "R_SP_ELE3" then gui.image(x,y,R_SP_ELE3)
-	elseif str == "R_SP_ELE4" then gui.image(x,y,R_SP_ELE4)
-	elseif str == "R_SP_ELE5" then gui.image(x,y,R_SP_ELE5)
-	elseif str == "R_SP_GOU1" then gui.image(x,y,R_SP_GOU1)
-	elseif str == "R_SP_GOU2" then gui.image(x,y,R_SP_GOU2)
-	elseif str == "R_SP_GOU3" then gui.image(x,y,R_SP_GOU3)
-	elseif str == "R_SP_GOU4" then gui.image(x,y,R_SP_GOU4)
-	elseif str == "R_SP_GOU5" then gui.image(x,y,R_SP_GOU5)
-	elseif str == "R_SP_GOU6" then gui.image(x,y,R_SP_GOU6)
-	elseif str == "R_SP_GOU7_1" then gui.image(x,y,R_SP_GOU7_1)
-	elseif str == "R_SP_GOU7_2" then gui.image(x,y,R_SP_GOU7_2)
-	elseif str == "R_SP_GOU7_3" then gui.image(x,y,R_SP_GOU7_3)
-	elseif str == "R_SP_GOU7_4" then gui.image(x,y,R_SP_GOU7_4)
-	elseif str == "R_SP_GOU7_5" then gui.image(x,y,R_SP_GOU7_5)
-	elseif str == "R_SP_GOU8" then gui.image(x,y,R_SP_GOU8)
-	elseif str == "R_SP_HUGO1" then gui.image(x,y,R_SP_HUGO1)
-	elseif str == "R_SP_HUGO2" then gui.image(x,y,R_SP_HUGO2)
-	elseif str == "R_SP_HUGO3" then gui.image(x,y,R_SP_HUGO3)
-	elseif str == "R_SP_HUGO4" then gui.image(x,y,R_SP_HUGO4)
-	elseif str == "R_SP_HUGO5" then gui.image(x,y,R_SP_HUGO5)
-	elseif str == "R_SP_HUGO6" then gui.image(x,y,R_SP_HUGO6)
-	elseif str == "R_SP_IBU1" then gui.image(x,y,R_SP_IBU1)
-	elseif str == "R_SP_IBU2" then gui.image(x,y,R_SP_IBU2)
-	elseif str == "R_SP_IBU3" then gui.image(x,y,R_SP_IBU3)
-	elseif str == "R_SP_MAK1" then gui.image(x,y,R_SP_MAK1)
-	elseif str == "R_SP_MAK2" then gui.image(x,y,R_SP_MAK2)
-	elseif str == "R_SP_MAK3" then gui.image(x,y,R_SP_MAK3)
-	elseif str == "R_SP_MAK4" then gui.image(x,y,R_SP_MAK4)
-	elseif str == "R_SP_MAK5" then gui.image(x,y,R_SP_MAK5)
-	elseif str == "R_SP_NEC1" then gui.image(x,y,R_SP_NEC1)
-	elseif str == "R_SP_NEC2" then gui.image(x,y,R_SP_NEC2)
-	elseif str == "R_SP_NEC3" then gui.image(x,y,R_SP_NEC3)
-	elseif str == "R_SP_NEC4" then gui.image(x,y,R_SP_NEC4)
-	elseif str == "R_SP_NEC5" then gui.image(x,y,R_SP_NEC5)
-	elseif str == "R_SP_NEC6" then gui.image(x,y,R_SP_NEC6)
-	elseif str == "R_SP_ORO1" then gui.image(x,y,R_SP_ORO1)
-	elseif str == "R_SP_ORO2" then gui.image(x,y,R_SP_ORO2)
-	elseif str == "R_SP_ORO3" then gui.image(x,y,R_SP_ORO3)
-	elseif str == "R_SP_ORO4" then gui.image(x,y,R_SP_ORO4)
-	elseif str == "R_SP_ORO5" then gui.image(x,y,R_SP_ORO5)
-	elseif str == "R_SP_Q1" then gui.image(x,y,R_SP_Q1)
-	elseif str == "R_SP_Q2" then gui.image(x,y,R_SP_Q2)
-	elseif str == "R_SP_Q3" then gui.image(x,y,R_SP_Q3)
-	elseif str == "R_SP_Q4" then gui.image(x,y,R_SP_Q4)
-	elseif str == "R_SP_Q5" then gui.image(x,y,R_SP_Q5)
-	elseif str == "R_SP_REM1" then gui.image(x,y,R_SP_REM1)
-	elseif str == "R_SP_REM2" then gui.image(x,y,R_SP_REM2)
-	elseif str == "R_SP_REM3" then gui.image(x,y,R_SP_REM3)
-	elseif str == "R_SP_REM4" then gui.image(x,y,R_SP_REM4)
-	elseif str == "R_SP_RYU1" then gui.image(x,y,R_SP_RYU1)
-	elseif str == "R_SP_RYU2" then gui.image(x,y,R_SP_RYU2)
-	elseif str == "R_SP_RYU3" then gui.image(x,y,R_SP_RYU3)
-	elseif str == "R_SP_RYU4" then gui.image(x,y,R_SP_RYU4)
-	elseif str == "R_SP_RYU5" then gui.image(x,y,R_SP_RYU5)
-	elseif str == "R_SP_SEA1" then gui.image(x,y,R_SP_SEA1)
-	elseif str == "R_SP_SEA2" then gui.image(x,y,R_SP_SEA2)
-	elseif str == "R_SP_SEA3" then gui.image(x,y,R_SP_SEA3)
-	elseif str == "R_SP_SEA4" then gui.image(x,y,R_SP_SEA4)
-	elseif str == "R_SP_SEA5" then gui.image(x,y,R_SP_SEA5)
-	elseif str == "R_SP_TWE1" then gui.image(x,y,R_SP_TWE1)
-	elseif str == "R_SP_TWE2" then gui.image(x,y,R_SP_TWE2)
-	elseif str == "R_SP_TWE3" then gui.image(x,y,R_SP_TWE3)
-	elseif str == "R_SP_TWE4" then gui.image(x,y,R_SP_TWE4)
-	elseif str == "R_SP_URIEN1" then gui.image(x,y,R_SP_URIEN1)
-	elseif str == "R_SP_URIEN2" then gui.image(x,y,R_SP_URIEN2)
-	elseif str == "R_SP_URIEN3" then gui.image(x,y,R_SP_URIEN3)
-	elseif str == "R_SP_URIEN4" then gui.image(x,y,R_SP_URIEN4)
-	elseif str == "R_SP_YANG1" then gui.image(x,y,R_SP_YANG1)
-	elseif str == "R_SP_YANG2" then gui.image(x,y,R_SP_YANG2)
-	elseif str == "R_SP_YANG3" then gui.image(x,y,R_SP_YANG3)
-	elseif str == "R_SP_YANG4" then gui.image(x,y,R_SP_YANG4)
-	elseif str == "R_SP_YANG5" then gui.image(x,y,R_SP_YANG5)
-	elseif str == "R_SP_YUN1" then gui.image(x,y,R_SP_YUN1)
-	elseif str == "R_SP_YUN2" then gui.image(x,y,R_SP_YUN2)
-	elseif str == "R_SP_YUN3" then gui.image(x,y,R_SP_YUN3)
-	elseif str == "R_SP_YUN4" then gui.image(x,y,R_SP_YUN4)
-	elseif str == "R_SP_YUN5" then gui.image(x,y,R_SP_YUN5)
-	elseif str == "R_TK_HUGO1" then gui.image(x,y,R_TK_HUGO1)
-	elseif str == "R_TR_ALEX1" then gui.image(x,y,R_TR_ALEX1)
-	elseif str == "R_TR_ALEX2" then gui.image(x,y,R_TR_ALEX2)
-	elseif str == "R_TR_KEN1" then gui.image(x,y,R_TR_KEN1)
-	elseif str == "R_TR_KEN2" then gui.image(x,y,R_TR_KEN2)
-	elseif str == "R_TR_HUGO1" then gui.image(x,y,R_TR_HUGO1)
-	elseif str == "R_4_THROW" then gui.image(x,y,R_4_THROW)
-	elseif str == "R_6_THROW" then gui.image(x,y,R_6_THROW)
-	elseif str == "R_N_THROW" then gui.image(x,y,R_N_THROW)
-	elseif str == "R_NM_BDASH" then gui.image(x,y,R_NM_BDASH)
-	elseif str == "R_NM_FDASH" then gui.image(x,y,R_NM_FDASH)
-	elseif str == "W_COMMON_OR" then gui.image(x,y,W_COMMON_OR)
-	elseif str == "W_COMMON_EX" then gui.image(x,y,W_COMMON_EX)
-	elseif str == "W_COMMON_H" then gui.image(x,y,W_COMMON_H)
-	elseif str == "W_COMMON_L" then gui.image(x,y,W_COMMON_L)
-	elseif str == "W_COMMON_M" then gui.image(x,y,W_COMMON_M)
-	elseif str == "W_COMMON_ME" then gui.image(x,y,W_COMMON_ME)
-	elseif str == "W_COMMON_URA" then gui.image(x,y,W_COMMON_URA)
-	elseif str == "W_COMMON_KARACAN" then gui.image(x,y,W_COMMON_KARACAN)
-	elseif str == "W_COMMON_JS" then gui.image(x,y,W_COMMON_JS)
-	elseif str == "W_COMMON_JN" then gui.image(x,y,W_COMMON_JN)
-	elseif str == "W_COMMON_ANTI_AIR" then gui.image(x,y,W_COMMON_ANTI_AIR)
-	elseif str == "W_COMMON_KARABURI" then gui.image(x,y,W_COMMON_KARABURI)
-	elseif str == "W_LEAP" then gui.image(x,y,W_LEAP)
-	elseif str == "W_NM_1HK" then gui.image(x,y,W_NM_1HK)
-	elseif str == "W_NM_1HP" then gui.image(x,y,W_NM_1HP)
-	elseif str == "W_NM_1LK" then gui.image(x,y,W_NM_1LK)
-	elseif str == "W_NM_1LP" then gui.image(x,y,W_NM_1LP)
-	elseif str == "W_NM_1MK" then gui.image(x,y,W_NM_1MK)
-	elseif str == "W_NM_1MP" then gui.image(x,y,W_NM_1MP)
-	elseif str == "W_NM_3HK" then gui.image(x,y,W_NM_3HK)
-	elseif str == "W_NM_3HP" then gui.image(x,y,W_NM_3HP)
-	elseif str == "W_NM_3LK" then gui.image(x,y,W_NM_3LK)
-	elseif str == "W_NM_3LP" then gui.image(x,y,W_NM_3LP)
-	elseif str == "W_NM_3MK" then gui.image(x,y,W_NM_3MK)
-	elseif str == "W_NM_3MP" then gui.image(x,y,W_NM_3MP)
-	elseif str == "W_NM_4HK" then gui.image(x,y,W_NM_4HK)
-	elseif str == "W_NM_4HP" then gui.image(x,y,W_NM_4HP)
-	elseif str == "W_NM_4LK" then gui.image(x,y,W_NM_4LK)
-	elseif str == "W_NM_4LP" then gui.image(x,y,W_NM_4LP)
-	elseif str == "W_NM_4MK" then gui.image(x,y,W_NM_4MK)
-	elseif str == "W_NM_4MP" then gui.image(x,y,W_NM_4MP)
-	elseif str == "W_NM_6HK" then gui.image(x,y,W_NM_6HK)
-	elseif str == "W_NM_6HP" then gui.image(x,y,W_NM_6HP)
-	elseif str == "W_NM_6LK" then gui.image(x,y,W_NM_6LK)
-	elseif str == "W_NM_6LP" then gui.image(x,y,W_NM_6LP)
-	elseif str == "W_NM_6MK" then gui.image(x,y,W_NM_6MK)
-	elseif str == "W_NM_6MP" then gui.image(x,y,W_NM_6MP)
-	elseif str == "W_NM_CHK" then gui.image(x,y,W_NM_CHK)
-	elseif str == "W_NM_CHP" then gui.image(x,y,W_NM_CHP)
-	elseif str == "W_NM_CLK" then gui.image(x,y,W_NM_CLK)
-	elseif str == "W_NM_CLP" then gui.image(x,y,W_NM_CLP)
-	elseif str == "W_NM_CMK" then gui.image(x,y,W_NM_CMK)
-	elseif str == "W_NM_CMP" then gui.image(x,y,W_NM_CMP)
-	elseif str == "W_NM_JHK" then gui.image(x,y,W_NM_JHK)
-	elseif str == "W_NM_JHP" then gui.image(x,y,W_NM_JHP)
-	elseif str == "W_NM_JLK" then gui.image(x,y,W_NM_JLK)
-	elseif str == "W_NM_JLP" then gui.image(x,y,W_NM_JLP)
-	elseif str == "W_NM_JMK" then gui.image(x,y,W_NM_JMK)
-	elseif str == "W_NM_JMP" then gui.image(x,y,W_NM_JMP)
-	elseif str == "W_NM_J2MK" then gui.image(x,y,W_NM_J2MK)
-	elseif str == "W_NM_J3MK" then gui.image(x,y,W_NM_J3MK)
-	elseif str == "W_NM_J6HP" then gui.image(x,y,W_NM_J6HP)
-	elseif str == "W_NM_J2HP" then gui.image(x,y,W_NM_J2HP)
-	elseif str == "W_NM_J6MK" then gui.image(x,y,W_NM_J6MK)
-	elseif str == "W_NM_NJHK" then gui.image(x,y,W_NM_NJHK)
-	elseif str == "W_NM_NJHP" then gui.image(x,y,W_NM_NJHP)
-	elseif str == "W_NM_NJLK" then gui.image(x,y,W_NM_NJLK)
-	elseif str == "W_NM_NJLP" then gui.image(x,y,W_NM_NJLP)
-	elseif str == "W_NM_NJMK" then gui.image(x,y,W_NM_NJMK)
-	elseif str == "W_NM_NJMP" then gui.image(x,y,W_NM_NJMP)
-	elseif str == "W_NM_SCHK" then gui.image(x,y,W_NM_SCHK)
-	elseif str == "W_NM_SCHP" then gui.image(x,y,W_NM_SCHP)
-	elseif str == "W_NM_SCLK" then gui.image(x,y,W_NM_SCLK)
-	elseif str == "W_NM_SCLP" then gui.image(x,y,W_NM_SCLP)
-	elseif str == "W_NM_SCMK" then gui.image(x,y,W_NM_SCMK)
-	elseif str == "W_NM_SCMP" then gui.image(x,y,W_NM_SCMP)
-	elseif str == "W_NM_SDHK" then gui.image(x,y,W_NM_SDHK)
-	elseif str == "W_NM_SDHP" then gui.image(x,y,W_NM_SDHP)
-	elseif str == "W_NM_SDLK" then gui.image(x,y,W_NM_SDLK)
-	elseif str == "W_NM_SDLP" then gui.image(x,y,W_NM_SDLP)
-	elseif str == "W_NM_SDMK" then gui.image(x,y,W_NM_SDMK)
-	elseif str == "W_NM_SDMP" then gui.image(x,y,W_NM_SDMP)
-	elseif str == "W_NM_SHK" then gui.image(x,y,W_NM_SHK)
-	elseif str == "W_NM_SHP" then gui.image(x,y,W_NM_SHP)
-	elseif str == "W_NM_SJHK" then gui.image(x,y,W_NM_SJHK)
-	elseif str == "W_NM_SJHP" then gui.image(x,y,W_NM_SJHP)
-	elseif str == "W_NM_SJLK" then gui.image(x,y,W_NM_SJLK)
-	elseif str == "W_NM_SJLP" then gui.image(x,y,W_NM_SJLP)
-	elseif str == "W_NM_SJMK" then gui.image(x,y,W_NM_SJMK)
-	elseif str == "W_NM_SJMP" then gui.image(x,y,W_NM_SJMP)
-	elseif str == "W_NM_SLK" then gui.image(x,y,W_NM_SLK)
-	elseif str == "W_NM_SLP" then gui.image(x,y,W_NM_SLP)
-	elseif str == "W_NM_SMK" then gui.image(x,y,W_NM_SMK)
-	elseif str == "W_NM_SMP" then gui.image(x,y,W_NM_SMP)
-	elseif str == "W_PA" then gui.image(x,y,W_PA)
-	elseif str == "W_SA_ALEX1" then gui.image(x,y,W_SA_ALEX1)
-	elseif str == "W_SA_ALEX2" then gui.image(x,y,W_SA_ALEX2)
-	elseif str == "W_SA_ALEX3" then gui.image(x,y,W_SA_ALEX3)
-	elseif str == "W_SA_CHU1" then gui.image(x,y,W_SA_CHU1)
-	elseif str == "W_SA_CHU2" then gui.image(x,y,W_SA_CHU2)
-	elseif str == "W_SA_CHU3" then gui.image(x,y,W_SA_CHU3)
-	elseif str == "W_SA_DUD1" then gui.image(x,y,W_SA_DUD1)
-	elseif str == "W_SA_DUD2" then gui.image(x,y,W_SA_DUD2)
-	elseif str == "W_SA_DUD3" then gui.image(x,y,W_SA_DUD3)
-	elseif str == "W_SA_DUDLEY1" then gui.image(x,y,W_SA_DUDLEY1)
-	elseif str == "W_SA_DUDLEY2" then gui.image(x,y,W_SA_DUDLEY2)
-	elseif str == "W_SA_DUDLEY3" then gui.image(x,y,W_SA_DUDLEY3)
-	elseif str == "W_SA_ELE1" then gui.image(x,y,W_SA_ELE1)
-	elseif str == "W_SA_ELE2" then gui.image(x,y,W_SA_ELE2)
-	elseif str == "W_SA_ELE3" then gui.image(x,y,W_SA_ELE3)
-	elseif str == "W_SA_GOU1_1" then gui.image(x,y,W_SA_GOU1_1)
-	elseif str == "W_SA_GOU1_2" then gui.image(x,y,W_SA_GOU1_2)
-	elseif str == "W_SA_GOU2" then gui.image(x,y,W_SA_GOU2)
-	elseif str == "W_SA_GOU3_1" then gui.image(x,y,W_SA_GOU3_1)
-	elseif str == "W_SA_GOU3_2" then gui.image(x,y,W_SA_GOU3_2)
-	elseif str == "W_SA_GOU4" then gui.image(x,y,W_SA_GOU4)
-	elseif str == "W_SA_GOU5" then gui.image(x,y,W_SA_GOU5)
-	elseif str == "W_SA_HUGO1" then gui.image(x,y,W_SA_HUGO1)
-	elseif str == "W_SA_HUGO2" then gui.image(x,y,W_SA_HUGO2)
-	elseif str == "W_SA_HUGO3" then gui.image(x,y,W_SA_HUGO3)
-	elseif str == "W_SA_IBU1" then gui.image(x,y,W_SA_IBU1)
-	elseif str == "W_SA_IBU2" then gui.image(x,y,W_SA_IBU2)
-	elseif str == "W_SA_IBU3" then gui.image(x,y,W_SA_IBU3)
-	elseif str == "W_SA_IBU4" then gui.image(x,y,W_SA_IBU4)
-	elseif str == "W_SA_IBU5" then gui.image(x,y,W_SA_IBU5)
-	elseif str == "W_SA_IBU6" then gui.image(x,y,W_SA_IBU6)
-	elseif str == "W_SA_IBU7" then gui.image(x,y,W_SA_IBU7)
-	elseif str == "W_SA_IBU8" then gui.image(x,y,W_SA_IBU8)
-	elseif str == "W_SA_KEN1" then gui.image(x,y,W_SA_KEN1)
-	elseif str == "W_SA_KEN2" then gui.image(x,y,W_SA_KEN2)
-	elseif str == "W_SA_KEN3" then gui.image(x,y,W_SA_KEN3)
-	elseif str == "W_SA_MAK1" then gui.image(x,y,W_SA_MAK1)
-	elseif str == "W_SA_MAK2" then gui.image(x,y,W_SA_MAK2)
-	elseif str == "W_SA_MAK3" then gui.image(x,y,W_SA_MAK3)
-	elseif str == "W_SA_NEC1" then gui.image(x,y,W_SA_NEC1)
-	elseif str == "W_SA_NEC2" then gui.image(x,y,W_SA_NEC2)
-	elseif str == "W_SA_NEC3" then gui.image(x,y,W_SA_NEC3)
-	elseif str == "W_SA_ORO1_1" then gui.image(x,y,W_SA_ORO1_1)
-	elseif str == "W_SA_ORO1_2" then gui.image(x,y,W_SA_ORO1_2)
-	elseif str == "W_SA_ORO1_3" then gui.image(x,y,W_SA_ORO1_3)
-	elseif str == "W_SA_ORO2_1" then gui.image(x,y,W_SA_ORO2_1)
-	elseif str == "W_SA_ORO2_2" then gui.image(x,y,W_SA_ORO2_2)
-	elseif str == "W_SA_ORO3_1" then gui.image(x,y,W_SA_ORO3_1)
-	elseif str == "W_SA_ORO3_2" then gui.image(x,y,W_SA_ORO3_2)
-	elseif str == "W_SA_Q1" then gui.image(x,y,W_SA_Q1)
-	elseif str == "W_SA_Q2" then gui.image(x,y,W_SA_Q2)
-	elseif str == "W_SA_Q3" then gui.image(x,y,W_SA_Q3)
-	elseif str == "W_SA_Q3_1" then gui.image(x,y,W_SA_Q3_1)
-	elseif str == "W_SA_Q3_2" then gui.image(x,y,W_SA_Q3_2)
-	elseif str == "W_SA_REM1" then gui.image(x,y,W_SA_REM1)
-	elseif str == "W_SA_REM2" then gui.image(x,y,W_SA_REM2)
-	elseif str == "W_SA_REM3" then gui.image(x,y,W_SA_REM3)
-	elseif str == "W_SA_RYU1" then gui.image(x,y,W_SA_RYU1)
-	elseif str == "W_SA_RYU2" then gui.image(x,y,W_SA_RYU2)
-	elseif str == "W_SA_RYU3_1" then gui.image(x,y,W_SA_RYU3_1)
-	elseif str == "W_SA_RYU3_2" then gui.image(x,y,W_SA_RYU3_2)
-	elseif str == "W_SA_RYU3_3" then gui.image(x,y,W_SA_RYU3_3)
-	elseif str == "W_SA_RYU3_4" then gui.image(x,y,W_SA_RYU3_4)
-	elseif str == "W_SA_RYU3_5" then gui.image(x,y,W_SA_RYU3_5)
-	elseif str == "W_SA_SEA1" then gui.image(x,y,W_SA_SEA1)
-	elseif str == "W_SA_SEA2" then gui.image(x,y,W_SA_SEA2)
-	elseif str == "W_SA_SEA3" then gui.image(x,y,W_SA_SEA3)
-	elseif str == "W_SA_TWE1" then gui.image(x,y,W_SA_TWE1)
-	elseif str == "W_SA_TWE2" then gui.image(x,y,W_SA_TWE2)
-	elseif str == "W_SA_TWE3" then gui.image(x,y,W_SA_TWE3)
-	elseif str == "W_SA_URIEN1" then gui.image(x,y,W_SA_URIEN1)
-	elseif str == "W_SA_URIEN2" then gui.image(x,y,W_SA_URIEN2)
-	elseif str == "W_SA_URIEN3" then gui.image(x,y,W_SA_URIEN3)
-	elseif str == "W_SA_YANG1" then gui.image(x,y,W_SA_YANG1)
-	elseif str == "W_SA_YANG2" then gui.image(x,y,W_SA_YANG2)
-	elseif str == "W_SA_YANG3" then gui.image(x,y,W_SA_YANG3)
-	elseif str == "W_SA_YUN1" then gui.image(x,y,W_SA_YUN1)
-	elseif str == "W_SA_YUN2" then gui.image(x,y,W_SA_YUN2)
-	elseif str == "W_SA_YUN3" then gui.image(x,y,W_SA_YUN3)
-	elseif str == "W_SP_ALEX1" then gui.image(x,y,W_SP_ALEX1)
-	elseif str == "W_SP_ALEX2" then gui.image(x,y,W_SP_ALEX2)
-	elseif str == "W_SP_ALEX3" then gui.image(x,y,W_SP_ALEX3)
-	elseif str == "W_SP_ALEX4" then gui.image(x,y,W_SP_ALEX4)
-	elseif str == "W_SP_ALEX5" then gui.image(x,y,W_SP_ALEX5)
-	elseif str == "W_SP_ALEX6" then gui.image(x,y,W_SP_ALEX6)
-	elseif str == "W_SP_CHU1" then gui.image(x,y,W_SP_CHU1)
-	elseif str == "W_SP_CHU2" then gui.image(x,y,W_SP_CHU2)
-	elseif str == "W_SP_CHU3" then gui.image(x,y,W_SP_CHU3)
-	elseif str == "W_SP_CHU4" then gui.image(x,y,W_SP_CHU4)
-	elseif str == "W_SP_DUD1" then gui.image(x,y,W_SP_DUD1)
-	elseif str == "W_SP_DUD2_1" then gui.image(x,y,W_SP_DUD2_1)
-	elseif str == "W_SP_DUD2_2" then gui.image(x,y,W_SP_DUD2_2)
-	elseif str == "W_SP_DUD2_3" then gui.image(x,y,W_SP_DUD2_3)
-	elseif str == "W_SP_DUD3" then gui.image(x,y,W_SP_DUD3)
-	elseif str == "W_SP_DUD4" then gui.image(x,y,W_SP_DUD4)
-	elseif str == "W_SP_DUD5" then gui.image(x,y,W_SP_DUD5)
-	elseif str == "W_SP_DUD6" then gui.image(x,y,W_SP_DUD6)
-	elseif str == "W_SP_DUDLEY1" then gui.image(x,y,W_SP_DUDLEY1)
-	elseif str == "W_SP_DUDLEY2" then gui.image(x,y,W_SP_DUDLEY2)
-	elseif str == "W_SP_DUDLEY3" then gui.image(x,y,W_SP_DUDLEY3)
-	elseif str == "W_SP_DUDLEY4" then gui.image(x,y,W_SP_DUDLEY4)
-	elseif str == "W_SP_DUDLEY5" then gui.image(x,y,W_SP_DUDLEY5)
-	elseif str == "W_SP_DUDLEY6" then gui.image(x,y,W_SP_DUDLEY6)
-	elseif str == "W_SP_DUDLEY7" then gui.image(x,y,W_SP_DUDLEY7)
-	elseif str == "W_SP_DUDLEY8" then gui.image(x,y,W_SP_DUDLEY8)
-	elseif str == "W_SP_ELE1" then gui.image(x,y,W_SP_ELE1)
-	elseif str == "W_SP_ELE2" then gui.image(x,y,W_SP_ELE2)
-	elseif str == "W_SP_ELE3" then gui.image(x,y,W_SP_ELE3)
-	elseif str == "W_SP_ELE4" then gui.image(x,y,W_SP_ELE4)
-	elseif str == "W_SP_ELE5" then gui.image(x,y,W_SP_ELE5)
-	elseif str == "W_SP_GOU1" then gui.image(x,y,W_SP_GOU1)
-	elseif str == "W_SP_GOU2" then gui.image(x,y,W_SP_GOU2)
-	elseif str == "W_SP_GOU3" then gui.image(x,y,W_SP_GOU3)
-	elseif str == "W_SP_GOU4" then gui.image(x,y,W_SP_GOU4)
-	elseif str == "W_SP_GOU5" then gui.image(x,y,W_SP_GOU5)
-	elseif str == "W_SP_GOU6" then gui.image(x,y,W_SP_GOU6)
-	elseif str == "W_SP_GOU7_1" then gui.image(x,y,W_SP_GOU7_1)
-	elseif str == "W_SP_GOU7_2" then gui.image(x,y,W_SP_GOU7_2)
-	elseif str == "W_SP_GOU7_3" then gui.image(x,y,W_SP_GOU7_3)
-	elseif str == "W_SP_GOU7_4" then gui.image(x,y,W_SP_GOU7_4)
-	elseif str == "W_SP_GOU7_5" then gui.image(x,y,W_SP_GOU7_5)
-	elseif str == "W_SP_GOU8" then gui.image(x,y,W_SP_GOU8)
-	elseif str == "W_SP_HUGO1" then gui.image(x,y,W_SP_HUGO1)
-	elseif str == "W_SP_HUGO2" then gui.image(x,y,W_SP_HUGO2)
-	elseif str == "W_SP_HUGO3" then gui.image(x,y,W_SP_HUGO3)
-	elseif str == "W_SP_HUGO4" then gui.image(x,y,W_SP_HUGO4)
-	elseif str == "W_SP_HUGO5" then gui.image(x,y,W_SP_HUGO5)
-	elseif str == "W_SP_HUGO6" then gui.image(x,y,W_SP_HUGO6)
-	elseif str == "W_SP_IBU1" then gui.image(x,y,W_SP_IBU1)
-	elseif str == "W_SP_IBU2" then gui.image(x,y,W_SP_IBU2)
-	elseif str == "W_SP_IBU3" then gui.image(x,y,W_SP_IBU3)
-	elseif str == "W_SP_MAK1" then gui.image(x,y,W_SP_MAK1)
-	elseif str == "W_SP_MAK2" then gui.image(x,y,W_SP_MAK2)
-	elseif str == "W_SP_MAK3" then gui.image(x,y,W_SP_MAK3)
-	elseif str == "W_SP_MAK4" then gui.image(x,y,W_SP_MAK4)
-	elseif str == "W_SP_MAK5" then gui.image(x,y,W_SP_MAK5)
-	elseif str == "W_SP_NEC1" then gui.image(x,y,W_SP_NEC1)
-	elseif str == "W_SP_NEC2" then gui.image(x,y,W_SP_NEC2)
-	elseif str == "W_SP_NEC3" then gui.image(x,y,W_SP_NEC3)
-	elseif str == "W_SP_NEC4" then gui.image(x,y,W_SP_NEC4)
-	elseif str == "W_SP_NEC5" then gui.image(x,y,W_SP_NEC5)
-	elseif str == "W_SP_NEC6" then gui.image(x,y,W_SP_NEC6)
-	elseif str == "W_SP_ORO1" then gui.image(x,y,W_SP_ORO1)
-	elseif str == "W_SP_ORO2" then gui.image(x,y,W_SP_ORO2)
-	elseif str == "W_SP_ORO3" then gui.image(x,y,W_SP_ORO3)
-	elseif str == "W_SP_ORO4" then gui.image(x,y,W_SP_ORO4)
-	elseif str == "W_SP_ORO5" then gui.image(x,y,W_SP_ORO5)
-	elseif str == "W_SP_Q1" then gui.image(x,y,W_SP_Q1)
-	elseif str == "W_SP_Q2" then gui.image(x,y,W_SP_Q2)
-	elseif str == "W_SP_Q3" then gui.image(x,y,W_SP_Q3)
-	elseif str == "W_SP_Q4" then gui.image(x,y,W_SP_Q4)
-	elseif str == "W_SP_Q5" then gui.image(x,y,W_SP_Q5)
-	elseif str == "W_SP_REM1" then gui.image(x,y,W_SP_REM1)
-	elseif str == "W_SP_REM2" then gui.image(x,y,W_SP_REM2)
-	elseif str == "W_SP_REM3" then gui.image(x,y,W_SP_REM3)
-	elseif str == "W_SP_REM4" then gui.image(x,y,W_SP_REM4)
-	elseif str == "W_SP_RYU1" then gui.image(x,y,W_SP_RYU1)
-	elseif str == "W_SP_RYU2" then gui.image(x,y,W_SP_RYU2)
-	elseif str == "W_SP_RYU3" then gui.image(x,y,W_SP_RYU3)
-	elseif str == "W_SP_RYU4" then gui.image(x,y,W_SP_RYU4)
-	elseif str == "W_SP_RYU5" then gui.image(x,y,W_SP_RYU5)
-	elseif str == "W_SP_SEA1" then gui.image(x,y,W_SP_SEA1)
-	elseif str == "W_SP_SEA2" then gui.image(x,y,W_SP_SEA2)
-	elseif str == "W_SP_SEA3" then gui.image(x,y,W_SP_SEA3)
-	elseif str == "W_SP_SEA4" then gui.image(x,y,W_SP_SEA4)
-	elseif str == "W_SP_SEA5" then gui.image(x,y,W_SP_SEA5)
-	elseif str == "W_SP_TWE1" then gui.image(x,y,W_SP_TWE1)
-	elseif str == "W_SP_TWE2" then gui.image(x,y,W_SP_TWE2)
-	elseif str == "W_SP_TWE3" then gui.image(x,y,W_SP_TWE3)
-	elseif str == "W_SP_TWE4" then gui.image(x,y,W_SP_TWE4)
-	elseif str == "W_SP_URIEN1" then gui.image(x,y,W_SP_URIEN1)
-	elseif str == "W_SP_URIEN2" then gui.image(x,y,W_SP_URIEN2)
-	elseif str == "W_SP_URIEN3" then gui.image(x,y,W_SP_URIEN3)
-	elseif str == "W_SP_URIEN4" then gui.image(x,y,W_SP_URIEN4)
-	elseif str == "W_SP_YANG1" then gui.image(x,y,W_SP_YANG1)
-	elseif str == "W_SP_YANG2" then gui.image(x,y,W_SP_YANG2)
-	elseif str == "W_SP_YANG3" then gui.image(x,y,W_SP_YANG3)
-	elseif str == "W_SP_YANG4" then gui.image(x,y,W_SP_YANG4)
-	elseif str == "W_SP_YANG5" then gui.image(x,y,W_SP_YANG5)
-	elseif str == "W_SP_YUN1" then gui.image(x,y,W_SP_YUN1)
-	elseif str == "W_SP_YUN2" then gui.image(x,y,W_SP_YUN2)
-	elseif str == "W_SP_YUN3" then gui.image(x,y,W_SP_YUN3)
-	elseif str == "W_SP_YUN4" then gui.image(x,y,W_SP_YUN4)
-	elseif str == "W_SP_YUN5" then gui.image(x,y,W_SP_YUN5)
-	elseif str == "W_TK_HUGO1" then gui.image(x,y,W_TK_HUGO1)
-	elseif str == "W_TR_ALEX1" then gui.image(x,y,W_TR_ALEX1)
-	elseif str == "W_TR_ALEX2" then gui.image(x,y,W_TR_ALEX2)
-	elseif str == "W_TR_KEN1" then gui.image(x,y,W_TR_KEN1)
-	elseif str == "W_TR_KEN2" then gui.image(x,y,W_TR_KEN2)
-	elseif str == "W_TR_HUGO1" then gui.image(x,y,W_TR_HUGO1)
-	elseif str == "W_4_THROW" then gui.image(x,y,W_4_THROW)
-	elseif str == "W_6_THROW" then gui.image(x,y,W_6_THROW)
-	elseif str == "W_N_THROW" then gui.image(x,y,W_N_THROW)
-	elseif str == "W_NM_BDASH" then gui.image(x,y,W_NM_BDASH)
-	elseif str == "W_NM_FDASH" then gui.image(x,y,W_NM_FDASH)
+	if wr == "R" then
+		if kadai == "_COMMON_OR" then gui.image(x,y,R_COMMON_OR)
+		elseif kadai == "_COMMON_EX" then gui.image(x,y,R_COMMON_EX)
+		elseif kadai == "_COMMON_H" then gui.image(x,y,R_COMMON_H)
+		elseif kadai == "_COMMON_L" then gui.image(x,y,R_COMMON_L)
+		elseif kadai == "_COMMON_M" then gui.image(x,y,R_COMMON_M)
+		elseif kadai == "_COMMON_ME" then gui.image(x,y,R_COMMON_ME)
+		elseif kadai == "_COMMON_URA" then gui.image(x,y,R_COMMON_URA)
+		elseif kadai == "_COMMON_KARACAN" then gui.image(x,y,R_COMMON_KARACAN)
+		elseif kadai == "_COMMON_JS" then gui.image(x,y,R_COMMON_JS)
+		elseif kadai == "_COMMON_JN" then gui.image(x,y,R_COMMON_JN)
+		elseif kadai == "_COMMON_ANTI_AIR" then gui.image(x,y,R_COMMON_ANTI_AIR)
+		elseif kadai == "_COMMON_KARABURI" then gui.image(x,y,R_COMMON_KARABURI)
+		elseif kadai == "_LEAP" then gui.image(x,y,R_LEAP)
+		elseif kadai == "_NM_1HK" then gui.image(x,y,R_NM_1HK)
+		elseif kadai == "_NM_1HP" then gui.image(x,y,R_NM_1HP)
+		elseif kadai == "_NM_1LK" then gui.image(x,y,R_NM_1LK)
+		elseif kadai == "_NM_1LP" then gui.image(x,y,R_NM_1LP)
+		elseif kadai == "_NM_1MK" then gui.image(x,y,R_NM_1MK)
+		elseif kadai == "_NM_1MP" then gui.image(x,y,R_NM_1MP)
+		elseif kadai == "_NM_3HK" then gui.image(x,y,R_NM_3HK)
+		elseif kadai == "_NM_3HP" then gui.image(x,y,R_NM_3HP)
+		elseif kadai == "_NM_3LK" then gui.image(x,y,R_NM_3LK)
+		elseif kadai == "_NM_3LP" then gui.image(x,y,R_NM_3LP)
+		elseif kadai == "_NM_3MK" then gui.image(x,y,R_NM_3MK)
+		elseif kadai == "_NM_3MP" then gui.image(x,y,R_NM_3MP)
+		elseif kadai == "_NM_4HK" then gui.image(x,y,R_NM_4HK)
+		elseif kadai == "_NM_4HP" then gui.image(x,y,R_NM_4HP)
+		elseif kadai == "_NM_4LK" then gui.image(x,y,R_NM_4LK)
+		elseif kadai == "_NM_4LP" then gui.image(x,y,R_NM_4LP)
+		elseif kadai == "_NM_4MK" then gui.image(x,y,R_NM_4MK)
+		elseif kadai == "_NM_4MP" then gui.image(x,y,R_NM_4MP)
+		elseif kadai == "_NM_6HK" then gui.image(x,y,R_NM_6HK)
+		elseif kadai == "_NM_6HP" then gui.image(x,y,R_NM_6HP)
+		elseif kadai == "_NM_6LK" then gui.image(x,y,R_NM_6LK)
+		elseif kadai == "_NM_6LP" then gui.image(x,y,R_NM_6LP)
+		elseif kadai == "_NM_6MK" then gui.image(x,y,R_NM_6MK)
+		elseif kadai == "_NM_6MP" then gui.image(x,y,R_NM_6MP)
+		elseif kadai == "_NM_CHK" then gui.image(x,y,R_NM_CHK)
+		elseif kadai == "_NM_CHP" then gui.image(x,y,R_NM_CHP)
+		elseif kadai == "_NM_CLK" then gui.image(x,y,R_NM_CLK)
+		elseif kadai == "_NM_CLP" then gui.image(x,y,R_NM_CLP)
+		elseif kadai == "_NM_CMK" then gui.image(x,y,R_NM_CMK)
+		elseif kadai == "_NM_CMP" then gui.image(x,y,R_NM_CMP)
+		elseif kadai == "_NM_JHK" then gui.image(x,y,R_NM_JHK)
+		elseif kadai == "_NM_JHP" then gui.image(x,y,R_NM_JHP)
+		elseif kadai == "_NM_JLK" then gui.image(x,y,R_NM_JLK)
+		elseif kadai == "_NM_JLP" then gui.image(x,y,R_NM_JLP)
+		elseif kadai == "_NM_JMK" then gui.image(x,y,R_NM_JMK)
+		elseif kadai == "_NM_JMP" then gui.image(x,y,R_NM_JMP)
+		elseif kadai == "_NM_J2MK" then gui.image(x,y,R_NM_J2MK)
+		elseif kadai == "_NM_J3MK" then gui.image(x,y,R_NM_J3MK)
+		elseif kadai == "_NM_J6HP" then gui.image(x,y,R_NM_J6HP)
+		elseif kadai == "_NM_J2HP" then gui.image(x,y,R_NM_J2HP)
+		elseif kadai == "_NM_J6MK" then gui.image(x,y,R_NM_J6MK)
+		elseif kadai == "_NM_NJHK" then gui.image(x,y,R_NM_NJHK)
+		elseif kadai == "_NM_NJHP" then gui.image(x,y,R_NM_NJHP)
+		elseif kadai == "_NM_NJLK" then gui.image(x,y,R_NM_NJLK)
+		elseif kadai == "_NM_NJLP" then gui.image(x,y,R_NM_NJLP)
+		elseif kadai == "_NM_NJMK" then gui.image(x,y,R_NM_NJMK)
+		elseif kadai == "_NM_NJMP" then gui.image(x,y,R_NM_NJMP)
+		elseif kadai == "_NM_SCHK" then gui.image(x,y,R_NM_SCHK)
+		elseif kadai == "_NM_SCHP" then gui.image(x,y,R_NM_SCHP)
+		elseif kadai == "_NM_SCLK" then gui.image(x,y,R_NM_SCLK)
+		elseif kadai == "_NM_SCLP" then gui.image(x,y,R_NM_SCLP)
+		elseif kadai == "_NM_SCMK" then gui.image(x,y,R_NM_SCMK)
+		elseif kadai == "_NM_SCMP" then gui.image(x,y,R_NM_SCMP)
+		elseif kadai == "_NM_SDHK" then gui.image(x,y,R_NM_SDHK)
+		elseif kadai == "_NM_SDHP" then gui.image(x,y,R_NM_SDHP)
+		elseif kadai == "_NM_SDLK" then gui.image(x,y,R_NM_SDLK)
+		elseif kadai == "_NM_SDLP" then gui.image(x,y,R_NM_SDLP)
+		elseif kadai == "_NM_SDMK" then gui.image(x,y,R_NM_SDMK)
+		elseif kadai == "_NM_SDMP" then gui.image(x,y,R_NM_SDMP)
+		elseif kadai == "_NM_SHK" then gui.image(x,y,R_NM_SHK)
+		elseif kadai == "_NM_SHP" then gui.image(x,y,R_NM_SHP)
+		elseif kadai == "_NM_SJHK" then gui.image(x,y,R_NM_SJHK)
+		elseif kadai == "_NM_SJHP" then gui.image(x,y,R_NM_SJHP)
+		elseif kadai == "_NM_SJLK" then gui.image(x,y,R_NM_SJLK)
+		elseif kadai == "_NM_SJLP" then gui.image(x,y,R_NM_SJLP)
+		elseif kadai == "_NM_SJMK" then gui.image(x,y,R_NM_SJMK)
+		elseif kadai == "_NM_SJMP" then gui.image(x,y,R_NM_SJMP)
+		elseif kadai == "_NM_SLK" then gui.image(x,y,R_NM_SLK)
+		elseif kadai == "_NM_SLP" then gui.image(x,y,R_NM_SLP)
+		elseif kadai == "_NM_SMK" then gui.image(x,y,R_NM_SMK)
+		elseif kadai == "_NM_SMP" then gui.image(x,y,R_NM_SMP)
+		elseif kadai == "_PA" then gui.image(x,y,R_PA)
+		elseif kadai == "_SA_ALEX1" then gui.image(x,y,R_SA_ALEX1)
+		elseif kadai == "_SA_ALEX2" then gui.image(x,y,R_SA_ALEX2)
+		elseif kadai == "_SA_ALEX3" then gui.image(x,y,R_SA_ALEX3)
+		elseif kadai == "_SA_CHU1" then gui.image(x,y,R_SA_CHU1)
+		elseif kadai == "_SA_CHU2" then gui.image(x,y,R_SA_CHU2)
+		elseif kadai == "_SA_CHU3" then gui.image(x,y,R_SA_CHU3)
+		elseif kadai == "_SA_DUD1" then gui.image(x,y,R_SA_DUD1)
+		elseif kadai == "_SA_DUD2" then gui.image(x,y,R_SA_DUD2)
+		elseif kadai == "_SA_DUD3" then gui.image(x,y,R_SA_DUD3)
+		elseif kadai == "_SA_DUDLEY1" then gui.image(x,y,R_SA_DUDLEY1)
+		elseif kadai == "_SA_DUDLEY2" then gui.image(x,y,R_SA_DUDLEY2)
+		elseif kadai == "_SA_DUDLEY3" then gui.image(x,y,R_SA_DUDLEY3)
+		elseif kadai == "_SA_ELE1" then gui.image(x,y,R_SA_ELE1)
+		elseif kadai == "_SA_ELE2" then gui.image(x,y,R_SA_ELE2)
+		elseif kadai == "_SA_ELE3" then gui.image(x,y,R_SA_ELE3)
+		elseif kadai == "_SA_GILL1" then gui.image(x,y,R_SA_GILL1)
+		elseif kadai == "_SA_GILL2" then gui.image(x,y,R_SA_GILL2)
+		elseif kadai == "_SA_GILL3" then gui.image(x,y,R_SA_GILL3)
+		elseif kadai == "_SA_GOU1_1" then gui.image(x,y,R_SA_GOU1_1)
+		elseif kadai == "_SA_GOU1_2" then gui.image(x,y,R_SA_GOU1_2)
+		elseif kadai == "_SA_GOU2" then gui.image(x,y,R_SA_GOU2)
+		elseif kadai == "_SA_GOU3_1" then gui.image(x,y,R_SA_GOU3_1)
+		elseif kadai == "_SA_GOU3_2" then gui.image(x,y,R_SA_GOU3_2)
+		elseif kadai == "_SA_GOU4" then gui.image(x,y,R_SA_GOU4)
+		elseif kadai == "_SA_GOU5" then gui.image(x,y,R_SA_GOU5)
+		elseif kadai == "_SA_HUGO1" then gui.image(x,y,R_SA_HUGO1)
+		elseif kadai == "_SA_HUGO2" then gui.image(x,y,R_SA_HUGO2)
+		elseif kadai == "_SA_HUGO3" then gui.image(x,y,R_SA_HUGO3)
+		elseif kadai == "_SA_IBU1" then gui.image(x,y,R_SA_IBU1)
+		elseif kadai == "_SA_IBU2" then gui.image(x,y,R_SA_IBU2)
+		elseif kadai == "_SA_IBU3" then gui.image(x,y,R_SA_IBU3)
+		elseif kadai == "_SA_IBU4" then gui.image(x,y,R_SA_IBU4)
+		elseif kadai == "_SA_IBU5" then gui.image(x,y,R_SA_IBU5)
+		elseif kadai == "_SA_IBU6" then gui.image(x,y,R_SA_IBU6)
+		elseif kadai == "_SA_IBU7" then gui.image(x,y,R_SA_IBU7)
+		elseif kadai == "_SA_IBU8" then gui.image(x,y,R_SA_IBU8)
+		elseif kadai == "_SA_KEN1" then gui.image(x,y,R_SA_KEN1)
+		elseif kadai == "_SA_KEN2" then gui.image(x,y,R_SA_KEN2)
+		elseif kadai == "_SA_KEN3" then gui.image(x,y,R_SA_KEN3)
+		elseif kadai == "_SA_MAK1" then gui.image(x,y,R_SA_MAK1)
+		elseif kadai == "_SA_MAK2" then gui.image(x,y,R_SA_MAK2)
+		elseif kadai == "_SA_MAK3" then gui.image(x,y,R_SA_MAK3)
+		elseif kadai == "_SA_NEC1" then gui.image(x,y,R_SA_NEC1)
+		elseif kadai == "_SA_NEC2" then gui.image(x,y,R_SA_NEC2)
+		elseif kadai == "_SA_NEC3" then gui.image(x,y,R_SA_NEC3)
+		elseif kadai == "_SA_ORO1_1" then gui.image(x,y,R_SA_ORO1_1)
+		elseif kadai == "_SA_ORO1_2" then gui.image(x,y,R_SA_ORO1_2)
+		elseif kadai == "_SA_ORO1_3" then gui.image(x,y,R_SA_ORO1_3)
+		elseif kadai == "_SA_ORO2_1" then gui.image(x,y,R_SA_ORO2_1)
+		elseif kadai == "_SA_ORO2_2" then gui.image(x,y,R_SA_ORO2_2)
+		elseif kadai == "_SA_ORO3_1" then gui.image(x,y,R_SA_ORO3_1)
+		elseif kadai == "_SA_ORO3_2" then gui.image(x,y,R_SA_ORO3_2)
+		elseif kadai == "_SA_Q1" then gui.image(x,y,R_SA_Q1)
+		elseif kadai == "_SA_Q2" then gui.image(x,y,R_SA_Q2)
+		elseif kadai == "_SA_Q3" then gui.image(x,y,R_SA_Q3)
+		elseif kadai == "_SA_Q3_1" then gui.image(x,y,R_SA_Q3_1)
+		elseif kadai == "_SA_Q3_2" then gui.image(x,y,R_SA_Q3_2)
+		elseif kadai == "_SA_REM1" then gui.image(x,y,R_SA_REM1)
+		elseif kadai == "_SA_REM2" then gui.image(x,y,R_SA_REM2)
+		elseif kadai == "_SA_REM3" then gui.image(x,y,R_SA_REM3)
+		elseif kadai == "_SA_RYU1" then gui.image(x,y,R_SA_RYU1)
+		elseif kadai == "_SA_RYU2" then gui.image(x,y,R_SA_RYU2)
+		elseif kadai == "_SA_RYU3_1" then gui.image(x,y,R_SA_RYU3_1)
+		elseif kadai == "_SA_RYU3_2" then gui.image(x,y,R_SA_RYU3_2)
+		elseif kadai == "_SA_RYU3_3" then gui.image(x,y,R_SA_RYU3_3)
+		elseif kadai == "_SA_RYU3_4" then gui.image(x,y,R_SA_RYU3_4)
+		elseif kadai == "_SA_RYU3_5" then gui.image(x,y,R_SA_RYU3_5)
+		elseif kadai == "_SA_SEA1" then gui.image(x,y,R_SA_SEA1)
+		elseif kadai == "_SA_SEA2" then gui.image(x,y,R_SA_SEA2)
+		elseif kadai == "_SA_SEA3" then gui.image(x,y,R_SA_SEA3)
+		elseif kadai == "_SA_TWE1" then gui.image(x,y,R_SA_TWE1)
+		elseif kadai == "_SA_TWE2" then gui.image(x,y,R_SA_TWE2)
+		elseif kadai == "_SA_TWE3" then gui.image(x,y,R_SA_TWE3)
+		elseif kadai == "_SA_URIEN1" then gui.image(x,y,R_SA_URIEN1)
+		elseif kadai == "_SA_URIEN2" then gui.image(x,y,R_SA_URIEN2)
+		elseif kadai == "_SA_URIEN3" then gui.image(x,y,R_SA_URIEN3)
+		elseif kadai == "_SA_YANG1" then gui.image(x,y,R_SA_YANG1)
+		elseif kadai == "_SA_YANG2" then gui.image(x,y,R_SA_YANG2)
+		elseif kadai == "_SA_YANG3" then gui.image(x,y,R_SA_YANG3)
+		elseif kadai == "_SA_YUN1" then gui.image(x,y,R_SA_YUN1)
+		elseif kadai == "_SA_YUN2" then gui.image(x,y,R_SA_YUN2)
+		elseif kadai == "_SA_YUN3" then gui.image(x,y,R_SA_YUN3)
+		elseif kadai == "_SP_ALEX1" then gui.image(x,y,R_SP_ALEX1)
+		elseif kadai == "_SP_ALEX2" then gui.image(x,y,R_SP_ALEX2)
+		elseif kadai == "_SP_ALEX3" then gui.image(x,y,R_SP_ALEX3)
+		elseif kadai == "_SP_ALEX4" then gui.image(x,y,R_SP_ALEX4)
+		elseif kadai == "_SP_ALEX5" then gui.image(x,y,R_SP_ALEX5)
+		elseif kadai == "_SP_ALEX6" then gui.image(x,y,R_SP_ALEX6)
+		elseif kadai == "_SP_CHU1" then gui.image(x,y,R_SP_CHU1)
+		elseif kadai == "_SP_CHU2" then gui.image(x,y,R_SP_CHU2)
+		elseif kadai == "_SP_CHU3" then gui.image(x,y,R_SP_CHU3)
+		elseif kadai == "_SP_CHU4" then gui.image(x,y,R_SP_CHU4)
+		elseif kadai == "_SP_DUD1" then gui.image(x,y,R_SP_DUD1)
+		elseif kadai == "_SP_DUD2_1" then gui.image(x,y,R_SP_DUD2_1)
+		elseif kadai == "_SP_DUD2_2" then gui.image(x,y,R_SP_DUD2_2)
+		elseif kadai == "_SP_DUD2_3" then gui.image(x,y,R_SP_DUD2_3)
+		elseif kadai == "_SP_DUD3" then gui.image(x,y,R_SP_DUD3)
+		elseif kadai == "_SP_DUD4" then gui.image(x,y,R_SP_DUD4)
+		elseif kadai == "_SP_DUD5" then gui.image(x,y,R_SP_DUD5)
+		elseif kadai == "_SP_DUD6" then gui.image(x,y,R_SP_DUD6)
+		elseif kadai == "_SP_DUDLEY1" then gui.image(x,y,R_SP_DUDLEY1)
+		elseif kadai == "_SP_DUDLEY2" then gui.image(x,y,R_SP_DUDLEY2)
+		elseif kadai == "_SP_DUDLEY3" then gui.image(x,y,R_SP_DUDLEY3)
+		elseif kadai == "_SP_DUDLEY4" then gui.image(x,y,R_SP_DUDLEY4)
+		elseif kadai == "_SP_DUDLEY5" then gui.image(x,y,R_SP_DUDLEY5)
+		elseif kadai == "_SP_DUDLEY6" then gui.image(x,y,R_SP_DUDLEY6)
+		elseif kadai == "_SP_DUDLEY7" then gui.image(x,y,R_SP_DUDLEY7)
+		elseif kadai == "_SP_DUDLEY8" then gui.image(x,y,R_SP_DUDLEY8)
+		elseif kadai == "_SP_ELE1" then gui.image(x,y,R_SP_ELE1)
+		elseif kadai == "_SP_ELE2" then gui.image(x,y,R_SP_ELE2)
+		elseif kadai == "_SP_ELE3" then gui.image(x,y,R_SP_ELE3)
+		elseif kadai == "_SP_ELE4" then gui.image(x,y,R_SP_ELE4)
+		elseif kadai == "_SP_ELE5" then gui.image(x,y,R_SP_ELE5)
+		elseif kadai == "_SP_GILL1" then gui.image(x,y,R_SP_GILL1)
+		elseif kadai == "_SP_GILL2" then gui.image(x,y,R_SP_GILL2)
+		elseif kadai == "_SP_GILL3" then gui.image(x,y,R_SP_GILL3)
+		elseif kadai == "_SP_GILL4" then gui.image(x,y,R_SP_GILL4)
+		elseif kadai == "_SP_GOU1" then gui.image(x,y,R_SP_GOU1)
+		elseif kadai == "_SP_GOU2" then gui.image(x,y,R_SP_GOU2)
+		elseif kadai == "_SP_GOU3" then gui.image(x,y,R_SP_GOU3)
+		elseif kadai == "_SP_GOU4" then gui.image(x,y,R_SP_GOU4)
+		elseif kadai == "_SP_GOU5" then gui.image(x,y,R_SP_GOU5)
+		elseif kadai == "_SP_GOU6" then gui.image(x,y,R_SP_GOU6)
+		elseif kadai == "_SP_GOU7_1" then gui.image(x,y,R_SP_GOU7_1)
+		elseif kadai == "_SP_GOU7_2" then gui.image(x,y,R_SP_GOU7_2)
+		elseif kadai == "_SP_GOU7_3" then gui.image(x,y,R_SP_GOU7_3)
+		elseif kadai == "_SP_GOU7_4" then gui.image(x,y,R_SP_GOU7_4)
+		elseif kadai == "_SP_GOU7_5" then gui.image(x,y,R_SP_GOU7_5)
+		elseif kadai == "_SP_GOU8" then gui.image(x,y,R_SP_GOU8)
+		elseif kadai == "_SP_HUGO1" then gui.image(x,y,R_SP_HUGO1)
+		elseif kadai == "_SP_HUGO2" then gui.image(x,y,R_SP_HUGO2)
+		elseif kadai == "_SP_HUGO3" then gui.image(x,y,R_SP_HUGO3)
+		elseif kadai == "_SP_HUGO4" then gui.image(x,y,R_SP_HUGO4)
+		elseif kadai == "_SP_HUGO5" then gui.image(x,y,R_SP_HUGO5)
+		elseif kadai == "_SP_HUGO6" then gui.image(x,y,R_SP_HUGO6)
+		elseif kadai == "_SP_IBU1" then gui.image(x,y,R_SP_IBU1)
+		elseif kadai == "_SP_IBU2" then gui.image(x,y,R_SP_IBU2)
+		elseif kadai == "_SP_IBU3" then gui.image(x,y,R_SP_IBU3)
+		elseif kadai == "_SP_MAK1" then gui.image(x,y,R_SP_MAK1)
+		elseif kadai == "_SP_MAK2" then gui.image(x,y,R_SP_MAK2)
+		elseif kadai == "_SP_MAK3" then gui.image(x,y,R_SP_MAK3)
+		elseif kadai == "_SP_MAK4" then gui.image(x,y,R_SP_MAK4)
+		elseif kadai == "_SP_MAK5" then gui.image(x,y,R_SP_MAK5)
+		elseif kadai == "_SP_NEC1" then gui.image(x,y,R_SP_NEC1)
+		elseif kadai == "_SP_NEC2" then gui.image(x,y,R_SP_NEC2)
+		elseif kadai == "_SP_NEC3" then gui.image(x,y,R_SP_NEC3)
+		elseif kadai == "_SP_NEC4" then gui.image(x,y,R_SP_NEC4)
+		elseif kadai == "_SP_NEC5" then gui.image(x,y,R_SP_NEC5)
+		elseif kadai == "_SP_NEC6" then gui.image(x,y,R_SP_NEC6)
+		elseif kadai == "_SP_ORO1" then gui.image(x,y,R_SP_ORO1)
+		elseif kadai == "_SP_ORO2" then gui.image(x,y,R_SP_ORO2)
+		elseif kadai == "_SP_ORO3" then gui.image(x,y,R_SP_ORO3)
+		elseif kadai == "_SP_ORO4" then gui.image(x,y,R_SP_ORO4)
+		elseif kadai == "_SP_ORO5" then gui.image(x,y,R_SP_ORO5)
+		elseif kadai == "_SP_Q1" then gui.image(x,y,R_SP_Q1)
+		elseif kadai == "_SP_Q2" then gui.image(x,y,R_SP_Q2)
+		elseif kadai == "_SP_Q3" then gui.image(x,y,R_SP_Q3)
+		elseif kadai == "_SP_Q4" then gui.image(x,y,R_SP_Q4)
+		elseif kadai == "_SP_Q5" then gui.image(x,y,R_SP_Q5)
+		elseif kadai == "_SP_REM1" then gui.image(x,y,R_SP_REM1)
+		elseif kadai == "_SP_REM2" then gui.image(x,y,R_SP_REM2)
+		elseif kadai == "_SP_REM3" then gui.image(x,y,R_SP_REM3)
+		elseif kadai == "_SP_REM4" then gui.image(x,y,R_SP_REM4)
+		elseif kadai == "_SP_RYU1" then gui.image(x,y,R_SP_RYU1)
+		elseif kadai == "_SP_RYU2" then gui.image(x,y,R_SP_RYU2)
+		elseif kadai == "_SP_RYU3" then gui.image(x,y,R_SP_RYU3)
+		elseif kadai == "_SP_RYU4" then gui.image(x,y,R_SP_RYU4)
+		elseif kadai == "_SP_RYU5" then gui.image(x,y,R_SP_RYU5)
+		elseif kadai == "_SP_SEA1" then gui.image(x,y,R_SP_SEA1)
+		elseif kadai == "_SP_SEA2" then gui.image(x,y,R_SP_SEA2)
+		elseif kadai == "_SP_SEA3" then gui.image(x,y,R_SP_SEA3)
+		elseif kadai == "_SP_SEA4" then gui.image(x,y,R_SP_SEA4)
+		elseif kadai == "_SP_SEA5" then gui.image(x,y,R_SP_SEA5)
+		elseif kadai == "_SP_TWE1" then gui.image(x,y,R_SP_TWE1)
+		elseif kadai == "_SP_TWE2" then gui.image(x,y,R_SP_TWE2)
+		elseif kadai == "_SP_TWE3" then gui.image(x,y,R_SP_TWE3)
+		elseif kadai == "_SP_TWE4" then gui.image(x,y,R_SP_TWE4)
+		elseif kadai == "_SP_TWE5" then gui.image(x,y,R_SP_TWE5)
+		elseif kadai == "_SP_URIEN1" then gui.image(x,y,R_SP_URIEN1)
+		elseif kadai == "_SP_URIEN2" then gui.image(x,y,R_SP_URIEN2)
+		elseif kadai == "_SP_URIEN3" then gui.image(x,y,R_SP_URIEN3)
+		elseif kadai == "_SP_URIEN4" then gui.image(x,y,R_SP_URIEN4)
+		elseif kadai == "_SP_YANG1" then gui.image(x,y,R_SP_YANG1)
+		elseif kadai == "_SP_YANG2" then gui.image(x,y,R_SP_YANG2)
+		elseif kadai == "_SP_YANG3" then gui.image(x,y,R_SP_YANG3)
+		elseif kadai == "_SP_YANG4" then gui.image(x,y,R_SP_YANG4)
+		elseif kadai == "_SP_YANG5" then gui.image(x,y,R_SP_YANG5)
+		elseif kadai == "_SP_YUN1" then gui.image(x,y,R_SP_YUN1)
+		elseif kadai == "_SP_YUN2" then gui.image(x,y,R_SP_YUN2)
+		elseif kadai == "_SP_YUN3" then gui.image(x,y,R_SP_YUN3)
+		elseif kadai == "_SP_YUN4" then gui.image(x,y,R_SP_YUN4)
+		elseif kadai == "_SP_YUN5" then gui.image(x,y,R_SP_YUN5)
+		elseif kadai == "_TK_HUGO1" then gui.image(x,y,R_TK_HUGO1)
+		elseif kadai == "_TR_ALEX1" then gui.image(x,y,R_TR_ALEX1)
+		elseif kadai == "_TR_ALEX2" then gui.image(x,y,R_TR_ALEX2)
+		elseif kadai == "_TR_KEN1" then gui.image(x,y,R_TR_KEN1)
+		elseif kadai == "_TR_KEN2" then gui.image(x,y,R_TR_KEN2)
+		elseif kadai == "_TR_HUGO1" then gui.image(x,y,R_TR_HUGO1)
+		elseif kadai == "_4_THROW" then gui.image(x,y,R_4_THROW)
+		elseif kadai == "_6_THROW" then gui.image(x,y,R_6_THROW)
+		elseif kadai == "_N_THROW" then gui.image(x,y,R_N_THROW)
+		elseif kadai == "_NM_BDASH" then gui.image(x,y,R_NM_BDASH)
+		elseif kadai == "_NM_FDASH" then gui.image(x,y,R_NM_FDASH)
+		elseif kadai == "_NM_FORWARD" then gui.image(x,y,R_NM_FORWARD)
+		elseif kadai == "_HIT2" then gui.image(x,y,R_HIT2)
+		elseif kadai == "_NUM_1" then gui.image(x,y,R_NUM_1)
+		elseif kadai == "_NUM_2" then gui.image(x,y,R_NUM_2)
+		elseif kadai == "_NUM_3" then gui.image(x,y,R_NUM_3)
+		elseif kadai == "_NUM_4" then gui.image(x,y,R_NUM_4)
+		elseif kadai == "_NUM_5" then gui.image(x,y,R_NUM_5)
+		elseif kadai == "_NUM_6" then gui.image(x,y,R_NUM_6)
+		elseif kadai == "_NUM_7" then gui.image(x,y,R_NUM_7)
+		elseif kadai == "_NUM_8" then gui.image(x,y,R_NUM_8)
+		elseif kadai == "_NUM_0" then gui.image(x,y,R_NUM_0)
+		elseif kadai == "_NUM_9" then gui.image(x,y,R_NUM_9)
+		elseif kadai == "_NUM_P" then gui.image(x,y,R_NUM_P)
+		elseif kadai == "_SECOND_COMBO_DE" then gui.image(x,y,R_SECOND_COMBO_DE)
+		elseif kadai == "_SECOND_FLOAT" then gui.image(x,y,R_SECOND_FLOAT)
+		end
+	end
+	if wr == "Y" then
+		if kadai == "_COMMON_OR" then gui.image(x,y,Y_COMMON_OR)
+		elseif kadai == "_COMMON_EX" then gui.image(x,y,Y_COMMON_EX)
+		elseif kadai == "_COMMON_H" then gui.image(x,y,Y_COMMON_H)
+		elseif kadai == "_COMMON_L" then gui.image(x,y,Y_COMMON_L)
+		elseif kadai == "_COMMON_M" then gui.image(x,y,Y_COMMON_M)
+		elseif kadai == "_COMMON_ME" then gui.image(x,y,Y_COMMON_ME)
+		elseif kadai == "_COMMON_URA" then gui.image(x,y,Y_COMMON_URA)
+		elseif kadai == "_COMMON_KARACAN" then gui.image(x,y,Y_COMMON_KARACAN)
+		elseif kadai == "_COMMON_JS" then gui.image(x,y,Y_COMMON_JS)
+		elseif kadai == "_COMMON_JN" then gui.image(x,y,Y_COMMON_JN)
+		elseif kadai == "_COMMON_ANTI_AIR" then gui.image(x,y,Y_COMMON_ANTI_AIR)
+		elseif kadai == "_COMMON_KARABURI" then gui.image(x,y,Y_COMMON_KARABURI)
+		elseif kadai == "_LEAP" then gui.image(x,y,Y_LEAP)
+		elseif kadai == "_NM_1HK" then gui.image(x,y,Y_NM_1HK)
+		elseif kadai == "_NM_1HP" then gui.image(x,y,Y_NM_1HP)
+		elseif kadai == "_NM_1LK" then gui.image(x,y,Y_NM_1LK)
+		elseif kadai == "_NM_1LP" then gui.image(x,y,Y_NM_1LP)
+		elseif kadai == "_NM_1MK" then gui.image(x,y,Y_NM_1MK)
+		elseif kadai == "_NM_1MP" then gui.image(x,y,Y_NM_1MP)
+		elseif kadai == "_NM_3HK" then gui.image(x,y,Y_NM_3HK)
+		elseif kadai == "_NM_3HP" then gui.image(x,y,Y_NM_3HP)
+		elseif kadai == "_NM_3LK" then gui.image(x,y,Y_NM_3LK)
+		elseif kadai == "_NM_3LP" then gui.image(x,y,Y_NM_3LP)
+		elseif kadai == "_NM_3MK" then gui.image(x,y,Y_NM_3MK)
+		elseif kadai == "_NM_3MP" then gui.image(x,y,Y_NM_3MP)
+		elseif kadai == "_NM_4HK" then gui.image(x,y,Y_NM_4HK)
+		elseif kadai == "_NM_4HP" then gui.image(x,y,Y_NM_4HP)
+		elseif kadai == "_NM_4LK" then gui.image(x,y,Y_NM_4LK)
+		elseif kadai == "_NM_4LP" then gui.image(x,y,Y_NM_4LP)
+		elseif kadai == "_NM_4MK" then gui.image(x,y,Y_NM_4MK)
+		elseif kadai == "_NM_4MP" then gui.image(x,y,Y_NM_4MP)
+		elseif kadai == "_NM_6HK" then gui.image(x,y,Y_NM_6HK)
+		elseif kadai == "_NM_6HP" then gui.image(x,y,Y_NM_6HP)
+		elseif kadai == "_NM_6LK" then gui.image(x,y,Y_NM_6LK)
+		elseif kadai == "_NM_6LP" then gui.image(x,y,Y_NM_6LP)
+		elseif kadai == "_NM_6MK" then gui.image(x,y,Y_NM_6MK)
+		elseif kadai == "_NM_6MP" then gui.image(x,y,Y_NM_6MP)
+		elseif kadai == "_NM_CHK" then gui.image(x,y,Y_NM_CHK)
+		elseif kadai == "_NM_CHP" then gui.image(x,y,Y_NM_CHP)
+		elseif kadai == "_NM_CLK" then gui.image(x,y,Y_NM_CLK)
+		elseif kadai == "_NM_CLP" then gui.image(x,y,Y_NM_CLP)
+		elseif kadai == "_NM_CMK" then gui.image(x,y,Y_NM_CMK)
+		elseif kadai == "_NM_CMP" then gui.image(x,y,Y_NM_CMP)
+		elseif kadai == "_NM_JHK" then gui.image(x,y,Y_NM_JHK)
+		elseif kadai == "_NM_JHP" then gui.image(x,y,Y_NM_JHP)
+		elseif kadai == "_NM_JLK" then gui.image(x,y,Y_NM_JLK)
+		elseif kadai == "_NM_JLP" then gui.image(x,y,Y_NM_JLP)
+		elseif kadai == "_NM_JMK" then gui.image(x,y,Y_NM_JMK)
+		elseif kadai == "_NM_JMP" then gui.image(x,y,Y_NM_JMP)
+		elseif kadai == "_NM_J2MK" then gui.image(x,y,Y_NM_J2MK)
+		elseif kadai == "_NM_J3MK" then gui.image(x,y,Y_NM_J3MK)
+		elseif kadai == "_NM_J6HP" then gui.image(x,y,Y_NM_J6HP)
+		elseif kadai == "_NM_J2HP" then gui.image(x,y,Y_NM_J2HP)
+		elseif kadai == "_NM_J6MK" then gui.image(x,y,Y_NM_J6MK)
+		elseif kadai == "_NM_NJHK" then gui.image(x,y,Y_NM_NJHK)
+		elseif kadai == "_NM_NJHP" then gui.image(x,y,Y_NM_NJHP)
+		elseif kadai == "_NM_NJLK" then gui.image(x,y,Y_NM_NJLK)
+		elseif kadai == "_NM_NJLP" then gui.image(x,y,Y_NM_NJLP)
+		elseif kadai == "_NM_NJMK" then gui.image(x,y,Y_NM_NJMK)
+		elseif kadai == "_NM_NJMP" then gui.image(x,y,Y_NM_NJMP)
+		elseif kadai == "_NM_SCHK" then gui.image(x,y,Y_NM_SCHK)
+		elseif kadai == "_NM_SCHP" then gui.image(x,y,Y_NM_SCHP)
+		elseif kadai == "_NM_SCLK" then gui.image(x,y,Y_NM_SCLK)
+		elseif kadai == "_NM_SCLP" then gui.image(x,y,Y_NM_SCLP)
+		elseif kadai == "_NM_SCMK" then gui.image(x,y,Y_NM_SCMK)
+		elseif kadai == "_NM_SCMP" then gui.image(x,y,Y_NM_SCMP)
+		elseif kadai == "_NM_SDHK" then gui.image(x,y,Y_NM_SDHK)
+		elseif kadai == "_NM_SDHP" then gui.image(x,y,Y_NM_SDHP)
+		elseif kadai == "_NM_SDLK" then gui.image(x,y,Y_NM_SDLK)
+		elseif kadai == "_NM_SDLP" then gui.image(x,y,Y_NM_SDLP)
+		elseif kadai == "_NM_SDMK" then gui.image(x,y,Y_NM_SDMK)
+		elseif kadai == "_NM_SDMP" then gui.image(x,y,Y_NM_SDMP)
+		elseif kadai == "_NM_SHK" then gui.image(x,y,Y_NM_SHK)
+		elseif kadai == "_NM_SHP" then gui.image(x,y,Y_NM_SHP)
+		elseif kadai == "_NM_SJHK" then gui.image(x,y,Y_NM_SJHK)
+		elseif kadai == "_NM_SJHP" then gui.image(x,y,Y_NM_SJHP)
+		elseif kadai == "_NM_SJLK" then gui.image(x,y,Y_NM_SJLK)
+		elseif kadai == "_NM_SJLP" then gui.image(x,y,Y_NM_SJLP)
+		elseif kadai == "_NM_SJMK" then gui.image(x,y,Y_NM_SJMK)
+		elseif kadai == "_NM_SJMP" then gui.image(x,y,Y_NM_SJMP)
+		elseif kadai == "_NM_SLK" then gui.image(x,y,Y_NM_SLK)
+		elseif kadai == "_NM_SLP" then gui.image(x,y,Y_NM_SLP)
+		elseif kadai == "_NM_SMK" then gui.image(x,y,Y_NM_SMK)
+		elseif kadai == "_NM_SMP" then gui.image(x,y,Y_NM_SMP)
+		elseif kadai == "_PA" then gui.image(x,y,Y_PA)
+		elseif kadai == "_SA_ALEX1" then gui.image(x,y,Y_SA_ALEX1)
+		elseif kadai == "_SA_ALEX2" then gui.image(x,y,Y_SA_ALEX2)
+		elseif kadai == "_SA_ALEX3" then gui.image(x,y,Y_SA_ALEX3)
+		elseif kadai == "_SA_CHU1" then gui.image(x,y,Y_SA_CHU1)
+		elseif kadai == "_SA_CHU2" then gui.image(x,y,Y_SA_CHU2)
+		elseif kadai == "_SA_CHU3" then gui.image(x,y,Y_SA_CHU3)
+		elseif kadai == "_SA_DUD1" then gui.image(x,y,Y_SA_DUD1)
+		elseif kadai == "_SA_DUD2" then gui.image(x,y,Y_SA_DUD2)
+		elseif kadai == "_SA_DUD3" then gui.image(x,y,Y_SA_DUD3)
+		elseif kadai == "_SA_DUDLEY1" then gui.image(x,y,Y_SA_DUDLEY1)
+		elseif kadai == "_SA_DUDLEY2" then gui.image(x,y,Y_SA_DUDLEY2)
+		elseif kadai == "_SA_DUDLEY3" then gui.image(x,y,Y_SA_DUDLEY3)
+		elseif kadai == "_SA_ELE1" then gui.image(x,y,Y_SA_ELE1)
+		elseif kadai == "_SA_ELE2" then gui.image(x,y,Y_SA_ELE2)
+		elseif kadai == "_SA_ELE3" then gui.image(x,y,Y_SA_ELE3)
+		elseif kadai == "_SA_GILL1" then gui.image(x,y,Y_SA_GILL1)
+		elseif kadai == "_SA_GILL2" then gui.image(x,y,Y_SA_GILL2)
+		elseif kadai == "_SA_GILL3" then gui.image(x,y,Y_SA_GILL3)
+		elseif kadai == "_SA_GOU1_1" then gui.image(x,y,Y_SA_GOU1_1)
+		elseif kadai == "_SA_GOU1_2" then gui.image(x,y,Y_SA_GOU1_2)
+		elseif kadai == "_SA_GOU2" then gui.image(x,y,Y_SA_GOU2)
+		elseif kadai == "_SA_GOU3_1" then gui.image(x,y,Y_SA_GOU3_1)
+		elseif kadai == "_SA_GOU3_2" then gui.image(x,y,Y_SA_GOU3_2)
+		elseif kadai == "_SA_GOU4" then gui.image(x,y,Y_SA_GOU4)
+		elseif kadai == "_SA_GOU5" then gui.image(x,y,Y_SA_GOU5)
+		elseif kadai == "_SA_HUGO1" then gui.image(x,y,Y_SA_HUGO1)
+		elseif kadai == "_SA_HUGO2" then gui.image(x,y,Y_SA_HUGO2)
+		elseif kadai == "_SA_HUGO3" then gui.image(x,y,Y_SA_HUGO3)
+		elseif kadai == "_SA_IBU1" then gui.image(x,y,Y_SA_IBU1)
+		elseif kadai == "_SA_IBU2" then gui.image(x,y,Y_SA_IBU2)
+		elseif kadai == "_SA_IBU3" then gui.image(x,y,Y_SA_IBU3)
+		elseif kadai == "_SA_IBU4" then gui.image(x,y,Y_SA_IBU4)
+		elseif kadai == "_SA_IBU5" then gui.image(x,y,Y_SA_IBU5)
+		elseif kadai == "_SA_IBU6" then gui.image(x,y,Y_SA_IBU6)
+		elseif kadai == "_SA_IBU7" then gui.image(x,y,Y_SA_IBU7)
+		elseif kadai == "_SA_IBU8" then gui.image(x,y,Y_SA_IBU8)
+		elseif kadai == "_SA_KEN1" then gui.image(x,y,Y_SA_KEN1)
+		elseif kadai == "_SA_KEN2" then gui.image(x,y,Y_SA_KEN2)
+		elseif kadai == "_SA_KEN3" then gui.image(x,y,Y_SA_KEN3)
+		elseif kadai == "_SA_MAK1" then gui.image(x,y,Y_SA_MAK1)
+		elseif kadai == "_SA_MAK2" then gui.image(x,y,Y_SA_MAK2)
+		elseif kadai == "_SA_MAK3" then gui.image(x,y,Y_SA_MAK3)
+		elseif kadai == "_SA_NEC1" then gui.image(x,y,Y_SA_NEC1)
+		elseif kadai == "_SA_NEC2" then gui.image(x,y,Y_SA_NEC2)
+		elseif kadai == "_SA_NEC3" then gui.image(x,y,Y_SA_NEC3)
+		elseif kadai == "_SA_ORO1_1" then gui.image(x,y,Y_SA_ORO1_1)
+		elseif kadai == "_SA_ORO1_2" then gui.image(x,y,Y_SA_ORO1_2)
+		elseif kadai == "_SA_ORO1_3" then gui.image(x,y,Y_SA_ORO1_3)
+		elseif kadai == "_SA_ORO2_1" then gui.image(x,y,Y_SA_ORO2_1)
+		elseif kadai == "_SA_ORO2_2" then gui.image(x,y,Y_SA_ORO2_2)
+		elseif kadai == "_SA_ORO3_1" then gui.image(x,y,Y_SA_ORO3_1)
+		elseif kadai == "_SA_ORO3_2" then gui.image(x,y,Y_SA_ORO3_2)
+		elseif kadai == "_SA_Q1" then gui.image(x,y,Y_SA_Q1)
+		elseif kadai == "_SA_Q2" then gui.image(x,y,Y_SA_Q2)
+		elseif kadai == "_SA_Q3" then gui.image(x,y,Y_SA_Q3)
+		elseif kadai == "_SA_Q3_1" then gui.image(x,y,Y_SA_Q3_1)
+		elseif kadai == "_SA_Q3_2" then gui.image(x,y,Y_SA_Q3_2)
+		elseif kadai == "_SA_REM1" then gui.image(x,y,Y_SA_REM1)
+		elseif kadai == "_SA_REM2" then gui.image(x,y,Y_SA_REM2)
+		elseif kadai == "_SA_REM3" then gui.image(x,y,Y_SA_REM3)
+		elseif kadai == "_SA_RYU1" then gui.image(x,y,Y_SA_RYU1)
+		elseif kadai == "_SA_RYU2" then gui.image(x,y,Y_SA_RYU2)
+		elseif kadai == "_SA_RYU3_1" then gui.image(x,y,Y_SA_RYU3_1)
+		elseif kadai == "_SA_RYU3_2" then gui.image(x,y,Y_SA_RYU3_2)
+		elseif kadai == "_SA_RYU3_3" then gui.image(x,y,Y_SA_RYU3_3)
+		elseif kadai == "_SA_RYU3_4" then gui.image(x,y,Y_SA_RYU3_4)
+		elseif kadai == "_SA_RYU3_5" then gui.image(x,y,Y_SA_RYU3_5)
+		elseif kadai == "_SA_SEA1" then gui.image(x,y,Y_SA_SEA1)
+		elseif kadai == "_SA_SEA2" then gui.image(x,y,Y_SA_SEA2)
+		elseif kadai == "_SA_SEA3" then gui.image(x,y,Y_SA_SEA3)
+		elseif kadai == "_SA_TWE1" then gui.image(x,y,Y_SA_TWE1)
+		elseif kadai == "_SA_TWE2" then gui.image(x,y,Y_SA_TWE2)
+		elseif kadai == "_SA_TWE3" then gui.image(x,y,Y_SA_TWE3)
+		elseif kadai == "_SA_URIEN1" then gui.image(x,y,Y_SA_URIEN1)
+		elseif kadai == "_SA_URIEN2" then gui.image(x,y,Y_SA_URIEN2)
+		elseif kadai == "_SA_URIEN3" then gui.image(x,y,Y_SA_URIEN3)
+		elseif kadai == "_SA_YANG1" then gui.image(x,y,Y_SA_YANG1)
+		elseif kadai == "_SA_YANG2" then gui.image(x,y,Y_SA_YANG2)
+		elseif kadai == "_SA_YANG3" then gui.image(x,y,Y_SA_YANG3)
+		elseif kadai == "_SA_YUN1" then gui.image(x,y,Y_SA_YUN1)
+		elseif kadai == "_SA_YUN2" then gui.image(x,y,Y_SA_YUN2)
+		elseif kadai == "_SA_YUN3" then gui.image(x,y,Y_SA_YUN3)
+		elseif kadai == "_SP_ALEX1" then gui.image(x,y,Y_SP_ALEX1)
+		elseif kadai == "_SP_ALEX2" then gui.image(x,y,Y_SP_ALEX2)
+		elseif kadai == "_SP_ALEX3" then gui.image(x,y,Y_SP_ALEX3)
+		elseif kadai == "_SP_ALEX4" then gui.image(x,y,Y_SP_ALEX4)
+		elseif kadai == "_SP_ALEX5" then gui.image(x,y,Y_SP_ALEX5)
+		elseif kadai == "_SP_ALEX6" then gui.image(x,y,Y_SP_ALEX6)
+		elseif kadai == "_SP_CHU1" then gui.image(x,y,Y_SP_CHU1)
+		elseif kadai == "_SP_CHU2" then gui.image(x,y,Y_SP_CHU2)
+		elseif kadai == "_SP_CHU3" then gui.image(x,y,Y_SP_CHU3)
+		elseif kadai == "_SP_CHU4" then gui.image(x,y,Y_SP_CHU4)
+		elseif kadai == "_SP_DUD1" then gui.image(x,y,Y_SP_DUD1)
+		elseif kadai == "_SP_DUD2_1" then gui.image(x,y,Y_SP_DUD2_1)
+		elseif kadai == "_SP_DUD2_2" then gui.image(x,y,Y_SP_DUD2_2)
+		elseif kadai == "_SP_DUD2_3" then gui.image(x,y,Y_SP_DUD2_3)
+		elseif kadai == "_SP_DUD3" then gui.image(x,y,Y_SP_DUD3)
+		elseif kadai == "_SP_DUD4" then gui.image(x,y,Y_SP_DUD4)
+		elseif kadai == "_SP_DUD5" then gui.image(x,y,Y_SP_DUD5)
+		elseif kadai == "_SP_DUD6" then gui.image(x,y,Y_SP_DUD6)
+		elseif kadai == "_SP_DUDLEY1" then gui.image(x,y,Y_SP_DUDLEY1)
+		elseif kadai == "_SP_DUDLEY2" then gui.image(x,y,Y_SP_DUDLEY2)
+		elseif kadai == "_SP_DUDLEY3" then gui.image(x,y,Y_SP_DUDLEY3)
+		elseif kadai == "_SP_DUDLEY4" then gui.image(x,y,Y_SP_DUDLEY4)
+		elseif kadai == "_SP_DUDLEY5" then gui.image(x,y,Y_SP_DUDLEY5)
+		elseif kadai == "_SP_DUDLEY6" then gui.image(x,y,Y_SP_DUDLEY6)
+		elseif kadai == "_SP_DUDLEY7" then gui.image(x,y,Y_SP_DUDLEY7)
+		elseif kadai == "_SP_DUDLEY8" then gui.image(x,y,Y_SP_DUDLEY8)
+		elseif kadai == "_SP_ELE1" then gui.image(x,y,Y_SP_ELE1)
+		elseif kadai == "_SP_ELE2" then gui.image(x,y,Y_SP_ELE2)
+		elseif kadai == "_SP_ELE3" then gui.image(x,y,Y_SP_ELE3)
+		elseif kadai == "_SP_ELE4" then gui.image(x,y,Y_SP_ELE4)
+		elseif kadai == "_SP_ELE5" then gui.image(x,y,Y_SP_ELE5)
+		elseif kadai == "_SP_GILL1" then gui.image(x,y,Y_SP_GILL1)
+		elseif kadai == "_SP_GILL2" then gui.image(x,y,Y_SP_GILL2)
+		elseif kadai == "_SP_GILL3" then gui.image(x,y,Y_SP_GILL3)
+		elseif kadai == "_SP_GILL4" then gui.image(x,y,Y_SP_GILL4)
+		elseif kadai == "_SP_GOU1" then gui.image(x,y,Y_SP_GOU1)
+		elseif kadai == "_SP_GOU2" then gui.image(x,y,Y_SP_GOU2)
+		elseif kadai == "_SP_GOU3" then gui.image(x,y,Y_SP_GOU3)
+		elseif kadai == "_SP_GOU4" then gui.image(x,y,Y_SP_GOU4)
+		elseif kadai == "_SP_GOU5" then gui.image(x,y,Y_SP_GOU5)
+		elseif kadai == "_SP_GOU6" then gui.image(x,y,Y_SP_GOU6)
+		elseif kadai == "_SP_GOU7_1" then gui.image(x,y,Y_SP_GOU7_1)
+		elseif kadai == "_SP_GOU7_2" then gui.image(x,y,Y_SP_GOU7_2)
+		elseif kadai == "_SP_GOU7_3" then gui.image(x,y,Y_SP_GOU7_3)
+		elseif kadai == "_SP_GOU7_4" then gui.image(x,y,Y_SP_GOU7_4)
+		elseif kadai == "_SP_GOU7_5" then gui.image(x,y,Y_SP_GOU7_5)
+		elseif kadai == "_SP_GOU8" then gui.image(x,y,Y_SP_GOU8)
+		elseif kadai == "_SP_HUGO1" then gui.image(x,y,Y_SP_HUGO1)
+		elseif kadai == "_SP_HUGO2" then gui.image(x,y,Y_SP_HUGO2)
+		elseif kadai == "_SP_HUGO3" then gui.image(x,y,Y_SP_HUGO3)
+		elseif kadai == "_SP_HUGO4" then gui.image(x,y,Y_SP_HUGO4)
+		elseif kadai == "_SP_HUGO5" then gui.image(x,y,Y_SP_HUGO5)
+		elseif kadai == "_SP_HUGO6" then gui.image(x,y,Y_SP_HUGO6)
+		elseif kadai == "_SP_IBU1" then gui.image(x,y,Y_SP_IBU1)
+		elseif kadai == "_SP_IBU2" then gui.image(x,y,Y_SP_IBU2)
+		elseif kadai == "_SP_IBU3" then gui.image(x,y,Y_SP_IBU3)
+		elseif kadai == "_SP_MAK1" then gui.image(x,y,Y_SP_MAK1)
+		elseif kadai == "_SP_MAK2" then gui.image(x,y,Y_SP_MAK2)
+		elseif kadai == "_SP_MAK3" then gui.image(x,y,Y_SP_MAK3)
+		elseif kadai == "_SP_MAK4" then gui.image(x,y,Y_SP_MAK4)
+		elseif kadai == "_SP_MAK5" then gui.image(x,y,Y_SP_MAK5)
+		elseif kadai == "_SP_NEC1" then gui.image(x,y,Y_SP_NEC1)
+		elseif kadai == "_SP_NEC2" then gui.image(x,y,Y_SP_NEC2)
+		elseif kadai == "_SP_NEC3" then gui.image(x,y,Y_SP_NEC3)
+		elseif kadai == "_SP_NEC4" then gui.image(x,y,Y_SP_NEC4)
+		elseif kadai == "_SP_NEC5" then gui.image(x,y,Y_SP_NEC5)
+		elseif kadai == "_SP_NEC6" then gui.image(x,y,Y_SP_NEC6)
+		elseif kadai == "_SP_ORO1" then gui.image(x,y,Y_SP_ORO1)
+		elseif kadai == "_SP_ORO2" then gui.image(x,y,Y_SP_ORO2)
+		elseif kadai == "_SP_ORO3" then gui.image(x,y,Y_SP_ORO3)
+		elseif kadai == "_SP_ORO4" then gui.image(x,y,Y_SP_ORO4)
+		elseif kadai == "_SP_ORO5" then gui.image(x,y,Y_SP_ORO5)
+		elseif kadai == "_SP_Q1" then gui.image(x,y,Y_SP_Q1)
+		elseif kadai == "_SP_Q2" then gui.image(x,y,Y_SP_Q2)
+		elseif kadai == "_SP_Q3" then gui.image(x,y,Y_SP_Q3)
+		elseif kadai == "_SP_Q4" then gui.image(x,y,Y_SP_Q4)
+		elseif kadai == "_SP_Q5" then gui.image(x,y,Y_SP_Q5)
+		elseif kadai == "_SP_REM1" then gui.image(x,y,Y_SP_REM1)
+		elseif kadai == "_SP_REM2" then gui.image(x,y,Y_SP_REM2)
+		elseif kadai == "_SP_REM3" then gui.image(x,y,Y_SP_REM3)
+		elseif kadai == "_SP_REM4" then gui.image(x,y,Y_SP_REM4)
+		elseif kadai == "_SP_RYU1" then gui.image(x,y,Y_SP_RYU1)
+		elseif kadai == "_SP_RYU2" then gui.image(x,y,Y_SP_RYU2)
+		elseif kadai == "_SP_RYU3" then gui.image(x,y,Y_SP_RYU3)
+		elseif kadai == "_SP_RYU4" then gui.image(x,y,Y_SP_RYU4)
+		elseif kadai == "_SP_RYU5" then gui.image(x,y,Y_SP_RYU5)
+		elseif kadai == "_SP_SEA1" then gui.image(x,y,Y_SP_SEA1)
+		elseif kadai == "_SP_SEA2" then gui.image(x,y,Y_SP_SEA2)
+		elseif kadai == "_SP_SEA3" then gui.image(x,y,Y_SP_SEA3)
+		elseif kadai == "_SP_SEA4" then gui.image(x,y,Y_SP_SEA4)
+		elseif kadai == "_SP_SEA5" then gui.image(x,y,Y_SP_SEA5)
+		elseif kadai == "_SP_TWE1" then gui.image(x,y,Y_SP_TWE1)
+		elseif kadai == "_SP_TWE2" then gui.image(x,y,Y_SP_TWE2)
+		elseif kadai == "_SP_TWE3" then gui.image(x,y,Y_SP_TWE3)
+		elseif kadai == "_SP_TWE4" then gui.image(x,y,Y_SP_TWE4)
+		elseif kadai == "_SP_TWE5" then gui.image(x,y,Y_SP_TWE5)
+		elseif kadai == "_SP_URIEN1" then gui.image(x,y,Y_SP_URIEN1)
+		elseif kadai == "_SP_URIEN2" then gui.image(x,y,Y_SP_URIEN2)
+		elseif kadai == "_SP_URIEN3" then gui.image(x,y,Y_SP_URIEN3)
+		elseif kadai == "_SP_URIEN4" then gui.image(x,y,Y_SP_URIEN4)
+		elseif kadai == "_SP_YANG1" then gui.image(x,y,Y_SP_YANG1)
+		elseif kadai == "_SP_YANG2" then gui.image(x,y,Y_SP_YANG2)
+		elseif kadai == "_SP_YANG3" then gui.image(x,y,Y_SP_YANG3)
+		elseif kadai == "_SP_YANG4" then gui.image(x,y,Y_SP_YANG4)
+		elseif kadai == "_SP_YANG5" then gui.image(x,y,Y_SP_YANG5)
+		elseif kadai == "_SP_YUN1" then gui.image(x,y,Y_SP_YUN1)
+		elseif kadai == "_SP_YUN2" then gui.image(x,y,Y_SP_YUN2)
+		elseif kadai == "_SP_YUN3" then gui.image(x,y,Y_SP_YUN3)
+		elseif kadai == "_SP_YUN4" then gui.image(x,y,Y_SP_YUN4)
+		elseif kadai == "_SP_YUN5" then gui.image(x,y,Y_SP_YUN5)
+		elseif kadai == "_TK_HUGO1" then gui.image(x,y,Y_TK_HUGO1)
+		elseif kadai == "_TR_ALEX1" then gui.image(x,y,Y_TR_ALEX1)
+		elseif kadai == "_TR_ALEX2" then gui.image(x,y,Y_TR_ALEX2)
+		elseif kadai == "_TR_KEN1" then gui.image(x,y,Y_TR_KEN1)
+		elseif kadai == "_TR_KEN2" then gui.image(x,y,Y_TR_KEN2)
+		elseif kadai == "_TR_HUGO1" then gui.image(x,y,Y_TR_HUGO1)
+		elseif kadai == "_4_THROW" then gui.image(x,y,Y_4_THROW)
+		elseif kadai == "_6_THROW" then gui.image(x,y,Y_6_THROW)
+		elseif kadai == "_N_THROW" then gui.image(x,y,Y_N_THROW)
+		elseif kadai == "_NM_BDASH" then gui.image(x,y,Y_NM_BDASH)
+		elseif kadai == "_NM_FDASH" then gui.image(x,y,Y_NM_FDASH)
+		elseif kadai == "_NM_FORWARD" then gui.image(x,y,Y_NM_FORWARD)
+		elseif kadai == "_HIT2" then gui.image(x,y,Y_HIT2)
+		elseif kadai == "_NUM_0" then gui.image(x,y,Y_NUM_0)
+		elseif kadai == "_NUM_1" then gui.image(x,y,Y_NUM_1)
+		elseif kadai == "_NUM_2" then gui.image(x,y,Y_NUM_2)
+		elseif kadai == "_NUM_3" then gui.image(x,y,Y_NUM_3)
+		elseif kadai == "_NUM_4" then gui.image(x,y,Y_NUM_4)
+		elseif kadai == "_NUM_5" then gui.image(x,y,Y_NUM_5)
+		elseif kadai == "_NUM_6" then gui.image(x,y,Y_NUM_6)
+		elseif kadai == "_NUM_7" then gui.image(x,y,Y_NUM_7)
+		elseif kadai == "_NUM_8" then gui.image(x,y,Y_NUM_8)
+		elseif kadai == "_NUM_9" then gui.image(x,y,Y_NUM_9)
+		elseif kadai == "_NUM_P" then gui.image(x,y,Y_NUM_P)
+		elseif kadai == "_SECOND_COMBO_DE" then gui.image(x,y,Y_SECOND_COMBO_DE)
+		elseif kadai == "_SECOND_FLOAT" then gui.image(x,y,Y_SECOND_FLOAT)
+		end
+	end
+	if wr == "W" then
+		if kadai == "_COMMON_OR" then gui.image(x,y,W_COMMON_OR)
+		elseif kadai == "_COMMON_EX" then gui.image(x,y,W_COMMON_EX)
+		elseif kadai == "_COMMON_H" then gui.image(x,y,W_COMMON_H)
+		elseif kadai == "_COMMON_L" then gui.image(x,y,W_COMMON_L)
+		elseif kadai == "_COMMON_M" then gui.image(x,y,W_COMMON_M)
+		elseif kadai == "_COMMON_ME" then gui.image(x,y,W_COMMON_ME)
+		elseif kadai == "_COMMON_URA" then gui.image(x,y,W_COMMON_URA)
+		elseif kadai == "_COMMON_KARACAN" then gui.image(x,y,W_COMMON_KARACAN)
+		elseif kadai == "_COMMON_JS" then gui.image(x,y,W_COMMON_JS)
+		elseif kadai == "_COMMON_JN" then gui.image(x,y,W_COMMON_JN)
+		elseif kadai == "_COMMON_ANTI_AIR" then gui.image(x,y,W_COMMON_ANTI_AIR)
+		elseif kadai == "_COMMON_KARABURI" then gui.image(x,y,W_COMMON_KARABURI)
+		elseif kadai == "_LEAP" then gui.image(x,y,W_LEAP)
+		elseif kadai == "_NM_1HK" then gui.image(x,y,W_NM_1HK)
+		elseif kadai == "_NM_1HP" then gui.image(x,y,W_NM_1HP)
+		elseif kadai == "_NM_1LK" then gui.image(x,y,W_NM_1LK)
+		elseif kadai == "_NM_1LP" then gui.image(x,y,W_NM_1LP)
+		elseif kadai == "_NM_1MK" then gui.image(x,y,W_NM_1MK)
+		elseif kadai == "_NM_1MP" then gui.image(x,y,W_NM_1MP)
+		elseif kadai == "_NM_3HK" then gui.image(x,y,W_NM_3HK)
+		elseif kadai == "_NM_3HP" then gui.image(x,y,W_NM_3HP)
+		elseif kadai == "_NM_3LK" then gui.image(x,y,W_NM_3LK)
+		elseif kadai == "_NM_3LP" then gui.image(x,y,W_NM_3LP)
+		elseif kadai == "_NM_3MK" then gui.image(x,y,W_NM_3MK)
+		elseif kadai == "_NM_3MP" then gui.image(x,y,W_NM_3MP)
+		elseif kadai == "_NM_4HK" then gui.image(x,y,W_NM_4HK)
+		elseif kadai == "_NM_4HP" then gui.image(x,y,W_NM_4HP)
+		elseif kadai == "_NM_4LK" then gui.image(x,y,W_NM_4LK)
+		elseif kadai == "_NM_4LP" then gui.image(x,y,W_NM_4LP)
+		elseif kadai == "_NM_4MK" then gui.image(x,y,W_NM_4MK)
+		elseif kadai == "_NM_4MP" then gui.image(x,y,W_NM_4MP)
+		elseif kadai == "_NM_6HK" then gui.image(x,y,W_NM_6HK)
+		elseif kadai == "_NM_6HP" then gui.image(x,y,W_NM_6HP)
+		elseif kadai == "_NM_6LK" then gui.image(x,y,W_NM_6LK)
+		elseif kadai == "_NM_6LP" then gui.image(x,y,W_NM_6LP)
+		elseif kadai == "_NM_6MK" then gui.image(x,y,W_NM_6MK)
+		elseif kadai == "_NM_6MP" then gui.image(x,y,W_NM_6MP)
+		elseif kadai == "_NM_CHK" then gui.image(x,y,W_NM_CHK)
+		elseif kadai == "_NM_CHP" then gui.image(x,y,W_NM_CHP)
+		elseif kadai == "_NM_CLK" then gui.image(x,y,W_NM_CLK)
+		elseif kadai == "_NM_CLP" then gui.image(x,y,W_NM_CLP)
+		elseif kadai == "_NM_CMK" then gui.image(x,y,W_NM_CMK)
+		elseif kadai == "_NM_CMP" then gui.image(x,y,W_NM_CMP)
+		elseif kadai == "_NM_JHK" then gui.image(x,y,W_NM_JHK)
+		elseif kadai == "_NM_JHP" then gui.image(x,y,W_NM_JHP)
+		elseif kadai == "_NM_JLK" then gui.image(x,y,W_NM_JLK)
+		elseif kadai == "_NM_JLP" then gui.image(x,y,W_NM_JLP)
+		elseif kadai == "_NM_JMK" then gui.image(x,y,W_NM_JMK)
+		elseif kadai == "_NM_JMP" then gui.image(x,y,W_NM_JMP)
+		elseif kadai == "_NM_J2MK" then gui.image(x,y,W_NM_J2MK)
+		elseif kadai == "_NM_J3MK" then gui.image(x,y,W_NM_J3MK)
+		elseif kadai == "_NM_J6HP" then gui.image(x,y,W_NM_J6HP)
+		elseif kadai == "_NM_J2HP" then gui.image(x,y,W_NM_J2HP)
+		elseif kadai == "_NM_J6MK" then gui.image(x,y,W_NM_J6MK)
+		elseif kadai == "_NM_NJHK" then gui.image(x,y,W_NM_NJHK)
+		elseif kadai == "_NM_NJHP" then gui.image(x,y,W_NM_NJHP)
+		elseif kadai == "_NM_NJLK" then gui.image(x,y,W_NM_NJLK)
+		elseif kadai == "_NM_NJLP" then gui.image(x,y,W_NM_NJLP)
+		elseif kadai == "_NM_NJMK" then gui.image(x,y,W_NM_NJMK)
+		elseif kadai == "_NM_NJMP" then gui.image(x,y,W_NM_NJMP)
+		elseif kadai == "_NM_SCHK" then gui.image(x,y,W_NM_SCHK)
+		elseif kadai == "_NM_SCHP" then gui.image(x,y,W_NM_SCHP)
+		elseif kadai == "_NM_SCLK" then gui.image(x,y,W_NM_SCLK)
+		elseif kadai == "_NM_SCLP" then gui.image(x,y,W_NM_SCLP)
+		elseif kadai == "_NM_SCMK" then gui.image(x,y,W_NM_SCMK)
+		elseif kadai == "_NM_SCMP" then gui.image(x,y,W_NM_SCMP)
+		elseif kadai == "_NM_SDHK" then gui.image(x,y,W_NM_SDHK)
+		elseif kadai == "_NM_SDHP" then gui.image(x,y,W_NM_SDHP)
+		elseif kadai == "_NM_SDLK" then gui.image(x,y,W_NM_SDLK)
+		elseif kadai == "_NM_SDLP" then gui.image(x,y,W_NM_SDLP)
+		elseif kadai == "_NM_SDMK" then gui.image(x,y,W_NM_SDMK)
+		elseif kadai == "_NM_SDMP" then gui.image(x,y,W_NM_SDMP)
+		elseif kadai == "_NM_SHK" then gui.image(x,y,W_NM_SHK)
+		elseif kadai == "_NM_SHP" then gui.image(x,y,W_NM_SHP)
+		elseif kadai == "_NM_SJHK" then gui.image(x,y,W_NM_SJHK)
+		elseif kadai == "_NM_SJHP" then gui.image(x,y,W_NM_SJHP)
+		elseif kadai == "_NM_SJLK" then gui.image(x,y,W_NM_SJLK)
+		elseif kadai == "_NM_SJLP" then gui.image(x,y,W_NM_SJLP)
+		elseif kadai == "_NM_SJMK" then gui.image(x,y,W_NM_SJMK)
+		elseif kadai == "_NM_SJMP" then gui.image(x,y,W_NM_SJMP)
+		elseif kadai == "_NM_SLK" then gui.image(x,y,W_NM_SLK)
+		elseif kadai == "_NM_SLP" then gui.image(x,y,W_NM_SLP)
+		elseif kadai == "_NM_SMK" then gui.image(x,y,W_NM_SMK)
+		elseif kadai == "_NM_SMP" then gui.image(x,y,W_NM_SMP)
+		elseif kadai == "_PA" then gui.image(x,y,W_PA)
+		elseif kadai == "_SA_ALEX1" then gui.image(x,y,W_SA_ALEX1)
+		elseif kadai == "_SA_ALEX2" then gui.image(x,y,W_SA_ALEX2)
+		elseif kadai == "_SA_ALEX3" then gui.image(x,y,W_SA_ALEX3)
+		elseif kadai == "_SA_CHU1" then gui.image(x,y,W_SA_CHU1)
+		elseif kadai == "_SA_CHU2" then gui.image(x,y,W_SA_CHU2)
+		elseif kadai == "_SA_CHU3" then gui.image(x,y,W_SA_CHU3)
+		elseif kadai == "_SA_DUD1" then gui.image(x,y,W_SA_DUD1)
+		elseif kadai == "_SA_DUD2" then gui.image(x,y,W_SA_DUD2)
+		elseif kadai == "_SA_DUD3" then gui.image(x,y,W_SA_DUD3)
+		elseif kadai == "_SA_DUDLEY1" then gui.image(x,y,W_SA_DUDLEY1)
+		elseif kadai == "_SA_DUDLEY2" then gui.image(x,y,W_SA_DUDLEY2)
+		elseif kadai == "_SA_DUDLEY3" then gui.image(x,y,W_SA_DUDLEY3)
+		elseif kadai == "_SA_ELE1" then gui.image(x,y,W_SA_ELE1)
+		elseif kadai == "_SA_ELE2" then gui.image(x,y,W_SA_ELE2)
+		elseif kadai == "_SA_ELE3" then gui.image(x,y,W_SA_ELE3)
+		elseif kadai == "_SA_GILL1" then gui.image(x,y,W_SA_GILL1)
+		elseif kadai == "_SA_GILL2" then gui.image(x,y,W_SA_GILL2)
+		elseif kadai == "_SA_GILL3" then gui.image(x,y,W_SA_GILL3)
+		elseif kadai == "_SA_GOU1_1" then gui.image(x,y,W_SA_GOU1_1)
+		elseif kadai == "_SA_GOU1_2" then gui.image(x,y,W_SA_GOU1_2)
+		elseif kadai == "_SA_GOU2" then gui.image(x,y,W_SA_GOU2)
+		elseif kadai == "_SA_GOU3_1" then gui.image(x,y,W_SA_GOU3_1)
+		elseif kadai == "_SA_GOU3_2" then gui.image(x,y,W_SA_GOU3_2)
+		elseif kadai == "_SA_GOU4" then gui.image(x,y,W_SA_GOU4)
+		elseif kadai == "_SA_GOU5" then gui.image(x,y,W_SA_GOU5)
+		elseif kadai == "_SA_HUGO1" then gui.image(x,y,W_SA_HUGO1)
+		elseif kadai == "_SA_HUGO2" then gui.image(x,y,W_SA_HUGO2)
+		elseif kadai == "_SA_HUGO3" then gui.image(x,y,W_SA_HUGO3)
+		elseif kadai == "_SA_IBU1" then gui.image(x,y,W_SA_IBU1)
+		elseif kadai == "_SA_IBU2" then gui.image(x,y,W_SA_IBU2)
+		elseif kadai == "_SA_IBU3" then gui.image(x,y,W_SA_IBU3)
+		elseif kadai == "_SA_IBU4" then gui.image(x,y,W_SA_IBU4)
+		elseif kadai == "_SA_IBU5" then gui.image(x,y,W_SA_IBU5)
+		elseif kadai == "_SA_IBU6" then gui.image(x,y,W_SA_IBU6)
+		elseif kadai == "_SA_IBU7" then gui.image(x,y,W_SA_IBU7)
+		elseif kadai == "_SA_IBU8" then gui.image(x,y,W_SA_IBU8)
+		elseif kadai == "_SA_KEN1" then gui.image(x,y,W_SA_KEN1)
+		elseif kadai == "_SA_KEN2" then gui.image(x,y,W_SA_KEN2)
+		elseif kadai == "_SA_KEN3" then gui.image(x,y,W_SA_KEN3)
+		elseif kadai == "_SA_MAK1" then gui.image(x,y,W_SA_MAK1)
+		elseif kadai == "_SA_MAK2" then gui.image(x,y,W_SA_MAK2)
+		elseif kadai == "_SA_MAK3" then gui.image(x,y,W_SA_MAK3)
+		elseif kadai == "_SA_NEC1" then gui.image(x,y,W_SA_NEC1)
+		elseif kadai == "_SA_NEC2" then gui.image(x,y,W_SA_NEC2)
+		elseif kadai == "_SA_NEC3" then gui.image(x,y,W_SA_NEC3)
+		elseif kadai == "_SA_ORO1_1" then gui.image(x,y,W_SA_ORO1_1)
+		elseif kadai == "_SA_ORO1_2" then gui.image(x,y,W_SA_ORO1_2)
+		elseif kadai == "_SA_ORO1_3" then gui.image(x,y,W_SA_ORO1_3)
+		elseif kadai == "_SA_ORO2_1" then gui.image(x,y,W_SA_ORO2_1)
+		elseif kadai == "_SA_ORO2_2" then gui.image(x,y,W_SA_ORO2_2)
+		elseif kadai == "_SA_ORO3_1" then gui.image(x,y,W_SA_ORO3_1)
+		elseif kadai == "_SA_ORO3_2" then gui.image(x,y,W_SA_ORO3_2)
+		elseif kadai == "_SA_Q1" then gui.image(x,y,W_SA_Q1)
+		elseif kadai == "_SA_Q2" then gui.image(x,y,W_SA_Q2)
+		elseif kadai == "_SA_Q3" then gui.image(x,y,W_SA_Q3)
+		elseif kadai == "_SA_Q3_1" then gui.image(x,y,W_SA_Q3_1)
+		elseif kadai == "_SA_Q3_2" then gui.image(x,y,W_SA_Q3_2)
+		elseif kadai == "_SA_REM1" then gui.image(x,y,W_SA_REM1)
+		elseif kadai == "_SA_REM2" then gui.image(x,y,W_SA_REM2)
+		elseif kadai == "_SA_REM3" then gui.image(x,y,W_SA_REM3)
+		elseif kadai == "_SA_RYU1" then gui.image(x,y,W_SA_RYU1)
+		elseif kadai == "_SA_RYU2" then gui.image(x,y,W_SA_RYU2)
+		elseif kadai == "_SA_RYU3_1" then gui.image(x,y,W_SA_RYU3_1)
+		elseif kadai == "_SA_RYU3_2" then gui.image(x,y,W_SA_RYU3_2)
+		elseif kadai == "_SA_RYU3_3" then gui.image(x,y,W_SA_RYU3_3)
+		elseif kadai == "_SA_RYU3_4" then gui.image(x,y,W_SA_RYU3_4)
+		elseif kadai == "_SA_RYU3_5" then gui.image(x,y,W_SA_RYU3_5)
+		elseif kadai == "_SA_SEA1" then gui.image(x,y,W_SA_SEA1)
+		elseif kadai == "_SA_SEA2" then gui.image(x,y,W_SA_SEA2)
+		elseif kadai == "_SA_SEA3" then gui.image(x,y,W_SA_SEA3)
+		elseif kadai == "_SA_TWE1" then gui.image(x,y,W_SA_TWE1)
+		elseif kadai == "_SA_TWE2" then gui.image(x,y,W_SA_TWE2)
+		elseif kadai == "_SA_TWE3" then gui.image(x,y,W_SA_TWE3)
+		elseif kadai == "_SA_URIEN1" then gui.image(x,y,W_SA_URIEN1)
+		elseif kadai == "_SA_URIEN2" then gui.image(x,y,W_SA_URIEN2)
+		elseif kadai == "_SA_URIEN3" then gui.image(x,y,W_SA_URIEN3)
+		elseif kadai == "_SA_YANG1" then gui.image(x,y,W_SA_YANG1)
+		elseif kadai == "_SA_YANG2" then gui.image(x,y,W_SA_YANG2)
+		elseif kadai == "_SA_YANG3" then gui.image(x,y,W_SA_YANG3)
+		elseif kadai == "_SA_YUN1" then gui.image(x,y,W_SA_YUN1)
+		elseif kadai == "_SA_YUN2" then gui.image(x,y,W_SA_YUN2)
+		elseif kadai == "_SA_YUN3" then gui.image(x,y,W_SA_YUN3)
+		elseif kadai == "_SP_ALEX1" then gui.image(x,y,W_SP_ALEX1)
+		elseif kadai == "_SP_ALEX2" then gui.image(x,y,W_SP_ALEX2)
+		elseif kadai == "_SP_ALEX3" then gui.image(x,y,W_SP_ALEX3)
+		elseif kadai == "_SP_ALEX4" then gui.image(x,y,W_SP_ALEX4)
+		elseif kadai == "_SP_ALEX5" then gui.image(x,y,W_SP_ALEX5)
+		elseif kadai == "_SP_ALEX6" then gui.image(x,y,W_SP_ALEX6)
+		elseif kadai == "_SP_CHU1" then gui.image(x,y,W_SP_CHU1)
+		elseif kadai == "_SP_CHU2" then gui.image(x,y,W_SP_CHU2)
+		elseif kadai == "_SP_CHU3" then gui.image(x,y,W_SP_CHU3)
+		elseif kadai == "_SP_CHU4" then gui.image(x,y,W_SP_CHU4)
+		elseif kadai == "_SP_DUD1" then gui.image(x,y,W_SP_DUD1)
+		elseif kadai == "_SP_DUD2_1" then gui.image(x,y,W_SP_DUD2_1)
+		elseif kadai == "_SP_DUD2_2" then gui.image(x,y,W_SP_DUD2_2)
+		elseif kadai == "_SP_DUD2_3" then gui.image(x,y,W_SP_DUD2_3)
+		elseif kadai == "_SP_DUD3" then gui.image(x,y,W_SP_DUD3)
+		elseif kadai == "_SP_DUD4" then gui.image(x,y,W_SP_DUD4)
+		elseif kadai == "_SP_DUD5" then gui.image(x,y,W_SP_DUD5)
+		elseif kadai == "_SP_DUD6" then gui.image(x,y,W_SP_DUD6)
+		elseif kadai == "_SP_DUDLEY1" then gui.image(x,y,W_SP_DUDLEY1)
+		elseif kadai == "_SP_DUDLEY2" then gui.image(x,y,W_SP_DUDLEY2)
+		elseif kadai == "_SP_DUDLEY3" then gui.image(x,y,W_SP_DUDLEY3)
+		elseif kadai == "_SP_DUDLEY4" then gui.image(x,y,W_SP_DUDLEY4)
+		elseif kadai == "_SP_DUDLEY5" then gui.image(x,y,W_SP_DUDLEY5)
+		elseif kadai == "_SP_DUDLEY6" then gui.image(x,y,W_SP_DUDLEY6)
+		elseif kadai == "_SP_DUDLEY7" then gui.image(x,y,W_SP_DUDLEY7)
+		elseif kadai == "_SP_DUDLEY8" then gui.image(x,y,W_SP_DUDLEY8)
+		elseif kadai == "_SP_ELE1" then gui.image(x,y,W_SP_ELE1)
+		elseif kadai == "_SP_ELE2" then gui.image(x,y,W_SP_ELE2)
+		elseif kadai == "_SP_ELE3" then gui.image(x,y,W_SP_ELE3)
+		elseif kadai == "_SP_ELE4" then gui.image(x,y,W_SP_ELE4)
+		elseif kadai == "_SP_ELE5" then gui.image(x,y,W_SP_ELE5)
+		elseif kadai == "_SP_GILL1" then gui.image(x,y,W_SP_GILL1)
+		elseif kadai == "_SP_GILL2" then gui.image(x,y,W_SP_GILL2)
+		elseif kadai == "_SP_GILL3" then gui.image(x,y,W_SP_GILL3)
+		elseif kadai == "_SP_GILL4" then gui.image(x,y,W_SP_GILL4)
+		elseif kadai == "_SP_GOU1" then gui.image(x,y,W_SP_GOU1)
+		elseif kadai == "_SP_GOU2" then gui.image(x,y,W_SP_GOU2)
+		elseif kadai == "_SP_GOU3" then gui.image(x,y,W_SP_GOU3)
+		elseif kadai == "_SP_GOU4" then gui.image(x,y,W_SP_GOU4)
+		elseif kadai == "_SP_GOU5" then gui.image(x,y,W_SP_GOU5)
+		elseif kadai == "_SP_GOU6" then gui.image(x,y,W_SP_GOU6)
+		elseif kadai == "_SP_GOU7_1" then gui.image(x,y,W_SP_GOU7_1)
+		elseif kadai == "_SP_GOU7_2" then gui.image(x,y,W_SP_GOU7_2)
+		elseif kadai == "_SP_GOU7_3" then gui.image(x,y,W_SP_GOU7_3)
+		elseif kadai == "_SP_GOU7_4" then gui.image(x,y,W_SP_GOU7_4)
+		elseif kadai == "_SP_GOU7_5" then gui.image(x,y,W_SP_GOU7_5)
+		elseif kadai == "_SP_GOU8" then gui.image(x,y,W_SP_GOU8)
+		elseif kadai == "_SP_HUGO1" then gui.image(x,y,W_SP_HUGO1)
+		elseif kadai == "_SP_HUGO2" then gui.image(x,y,W_SP_HUGO2)
+		elseif kadai == "_SP_HUGO3" then gui.image(x,y,W_SP_HUGO3)
+		elseif kadai == "_SP_HUGO4" then gui.image(x,y,W_SP_HUGO4)
+		elseif kadai == "_SP_HUGO5" then gui.image(x,y,W_SP_HUGO5)
+		elseif kadai == "_SP_HUGO6" then gui.image(x,y,W_SP_HUGO6)
+		elseif kadai == "_SP_IBU1" then gui.image(x,y,W_SP_IBU1)
+		elseif kadai == "_SP_IBU2" then gui.image(x,y,W_SP_IBU2)
+		elseif kadai == "_SP_IBU3" then gui.image(x,y,W_SP_IBU3)
+		elseif kadai == "_SP_MAK1" then gui.image(x,y,W_SP_MAK1)
+		elseif kadai == "_SP_MAK2" then gui.image(x,y,W_SP_MAK2)
+		elseif kadai == "_SP_MAK3" then gui.image(x,y,W_SP_MAK3)
+		elseif kadai == "_SP_MAK4" then gui.image(x,y,W_SP_MAK4)
+		elseif kadai == "_SP_MAK5" then gui.image(x,y,W_SP_MAK5)
+		elseif kadai == "_SP_NEC1" then gui.image(x,y,W_SP_NEC1)
+		elseif kadai == "_SP_NEC2" then gui.image(x,y,W_SP_NEC2)
+		elseif kadai == "_SP_NEC3" then gui.image(x,y,W_SP_NEC3)
+		elseif kadai == "_SP_NEC4" then gui.image(x,y,W_SP_NEC4)
+		elseif kadai == "_SP_NEC5" then gui.image(x,y,W_SP_NEC5)
+		elseif kadai == "_SP_NEC6" then gui.image(x,y,W_SP_NEC6)
+		elseif kadai == "_SP_ORO1" then gui.image(x,y,W_SP_ORO1)
+		elseif kadai == "_SP_ORO2" then gui.image(x,y,W_SP_ORO2)
+		elseif kadai == "_SP_ORO3" then gui.image(x,y,W_SP_ORO3)
+		elseif kadai == "_SP_ORO4" then gui.image(x,y,W_SP_ORO4)
+		elseif kadai == "_SP_ORO5" then gui.image(x,y,W_SP_ORO5)
+		elseif kadai == "_SP_Q1" then gui.image(x,y,W_SP_Q1)
+		elseif kadai == "_SP_Q2" then gui.image(x,y,W_SP_Q2)
+		elseif kadai == "_SP_Q3" then gui.image(x,y,W_SP_Q3)
+		elseif kadai == "_SP_Q4" then gui.image(x,y,W_SP_Q4)
+		elseif kadai == "_SP_Q5" then gui.image(x,y,W_SP_Q5)
+		elseif kadai == "_SP_REM1" then gui.image(x,y,W_SP_REM1)
+		elseif kadai == "_SP_REM2" then gui.image(x,y,W_SP_REM2)
+		elseif kadai == "_SP_REM3" then gui.image(x,y,W_SP_REM3)
+		elseif kadai == "_SP_REM4" then gui.image(x,y,W_SP_REM4)
+		elseif kadai == "_SP_RYU1" then gui.image(x,y,W_SP_RYU1)
+		elseif kadai == "_SP_RYU2" then gui.image(x,y,W_SP_RYU2)
+		elseif kadai == "_SP_RYU3" then gui.image(x,y,W_SP_RYU3)
+		elseif kadai == "_SP_RYU4" then gui.image(x,y,W_SP_RYU4)
+		elseif kadai == "_SP_RYU5" then gui.image(x,y,W_SP_RYU5)
+		elseif kadai == "_SP_SEA1" then gui.image(x,y,W_SP_SEA1)
+		elseif kadai == "_SP_SEA2" then gui.image(x,y,W_SP_SEA2)
+		elseif kadai == "_SP_SEA3" then gui.image(x,y,W_SP_SEA3)
+		elseif kadai == "_SP_SEA4" then gui.image(x,y,W_SP_SEA4)
+		elseif kadai == "_SP_SEA5" then gui.image(x,y,W_SP_SEA5)
+		elseif kadai == "_SP_TWE1" then gui.image(x,y,W_SP_TWE1)
+		elseif kadai == "_SP_TWE2" then gui.image(x,y,W_SP_TWE2)
+		elseif kadai == "_SP_TWE3" then gui.image(x,y,W_SP_TWE3)
+		elseif kadai == "_SP_TWE4" then gui.image(x,y,W_SP_TWE4)
+		elseif kadai == "_SP_TWE5" then gui.image(x,y,W_SP_TWE5)
+		elseif kadai == "_SP_URIEN1" then gui.image(x,y,W_SP_URIEN1)
+		elseif kadai == "_SP_URIEN2" then gui.image(x,y,W_SP_URIEN2)
+		elseif kadai == "_SP_URIEN3" then gui.image(x,y,W_SP_URIEN3)
+		elseif kadai == "_SP_URIEN4" then gui.image(x,y,W_SP_URIEN4)
+		elseif kadai == "_SP_YANG1" then gui.image(x,y,W_SP_YANG1)
+		elseif kadai == "_SP_YANG2" then gui.image(x,y,W_SP_YANG2)
+		elseif kadai == "_SP_YANG3" then gui.image(x,y,W_SP_YANG3)
+		elseif kadai == "_SP_YANG4" then gui.image(x,y,W_SP_YANG4)
+		elseif kadai == "_SP_YANG5" then gui.image(x,y,W_SP_YANG5)
+		elseif kadai == "_SP_YUN1" then gui.image(x,y,W_SP_YUN1)
+		elseif kadai == "_SP_YUN2" then gui.image(x,y,W_SP_YUN2)
+		elseif kadai == "_SP_YUN3" then gui.image(x,y,W_SP_YUN3)
+		elseif kadai == "_SP_YUN4" then gui.image(x,y,W_SP_YUN4)
+		elseif kadai == "_SP_YUN5" then gui.image(x,y,W_SP_YUN5)
+		elseif kadai == "_TK_HUGO1" then gui.image(x,y,W_TK_HUGO1)
+		elseif kadai == "_TR_ALEX1" then gui.image(x,y,W_TR_ALEX1)
+		elseif kadai == "_TR_ALEX2" then gui.image(x,y,W_TR_ALEX2)
+		elseif kadai == "_TR_KEN1" then gui.image(x,y,W_TR_KEN1)
+		elseif kadai == "_TR_KEN2" then gui.image(x,y,W_TR_KEN2)
+		elseif kadai == "_TR_HUGO1" then gui.image(x,y,W_TR_HUGO1)
+		elseif kadai == "_4_THROW" then gui.image(x,y,W_4_THROW)
+		elseif kadai == "_6_THROW" then gui.image(x,y,W_6_THROW)
+		elseif kadai == "_N_THROW" then gui.image(x,y,W_N_THROW)
+		elseif kadai == "_NM_BDASH" then gui.image(x,y,W_NM_BDASH)
+		elseif kadai == "_NM_FDASH" then gui.image(x,y,W_NM_FDASH)
+		elseif kadai == "_NM_FORWARD" then gui.image(x,y,W_NM_FORWARD)
+		elseif kadai == "_HIT2" then gui.image(x,y,W_HIT2)
+		elseif kadai == "_NUM_0" then gui.image(x,y,W_NUM_0)
+		elseif kadai == "_NUM_1" then gui.image(x,y,W_NUM_1)
+		elseif kadai == "_NUM_2" then gui.image(x,y,W_NUM_2)
+		elseif kadai == "_NUM_3" then gui.image(x,y,W_NUM_3)
+		elseif kadai == "_NUM_4" then gui.image(x,y,W_NUM_4)
+		elseif kadai == "_NUM_5" then gui.image(x,y,W_NUM_5)
+		elseif kadai == "_NUM_6" then gui.image(x,y,W_NUM_6)
+		elseif kadai == "_NUM_7" then gui.image(x,y,W_NUM_7)
+		elseif kadai == "_NUM_8" then gui.image(x,y,W_NUM_8)
+		elseif kadai == "_NUM_9" then gui.image(x,y,W_NUM_9)
+		elseif kadai == "_NUM_P" then gui.image(x,y,W_NUM_P)
+		elseif kadai == "_SECOND_COMBO_DE" then gui.image(x,y,W_SECOND_COMBO_DE)
+		elseif kadai == "_SECOND_FLOAT" then gui.image(x,y,W_SECOND_FLOAT)
+		end
 	end
 end
 function saveDataLoad()
@@ -3506,11 +5131,18 @@ function saveDataSaveFile()
 			score = saveData[i][k]
 			score2 = score + newKey[i][k]
 			score3 = score2 * (newKey[i][k]) * (newKey2[i][k])
-			addKeta = 11 - #(score3.."")
-			f:write(score3..""..ketaSoroe(addKeta)..""..addKeta.."\n")
+			addKeta = 10 - #(score3.."")
+			output = score3..""..ketaSoroe(addKeta)..""..addKeta
+			f:write(output.."\n")
+			if output % 10 == 1 then
+				print("addKeta:"..addKeta)
+				print("savedata("..i..","..k..") score:"..score.." score2:"..score2.." score3:"..score3.." newKey:"..newKey.." newKey2:"..newKey2)
+			end
 		end
 		if i==20 and k==1 then
-			break
+			do
+	    		break
+			end
 		end
 	end
 	f:close()
@@ -3519,7 +5151,9 @@ function ketaSoroe(val)
 	str = ""
 	for i=0, 10, 1 do
 		if i == val then
-			break
+			do
+	    		break
+			end
 		end
 		str = str..math.random(9)
 	end
@@ -3645,6 +5279,7 @@ function assistMode()
 	kaitenView = 1
 	rendaView = 1
 	denjinView = 1
+	airTimerView()
 	offsetTameGauge = 8
 	offsetRendaGauge = 8
 	offsetKaitenGauge = 14
@@ -4059,7 +5694,7 @@ function keyDisplay4(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2,
 				reba1P = 4
 			end
 			if input_up==0 and input_down==0 and input_right==0 and input_left==0 then
-				reba1P = 5		
+				reba1P = 5
 			end
 			if input_down==0 and input_right==1 and input_left==0 then
 				reba1P = 6
@@ -4207,6 +5842,68 @@ function keyDisplay4(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2,
 				end
 				offsetY=offsetY+9
 			end
+		end
+	end
+end
+function drawOriginNum(nums, x, y, value, keta, offsetX)
+	for i = keta, 1, -1 do
+		num_pinpoint = ((value%(10^i))-(value%10^(i-1)))
+		num_hitoketa = num_pinpoint / (10^(i-1))
+		gui.image(x, y, nums[num_hitoketa+1])
+		value = value % (10^(i-1))
+		x = x + offsetX
+	end
+end
+function dontShowBonus(val)
+	for i=0,3,1 do
+	end
+	bonus1PBase = 0x2028920
+	bonus2PBase = 0x20288B0
+	for i=0,3,1 do
+		bonus1PAddr = bonus1PBase + (0x1C*i)
+		bonusName1PAddr = bonus1PAddr + 0x13
+		bonusPoint1PAddr = bonus1PAddr + 0x15
+		bonusTime1PAddr = bonus1PAddr + 0x19
+		bonus2PAddr = bonus2PBase + (0x1C*i)
+		bonusName2PAddr = bonus2PAddr + 0x13
+		bonusPoint2PAddr = bonus2PAddr + 0x15
+		bonusTime2PAddr = bonus2PAddr + 0x19
+		if memory.readbyte(bonus1PAddr + 0x04) == val then
+			memory.writebyte(bonusName1PAddr,0x12)
+			memory.writebyte(bonusPoint1PAddr,0x09)
+		end
+		if memory.readbyte(bonus2PAddr + 0x04) == val then
+			memory.writebyte(bonusName2PAddr,0x12)
+			memory.writebyte(bonusPoint2PAddr,0x09)
+		end
+	end
+end
+function airTimerView()
+	airTimerOffsetX = 240
+	airOffsetY = 50
+	gui.drawtext(airTimerOffsetX,airOffsetY-2,tostring(memory.readbyte(0x020694C9)))
+	airTimerOffsetX = airTimerOffsetX + 8
+		gui.drawbox(airTimerOffsetX,airOffsetY,airTimerOffsetX+121,airOffsetY+3,0x00000000,0x000000FF)
+		gui.drawline(airTimerOffsetX+101,airOffsetY,airTimerOffsetX+101,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+81,airOffsetY,airTimerOffsetX+81,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+61,airOffsetY,airTimerOffsetX+61,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+41,airOffsetY,airTimerOffsetX+41,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+21,airOffsetY,airTimerOffsetX+21,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+11,airOffsetY,airTimerOffsetX+11,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+5,airOffsetY,airTimerOffsetX+5,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+2,airOffsetY,airTimerOffsetX+2,airOffsetY+3,0x000000FF)
+		gui.drawline(airTimerOffsetX+1,airOffsetY,airTimerOffsetX+1,airOffsetY+3,0x000000FF)
+	if memory.readbyte(0x020694C7) ~= 0xFF then
+		gui.drawbox(airTimerOffsetX,airOffsetY,airTimerOffsetX+((memory.readbyte(0x020694C7)+1)/2),airOffsetY+3,0x00C080FF,0x000000FF)
+		if memory.readbyte(0x020694C7) > 0 then
+			if ((memory.readbyte(0x020694C7)+1)/2) < 10 then
+				airTimerOffsetX = airTimerOffsetX - 1
+			elseif ((memory.readbyte(0x020694C7)+1)/2) < 100 then
+				airTimerOffsetX = airTimerOffsetX - 3
+			else
+				airTimerOffsetX = airTimerOffsetX - 5
+			end
+			gui.drawtext(airTimerOffsetX+((memory.readbyte(0x020694C7)+1)/2),airOffsetY+6,((memory.readbyte(0x020694C7)+1)/2))
 		end
 	end
 end
