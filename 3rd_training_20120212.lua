@@ -3,54 +3,54 @@
 	TIME = 0
 
 --[[
-�X�V����
-2012/02/12(Sun) �J�v���X�Q���L�[�f�B�X�v���C�����ǁB�QP�Ή������Ԍo�߂ŏ�����悤�ɁB
-2012/02/09(Thu) 02/07�̃L�[�f�B�X�v���C���폜�B02/08�̎d�l�ɍ��킹�č��Ȃ����\��B
-2012/02/08(Wed) �J�v���X�Q���ۂ��L�[�f�B�X�v���C�������B���򂪖ʓ|�L���Ă���ς�PP�������B
-2012/02/07(Tue) �L�[�f�B�X�v���C�Q�������A�Ƃ肠�����PP�������B���͏󋵂����Ȃ�ڍׂ܂ŕ\���B
-2011/05/16(Mon) BGM�̉��ʂ���������`�[�g�ǉ��B�g��Ȃ��ꍇ�̓R�����g�A�E�g�B
-2011/05/15(Sun) 2P���̃L�[�f�B�X�v���C���A�L�����̌����ɂ���Ă͋t�ɂȂ��Ă����̂ŏC���B
-2011/04/23      �Y��܂���
-2011/03/06(Sun) ���������̒l��������@�\���ē��ځB���i�̓R�����g�A�E�g�B
-2011/02/19(Sat) ���o�K�`�����K���[�h�����ǁB
-2011/02/14(Mon) ���o�K�`�����K���[�h�������B�܂��ȈՔłƌ������Ƃ���B�R�����g���₷�\��B
-2010/10/04(Mon) �X�^�[�g�{�^���Q��łQP�X�^���l�����^���ɂȂ�`�[�g��ǉ��B
+更新履歴
+2012/02/12(Sun) カプ○ス２風キーディスプレイを改良。２P対応＆時間経過で消えるように。
+2012/02/09(Thu) 02/07のキーディスプレイを削除。02/08の仕様に合わせて作りなおす予定。
+2012/02/08(Wed) カプ○ス２っぽいキーディスプレイを実装。分岐が面倒臭くてやっぱり１P側だけ。
+2012/02/07(Tue) キーディスプレイ２を実装、とりあえず１P側だけ。入力状況をかなり詳細まで表示。
+2011/05/16(Mon) BGMの音量を下げられるチート追加。使わない場合はコメントアウト。
+2011/05/15(Sun) 2P側のキーディスプレイが、キャラの向きによっては逆になっていたので修正。
+2011/04/23      忘れました
+2011/03/06(Sun) メモリ内の値が見える機能を再搭載。普段はコメントアウト。
+2011/02/19(Sat) レバガチャ練習モードを改良。
+2011/02/14(Mon) レバガチャ練習モードを実装。まだ簡易版と言ったところ。コメント増やす予定。
+2010/10/04(Mon) スタートボタン２回で２Pスタン値が満タンになるチートを追加。
 
-2010/10/03(Sun) �q�b�g�X�g�b�v���[���ɂȂ�`�[�g���C���B
-                �����O�q�b�g�X�g�b�v�ƃ[���q�b�g�X�g�b�v�𗼕��g����悤�ɏC���B
-                �g���[�j���O���[�h��ǉ��B�X�^�[�g�{�^���Q��łQP�̗͖��^���ɁB
-2010/10/02(Sat) �q�b�g�X�g�b�v���[���ɂȂ�`�[�g��ǉ��B
-2010/10/01(Fli) �q�b�g�X�g�b�v�̒����Ȃ�`�[�g��ǉ��B
-                �`�[�g���[�h���A�Ƃ肠�����L�����̓��������͎~�܂�悤�ɏC���i�q�b�g�X�g�b�v�����p�j�B
-2010/09/26(Mon) �󒆒ǌ����Ԗ����̃`�[�g��ǉ��B
-2010/09/25(Sat) drawOriginNum�֐��̒��g���C��
-                �`�[�g���[�h���ځB�X�^�[�g�{�^���������ŋN�����I�����A�`�[�g��I�����ăI���I�t�ł���B
-                �PP�̃Q�[�W��MAX�ɂ���`�[�g��ǉ��B
-2010/09/24(Fri) ���l������t�H���g�ŕ\���ł���֐�drawOriginNum�������B
-                ���̓d�n�g�����̗��߃Q�[�W�������B
-2010/09/21(Tue) �����悤�ȏ��������������̂ŁA�֐����g���񂷂悤�ɂ��čs�����팸�����B
-                �QP���ɂ��L�[�f�B�X�v���C�@�\��ǉ��B
-2010/09/19(Sun) �����A���AQ�A���~�[�A�I���̗��ߋZ�̗��ߔ񗭂߃Q�[�W�������B
-                �ǌ��\���Ԃ̃Q�[�W�ɖڐ����ǉ��B
-2010/09/18(Sat) �q���[�S�[�́A���[���T���g�v���X�ƃ~�[�g�X�J�b�V���[�y�уM�K�X�u���[�J�[��
-                �L�[���͂Ɖ�]�^�C�}�[�������B�M�K�X�͑I�����̂ݕ\������B
-                �A���b�N�X�̃n�C�p�[�{���̃L�[���͂Ɖ�]�^�C�}�[�������B��������I�����̂݁B
-                �ǌ��\���Ԃ̃Q�[�W�t�߂ɐ��l���\������悤�ɂ����B
-2010/09/17(Fli) �t��́A�S��r�̘A�ŉ񐔂ƘA�Ń^�C�}�[�A�X�s�o�̗��ߔ񗭂߃Q�[�W�������B
-                �팸�l�ƁA�ǌ��\���Ԃ������B
-2010/09/15(Wed) �A���b�N�X�́A�X���b�V���G���{�[�ƃG�A�X�^���s�[�g�̗��ߔ񗭂߃Q�[�W�������B
-                �L�[�f�B�X�v���C�@�\��ǉ��B�X�g�S��J�v�G�X�̓z�Ƃ͈Ⴄ�B
+2010/10/03(Sun) ヒットストップがゼロになるチートを修正。
+                ロングヒットストップとゼロヒットストップを両方使えるように修正。
+                トレーニングモードを追加。スタートボタン２回で２P体力満タンに。
+2010/10/02(Sat) ヒットストップがゼロになるチートを追加。
+2010/10/01(Fli) ヒットストップの長くなるチートを追加。
+                チートモード中、とりあえずキャラの動きだけは止まるように修正（ヒットストップを応用）。
+2010/09/26(Mon) 空中追撃時間無限のチートを追加。
+2010/09/25(Sat) drawOriginNum関数の中身を修正
+                チートモード搭載。スタートボタン長押しで起動＆終了し、チートを選択してオンオフできる。
+                １PのゲージをMAXにするチートを追加。
+2010/09/24(Fri) 数値を自作フォントで表示できる関数drawOriginNumを実装。
+                隆の電刃波動拳の溜めゲージを可視化。
+2010/09/21(Tue) 同じような処理が多かったので、関数を使い回すようにして行数を削減した。
+                ２P側にもキーディスプレイ機能を追加。
+2010/09/19(Sun) ユリアン、Q、レミー、オロの溜め技の溜め非溜めゲージを可視化。
+                追撃可能時間のゲージに目盛りを追加。
+2010/09/18(Sat) ヒューゴーの、ムーンサルトプレスとミートスカッシャー及びギガスブリーカーの
+                キー入力と回転タイマーを可視化。ギガスは選択時のみ表示する。
+                アレックスのハイパーボムのキー入力と回転タイマーも可視化。こちらも選択時のみ。
+                追撃可能時間のゲージ付近に数値も表示するようにした。
+2010/09/17(Fli) 春麗の、百裂脚の連打回数と連打タイマー、スピバの溜め非溜めゲージを可視化。
+                削減値と、追撃可能時間を可視化。
+2010/09/15(Wed) アレックスの、スラッシュエルボーとエアスタンピートの溜め非溜めゲージを可視化。
+                キーディスプレイ機能を追加。スト４やカプエスの奴とは違う。
 ]]
 
 
---����lua�t�@�C���ƘA�g�������Ƃ��͂�����g���炵��
---dofile("�t�@�C����","r")
+--他のluaファイルと連携したいときはこれを使うらしい
+--dofile("ファイル名","r")
 
 
---�摜�\���ׂ̈ɕK�v�ȋL�q���ۂ�
+--画像表示の為に必要な記述っぽい
 require "gd"
 
---�摜��ǂݍ���ł���
+--画像を読み込んでおく
 blank = gd.createFromPng("resources/waza/blank.png"):gdStr()
 blank2 = gd.createFromPng("resources/waza/blank2.png"):gdStr()
 blank3 = gd.createFromPng("resources/waza/blank3.png"):gdStr()
@@ -195,7 +195,7 @@ airComboInf_on = gd.createFromPng("resources/cheat/airComboInf_on.png"):gdStr()
 airComboInf_off = gd.createFromPng("resources/cheat/airComboInf_off.png"):gdStr()
 airComboInf_text = gd.createFromPng("resources/cheat/airComboInf_text.png"):gdStr()
 
---�����t�H���g���̂O
+--数字フォントその０
 nums0 = {
 	gd.createFromPng("resources/num/num0_0.png"):gdStr(),
 	gd.createFromPng("resources/num/num0_1.png"):gdStr(),
@@ -209,7 +209,7 @@ nums0 = {
 	gd.createFromPng("resources/num/num0_9.png"):gdStr()
 }
 
---�L�[�f�B�X�v���C�Q�̃��o�[
+--キーディスプレイ２のレバー
 keyDisp2Reba = {
 	gd.createFromPng("resources/command/keyDisp2_reba1_1.png"):gdStr(),
 	gd.createFromPng("resources/command/keyDisp2_reba1_2.png"):gdStr(),
@@ -224,10 +224,10 @@ keyDisp2Reba = {
 
 
 
---���͂̌�����\���ϐ�
+--入力の向きを表す変数
 local input_dir
 
---�O�̓��͂���o�߂����t���[����\���ϐ�
+--前の入力から経過したフレームを表す変数
 local reba_flame_from_before_input1P = 0
 local button_flame_from_before_input1P = 0
 local reba_flame_from_before_input2P = 0
@@ -240,12 +240,12 @@ time_in_game1P = 5678
 time_in_game2P = 5678
 
 
---���o�[�̓��͏�Ԃ�\���ϐ�
+--レバーの入力状態を表す変数
 local input_up, input_down, input_right, input_left
 
---�{�^���̓��͏�Ԃ�\���ϐ�
+--ボタンの入力状態を表す変数
 local input_lp, input_mp, input_hp, input_lk, input_mk, input_hk
---1�t���[���O�̓��͂�ۑ����Ă����ϐ�
+--1フレーム前の入力を保存しておく変数
 local before_reba1P = 0
 local before_input_lp1P = 0
 local before_input_mp1P = 0
@@ -260,16 +260,16 @@ local before_input_hp2P = 0
 local before_input_lk2P = 0
 local before_input_mk2P = 0
 local before_input_hk2P = 0
---���o�[�̉摜�t�@�C�����Ɏg���ϐ�
+--レバーの画像ファイル名に使う変数
 local reba_num
 
---�X�^�[�g�{�^�������b�����ꂽ��
+--スタートボタンが何秒押されたか
 startButton = 0
 
---�`�[�g�Z���N�g��ʂ��ǂ���
+--チートセレクト画面かどうか
 cheatModeNum = 0
 
---�e�X�̃`�[�g�t���O�B�����̃I���I�t�͂����Ő؂�ւ��܂��傤
+--各々のチートフラグ。初期のオンオフはここで切り替えましょう
 inputView = 0
 tameView = 0
 rendaView = 0
@@ -286,7 +286,7 @@ airComboInf = 0
 longHitStop = 0
 zeroHitStop = 0
 
---�`�[�g���j���[����
+--チートメニュー項目
 menu = {
 	{inputView_off,		trainingMode_off,	0},
 	{tameView_off,		stunMax_off,		gaugeMax_off},
@@ -297,7 +297,7 @@ menu = {
 	{airTimerView_off,	0,					0}
 }
 
---�`�[�g�̐���
+--チートの説明
 cheatText = {
 	{inputView_text,	trainingMode_text,	0},
 	{tameView_text,		stunMax_text,		gaugeMax_text},
@@ -308,11 +308,11 @@ cheatText = {
 	{airTimerView_text,	0,					0}
 }
 
---�`�[�g���[�h�̃J�[�\��
+--チートモードのカーソル
 cursorX = 1
 cursorY = 1
 
---�e�{�^���������Ă��鎞�Ԃ̒���
+--各ボタンを押している時間の長さ
 up_count = 0
 down_count = 0
 right_count = 0
@@ -325,32 +325,32 @@ lk_count = 0
 mk_count = 0
 hk_count = 0
 
---���̃t���[���ł̃��o�K�`���l�i�����͂̂Ƃ��ɖ��t���[���P����ׁA�����l���P�ɂ��Ă���j
+--そのフレームでのレバガチャ値（無入力のときに毎フレーム１減る為、初期値を１にしている）
 gachaValue1 = 1
 gachaValue2 = 1
 gachaValue3 = 1
 gachaValue4 = 1
 
---�ߋ�31�t���[���̃��o�K�`���l�B
---�PF������̕��σ��o�K�`���l���Ƃ�ׂɎg��
+--過去31フレームのレバガチャ値。
+--１Fあたりの平均レバガチャ値をとる為に使う
 previousGachaValue1s = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 previousGachaValue2s = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 previousGachaValue3s = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 previousGachaValue4s = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 
 
---�g���[�j���O���[�h�̃`�[�g�Ɏg���J�E���^�[�Ƃ�
+--トレーニングモードのチートに使うカウンターとか
 trainingModeCount = 0
 maxDamagevalue = 0
 maxCombovalue = 0
 
 
---�q�b�g�X�g�b�v�̃`�[�g�Ɏg���J�E���^�[
+--ヒットストップのチートに使うカウンター
 hitStopCount = 0
 zeroStopCount = 0
 
 
---�L�[�f�B�X�v���C�Q�̓��͗������
+--キーディスプレイ２の入力履歴入れ
 keyDisplay2_box1P = {
 	{"","","0000000"},
 	{"","","0000000"},
@@ -421,12 +421,12 @@ keyDisplay2_box2P = {
 	{"","","0000000"},
 }
 
---�L�[�f�B�X�v���C�Q�̖����͎���
+--キーディスプレイ２の無入力時間
 no_input_time1P = 0
 no_input_time2P = 0
 no_input_limit = 3000
 
---���̃{�^����������Ă���ƁA�J�E���g���P���₵�ĕԂ������̊֐�
+--そのボタンが押されていると、カウントを１増やして返すだけの関数
 function buttonCount(button, count)
 	if button == 1 then
 		count = count + 1
@@ -436,7 +436,7 @@ function buttonCount(button, count)
 	return count
 end
 
---�J�[�\���̈ʒu�ɉ����ă`�[�g���I���I�t���`�[�g��Ԃ�Ԃ��֐�
+--カーソルの位置に応じてチートをオンオフしつつチート状態を返す関数
 function cursorToCheat(x,y,cheat,onImage,offImage)
 	if cursorX == x and cursorY == y then
 		cheat = (cheat - 1)^2
@@ -451,12 +451,12 @@ end
 
 
 
---���o�K�`�����K�̏���������֐�
+--レバガチャ練習の処理をする関数
 function gachaTrainingMode()
-	--�Ԃ݂����ȉ摜��\��
+	--網みたいな画像を表示
 	gui.image(0,0,blank3)
 	
-	--���݂̓��͏�Ԃ��A1��1�̕ϐ��ɕ�����
+	--現在の入力状態を、1個1個の変数に分ける
 	input_up = bitReturn(memory.readbyte(0x0202564B),0)
 	input_down = bitReturn(memory.readbyte(0x0202564B),1)
 	input_left = bitReturn(memory.readbyte(0x0202564B),2)
@@ -468,12 +468,12 @@ function gachaTrainingMode()
 	input_mk = bitReturn(memory.readbyte(0x0202564B-1),1)
 	input_hk = bitReturn(memory.readbyte(0x0202564B-1),2)
 	
-	--�摜��\������Ƃ��Ƃ��̊���W���Z�b�g
+	--画像を表示するときとかの基準座標をセット
 	offsetX = 40
 	offsetY = 80
 	
-	--�e�{�^���̃J�E���^�[�B���������Ă���Ƒ����A�����ƂO�ɂȂ�B
-	--�܂�A�J�E���^�[���P�̎������{�^�������������Ƃ������ɂȂ�B
+	--各ボタンのカウンター。押し続けていると増え、離すと０になる。
+	--つまり、カウンターが１の時が＝ボタンを押した時という事になる。
 	up_count = buttonCount(input_up, up_count)
 	down_count = buttonCount(input_down, down_count)
 	right_count = buttonCount(input_right, right_count)
@@ -486,27 +486,27 @@ function gachaTrainingMode()
 	hk_count = buttonCount(input_hk, hk_count)
 	
 	
-	--���̃t���[���ł̃��o�K�`���l�B
-	--���Ƃ��ƃs����^�C�}�[��d�n�^�C�}�[�͖��t���[���P�����Ă���̂ŁA�f�t�H�łP�ɂ��Ă���B
+	--そのフレームでのレバガチャ値。
+	--もともとピヨりタイマーや電刃タイマーは毎フレーム１減っているので、デフォで１にしている。
 	gachaValue1 = 1
 	gachaValue2 = 0
 	gachaValue3 = 1
 	gachaValue4 = 1
 	
-	--�ߋ��R�P�t���[���̃��o�K�`���l���v�B
-	--���ϒl���o�����߂Ɏg���B
+	--過去３１フレームのレバガチャ値合計。
+	--平均値を出すために使う。
 	sumGachaValue1 = 0
 	sumGachaValue2 = 0
 	sumGachaValue3 = 0
 	sumGachaValue4 = 0
 	
-	--���o�[�オ�����ꂽ��A���o�K�`���l�𑝂₷
-	--�d�n�̂݁A�����������͎��̏������s���B
+	--レバー上が押されたら、レバガチャ値を増やす
+	--電刃のみ、同時方向入力時の処理を行う。
 	if up_count == 1 then
 		gachaValue1 = gachaValue1 + 2
 		gachaValue2 = gachaValue2 + 4
 		
-		--�������������ɓ��͂����Ƃ��͑����ʂR�A�P�̂̂Ƃ��͂Q�B
+		--横方向も同時に入力したときは増加量３、単体のときは２。
 		if right_count == 1 or left_count == 1 then
 			gachaValue3 = gachaValue3 + 3
 		else
@@ -528,8 +528,8 @@ function gachaTrainingMode()
 		gachaValue1 = gachaValue1 + 2
 		gachaValue2 = gachaValue2 + 4
 		
-		--�P�̂œ��͂��ꂽ�Ƃ��̂ݑ����ʂQ�B
-		--�������͎��̏����͏�̕��ł���Ă���̂ŁA�������Ȃ�
+		--単体で入力されたときのみ増加量２。
+		--同時入力時の処理は上の方でやっているので、もうやらない
 		if up_count ~=1 and down_count ~= 1 then
 			gachaValue3 = gachaValue3 + 2
 		end
@@ -544,7 +544,7 @@ function gachaTrainingMode()
 	end
 	
 	
-	--�p���`�{�^���������ꂽ��A���o�K�`���l�𑝂₷
+	--パンチボタンが押されたら、レバガチャ値を増やす
 	if lp_count == 1 then
 		gachaValue1 = gachaValue1 + 1
 		gachaValue2 = gachaValue2 + 2
@@ -561,10 +561,10 @@ function gachaTrainingMode()
 		gachaValue3 = gachaValue3 + 1
 	end
 	
-	--���L�b�N���P�̂ŉ����ꂽ�Ƃ�
+	--小キックが単体で押されたとき
 	if lk_count == 1 then
 		
-		--���̃L�b�N�Ɠ����ɉ����ꂽ�Ƃ�
+		--他のキックと同時に押されたとき
 		if mk_count == 1 or hk_count == 1 then
 			gachaValue1 = gachaValue1 + 1
 			gachaValue3 = gachaValue3 + 1
@@ -573,21 +573,21 @@ function gachaTrainingMode()
 		gachaValue2 = gachaValue2 + 1
 	
 	else
-		--���L�b�N��������Ă��炸�A���̃L�b�N���Q�����ɉ����ꂽ�Ƃ�
+		--小キックが押されておらず、他のキックが２つ同時に押されたとき
 		if mk_count == 1 and hk_count == 1 then
 			gachaValue1 = gachaValue1 + 1
 			gachaValue3 = gachaValue3 + 1
 		end	
 	end
 	
-	--���L�b�N���P�̂ŉ����ꂽ�Ƃ�
+	--中キックが単体で押されたとき
 	if mk_count == 1 then
 		if lk_count ~=1 and hk_count ~= 1 then
 			gachaValue2 = gachaValue2 + 1
 		end
 	end
 	
-	--���L�b�N���P�̂ŉ����ꂽ�Ƃ�
+	--強キックが単体で押されたとき
 	if hk_count == 1 then
 		if lk_count ~=1 and mk_count ~= 1 then
 			gachaValue2 = gachaValue2 + 1
@@ -597,19 +597,19 @@ function gachaTrainingMode()
 	
 	
 	
-	--�ߋ��̃��o�K�`���l�̑��a���o���B
+	--過去のレバガチャ値の総和を出す。
 	for i=1,31,1 do
 		sumGachaValue1 = sumGachaValue1 + previousGachaValue1s[i]
 		sumGachaValue2 = sumGachaValue2 + previousGachaValue2s[i]
 		sumGachaValue3 = sumGachaValue3 + previousGachaValue3s[i]
 	end
 	
-	--�Ō�ɁA���݂̃��o�K�`���l�𑫂��B
+	--最後に、現在のレバガチャ値を足す。
 	sumGachaValue1 = sumGachaValue1 + gachaValue1
 	sumGachaValue2 = sumGachaValue2 + gachaValue2
 	sumGachaValue3 = sumGachaValue3 + gachaValue3
 
-	--�p���`�{�^�����P���������ςȂ��łȂ�������A�d�n�͖���
+	--パンチボタンが１つも押しっぱなしでなかったら、電刃は無効
 	if lp_count <= 1 and mp_count <= 1 and hp_count <= 1 then
 		sumGachaValue3 = 32
 		for i=1,31,1 do
@@ -619,12 +619,12 @@ function gachaTrainingMode()
 	end
 
 
-	--���o�K�`���l�ɉ����ăQ�[�W��\������B
+	--レバガチャ値に応じてゲージを表示する。
 	tateGauge(alex_1,80,160,16,120,(sumGachaValue1/32)-1,2,1,0xFFFF00FF)
 	tateGauge(alex_1,160,160,16,120,(sumGachaValue2/32),4,0,0xFF4444FF)
 	tateGauge(alex_1,240,160,16,120,(sumGachaValue3/32)-1,2,1,0x00FFFFFF)
 			
-	--���o�K�`���l�P���P���傫���i�����͂łȂ��j�Ƃ��́A���o�K�`���l��\��
+	--レバガチャ値１が１より大きい（無入力でない）ときは、レバガチャ値を表示
 	if gachaValue1 > 1 then
 		drawOriginNum(nums0, 80-4, 20, gachaValue1, 2, 10)
 	end
@@ -637,8 +637,8 @@ function gachaTrainingMode()
 		drawOriginNum(nums0, 240-4, 20, gachaValue3, 2, 10)
 	end
 
-	--�ߋ��̃��o�K�`���l���i�[���Ă���z��̒��g�����ɂP���炵�A
-	--���݂̃��o�K�`���l��擪�Ɋi�[����B
+	--過去のレバガチャ値を格納している配列の中身を後ろに１個ずらし、
+	--現在のレバガチャ値を先頭に格納する。
 	for i=31,2,-1 do
 		previousGachaValue1s[i] = previousGachaValue1s[i-1]
 		previousGachaValue2s[i] = previousGachaValue2s[i-1]
@@ -650,7 +650,7 @@ function gachaTrainingMode()
 end
 
 
---�`�[�g���[�h�̏���������֐�
+--チートモードの処理をする関数
 function cheatMode()
 	gui.image(0,0,blank3)
 	input_up = bitReturn(memory.readbyte(0x0202564B),0)
@@ -667,11 +667,11 @@ function cheatMode()
 	offsetX = 20
 	offsetY = 20
 	
-	--�J�[�\���̈ʒu�ɉ����āA�`�[�g���ڂ�Ԃň͂�
+	--カーソルの位置に応じて、チート項目を赤で囲む
 	gui.drawbox(offsetX-2+108*(cursorX-1),offsetY-2+24*(cursorY-1),offsetX+100+1+108*(cursorX-1),offsetY+20+1+24*(cursorY-1),0xFF0000FF,0xFF0000FF)
 
-	--�`�[�g���ډ摜�����ׂĕ\������
-	--�z�񖼂̑O��#�����ƁA�z��̗v�f���Ƃ����Ӗ��ɂȂ�B
+	--チート項目画像をすべて表示する
+	--配列名の前に#がつくと、配列の要素数という意味になる。
 	for i=1,#menu,1 do
 		for j=1,#menu[i],1 do
 			if menu[i][j] ~= 0 then
@@ -685,7 +685,7 @@ function cheatMode()
 	
 	gui.image(20,194,cheatText[cursorY][cursorX])
 	
-	--�C���v�b�g�`�F�b�N
+	--インプットチェック
 	up_count = buttonCount(input_up, up_count)
 	down_count = buttonCount(input_down, down_count)
 	right_count = buttonCount(input_right, right_count)
@@ -696,29 +696,29 @@ function cheatMode()
 		button_count = 0
 	end
 	
-	--�����������or�������ςȂ���������
+	--上を押したらor押しっぱなしだったら
 	if up_count == 1 or (up_count >= 20 and up_count % 6 == 0) then
 	
-		--�J�[�\������Ɉړ�
+		--カーソルを上に移動
 		cursorY = cursorY - 1
-		--��ԏ���z�������ԉ��Ɉړ�
+		--一番上を越えたら一番下に移動
 		if cursorY == 0 then
 			cursorY = #menu
 		end
 		
-		--�ړ���ɍ��ڂ����݂��Ȃ����
+		--移動先に項目が存在しなければ
 		while menu[cursorY][cursorX] == 0 do
-			--�X�Ɉ��ֈړ�����
+			--更に一つ先へ移動する
 			cursorY = cursorY - 1
 			
-			--��ԏ���z�������ԉ��Ɉړ�
+			--一番上を越えたら一番下に移動
 			if cursorY == 0 then
 				cursorY = #menu
 			end
 		end	
 	end
 	
-	--������������or�������ςȂ���������
+	--下を押したらor押しっぱなしだったら
 	if down_count == 1 or (down_count >= 20 and down_count % 6 == 0) then
 	
 		cursorY = cursorY + 1
@@ -734,7 +734,7 @@ function cheatMode()
 		end
 	end
 	
-	--�E����������or�������ςȂ���������
+	--右を押したらor押しっぱなしだったら
 	if right_count == 1 or (right_count >= 20 and right_count % 6 == 0) then
 	
 		cursorX = cursorX + 1
@@ -750,7 +750,7 @@ function cheatMode()
 		end
 	end
 	
-	--������������or�������ςȂ���������
+	--左を押したらor押しっぱなしだったら
 	if left_count == 1 or (left_count >= 20 and left_count % 6 == 0) then
 	
 		cursorX = cursorX - 1
@@ -793,85 +793,85 @@ end
 
 
 
---********���lvalue�́Abitnum�Ԗڂ̃r�b�g��Ԃ��֐�********
---@param value	���ׂ����ϐ�
---@param bitnum	���Ԗڂ𒲂ׂ������i�ŉ��ʌ���0�j
+--********数値valueの、bitnum番目のビットを返す関数********
+--@param value	調べたい変数
+--@param bitnum	何番目を調べたいか（最下位桁は0）
 function bitReturn(value,bitnum)
 	re = value
 	
-	--bitnum����ʌ���؂�̂Ă�
+	--bitnumより上位桁を切り捨てる
 	re = SHIFT(re,bitnum-31)
 
-	--bitnum��艺�ʌ���؂�̂Ă�
+	--bitnumより下位桁を切り捨てる
 	re = SHIFT(re,31)
 	
 	return re
 end
 
---********���ߔ񗭂߃Q�[�W��\������֐�********
---@param image			�Q�[�W�̍��ɕ\������摜�i�Z���A�C�R���j
---@param x				����x���W
---@param y				����y���W
---@param address_tame	���߃t���[�����Ǘ����Ă���A�h���X
---@param address_timer	�񗭂߃t���[�����Ǘ����Ă���A�h���X
+--********溜め非溜めゲージを表示する関数********
+--@param image			ゲージの左に表示する画像（技名アイコン）
+--@param x				初期x座標
+--@param y				初期y座標
+--@param address_tame	溜めフレームを管理しているアドレス
+--@param address_timer	非溜めフレームを管理しているアドレス
 function tameGauge(image, x, y, address_tame, address_timer)
 
-	--�摜��\���ix���W, y���W, �摜�̓������ϐ����j�B
+	--画像を表示（x座標, y座標, 画像の入った変数名）。
 	gui.image(4,y-3,image)
 
-	--����F���߃t���[����FF�łȂ����
+	--分岐：溜めフレームがFFでなければ
 	if memory.readbyte(address_tame) ~= 0xFF then
 		
-		--�l�p�`��\���i�n�_��x���W, �n�_��y���W, �I�_��x���W, �I�_��y���W, ���g�̐F, �g�̐F�j�B
-		--�F�͍�����Q�����u�ԁv�u�΁v�u�v�u�s�����x�v�B
-		--�s�����x��00��FF�ȊO�ɂ���ƁA���삪�ɒ[�ɏd���Ȃ�̂Œ��ӁB
-		--���g�����̓����A�g�����̕s�����ɂ��Ă���̂ŁA���̎l�p�̓o�[�̘g�����B
+		--四角形を表示（始点のx座標, 始点のy座標, 終点のx座標, 終点のy座標, 中身の色, 枠の色）。
+		--色は左から２桁ずつ「赤」「緑」「青」「不透明度」。
+		--不透明度を00かFF以外にすると、動作が極端に重くなるので注意。
+		--中身を黒の透明、枠を黒の不透明にしているので、この四角はバーの枠部分。
 		gui.drawbox(x,y,x+84,y+6,0x00000000,0x000000FF)
 		
-		--�l�p�`��\���B
-		--���g�𐅐F�̕s�����A�g�����̓����ɂ��Ă���̂ŁA���̎l�p�̓o�[�̒��g�����B
+		--四角形を表示。
+		--中身を水色の不透明、枠を黒の透明にしているので、この四角はバーの中身部分。
 		gui.drawbox(x,y,x+(memory.readbyte(address_tame)*2),y+6,0x0080FFFF,0x000000FF)
 		
-	--���߃t���[����FF�ł����
+	--溜めフレームがFFであれば
 	else
-		--�����g�����\������B
+		--白い枠だけ表示する。
 		gui.drawbox(x,y,x+84,y+6,0x00000000,0xFFFFFFFF)
 		
 	end
 	
-	--���͔񗭂߃t���[���̕����`�悵�����̂ŁA�c���W��8�h�b�g���炷
+	--次は非溜めフレームの分も描画したいので、縦座標を8ドットずらす
 	y = y + 8
 
-	--����F�񗭂߃t���[����FF�łȂ����
+	--分岐：非溜めフレームがFFでなければ
 	if memory.readbyte(address_timer) ~= 0xFF then
 		
-		--�l�p�`��\���B
-		--���g�����̓����A�g�����̕s�����ɂ��Ă���̂ŁA���̎l�p�̓o�[�̘g�����B
+		--四角形を表示。
+		--中身を黒の透明、枠を黒の不透明にしているので、この四角はバーの枠部分。
 		gui.drawbox(x,y,x+84,y+6,0x00000000,0x000000FF)
 		
-		--�l�p�`��\���B
-		--���g���I�����W�F�̕s�����A�g�����̓����ɂ��Ă���̂ŁA���̎l�p�̓o�[�̒��g�����B
+		--四角形を表示。
+		--中身をオレンジ色の不透明、枠を黒の透明にしているので、この四角はバーの中身部分。
 		gui.drawbox(x,y,x+(memory.readbyte(address_timer)*2),y+6,0xFF8000FF,0x000000FF)
 		
-	--�G���{�[�̔񗭂߃t���[����FF�ł����
+	--エルボーの非溜めフレームがFFであれば
 	else
-		--�����g�����\������B
+		--白い枠だけ表示する。
 		gui.drawbox(x,y,x+84,y+6,0x00000000,0x000000FF)
 	end
 end
 
 
 
---********�c�^�̃Q�[�W��\������֐�********
---@param image			�Q�[�W�̋߂��ɕ\������摜
---@param x				����x���W
---@param y				����y���W
---@param xLen			x����
---@param yLen			y����
---@param value			�l
---@param maxValue		�ő�l
---@param offset			�l�̃Y��
---@param color			�F�i�ԁA�΁A�A�s�����x�j
+--********縦型のゲージを表示する関数********
+--@param image			ゲージの近くに表示する画像
+--@param x				初期x座標
+--@param y				初期y座標
+--@param xLen			x長さ
+--@param yLen			y長さ
+--@param value			値
+--@param maxValue		最大値
+--@param offset			値のズレ
+--@param color			色（赤、緑、青、不透明度）
 function tateGauge(image, x, y, xLen, yLen, value, maxValue, offset, color)
 
 		gui.drawbox(x-1,y+1,x+xLen+1,y-yLen-1,0x00000000,0xFFFFFFFF)
@@ -883,16 +883,16 @@ function tateGauge(image, x, y, xLen, yLen, value, maxValue, offset, color)
 end
 
 
---********���^�̃Q�[�W��\������֐�********
---@param image			�Q�[�W�̋߂��ɕ\������摜
---@param x				����x���W
---@param y				����y���W
---@param xLen			x����
---@param yLen			y����
---@param value			�l
---@param maxValue		�ő�l
---@param offset			�l�̃Y��
---@param color			�F�i�ԁA�΁A�A�s�����x�j
+--********横型のゲージを表示する関数********
+--@param image			ゲージの近くに表示する画像
+--@param x				初期x座標
+--@param y				初期y座標
+--@param xLen			x長さ
+--@param yLen			y長さ
+--@param value			値
+--@param maxValue		最大値
+--@param offset			値のズレ
+--@param color			色（赤、緑、青、不透明度）
 function yokoGauge(image, x, y, xLen, yLen, value, maxValue, offset, color)
 
 		gui.drawbox(x-1,y-1,x+xLen+1,y+yLen+1,0x00000000,0xFFFFFFFF)
@@ -911,12 +911,12 @@ function yokoGauge2(image, x, y, xLen, yLen, value, maxValue, offset, color)
 		gui.drawtext(x+xLen+3,y-1,value+offset)
 end
 
---********���o�[���]�Z�̖��ƃ^�C�}�[��\������֐�********
---@param image			�Z���A�C�R���̉摜
---@param x				����x���W
---@param y				����y���W
---@param address_juji	���o�[���͂��Ǘ����Ă���A�h���X
---@param address_timer	�^�C�}�[���Ǘ����Ă���A�h���X
+--********レバー一回転技の矢印とタイマーを表示する関数********
+--@param image			技名アイコンの画像
+--@param x				初期x座標
+--@param y				初期y座標
+--@param address_juji	レバー入力を管理しているアドレス
+--@param address_timer	タイマーを管理しているアドレス
 function kaiten(image, x, y, address_juji, address_timer)
 	gui.image(4,y-3,image)
 
@@ -925,28 +925,28 @@ function kaiten(image, x, y, address_juji, address_timer)
 	juji_right = bitReturn(memory.readbyte(address_juji),2)
 	juji_left = bitReturn(memory.readbyte(address_juji),3)
 	
-	--����������͍ς݂ł����
+	--上方向が入力済みであれば
 	if juji_up == 1 then
 		gui.image(x+48,y-12,arrow_up3)
 	else
 		gui.image(x+48,y-12,arrow_up1)
 	end
 	
-	--�����������͍ς݂ł����
+	--下方向が入力済みであれば
 	if juji_down == 1 then
 		gui.image(x+24,y-12,arrow_down3)
 	else
 		gui.image(x+24,y-12,arrow_down1)
 	end
 	
-	--�E���������͍ς݂ł����
+	--右方向が入力済みであれば
 	if juji_right == 1 then
 		gui.image(x+72,y-12,arrow_right3)
 	else
 		gui.image(x+72,y-12,arrow_right1)
 	end
 	
-	--�����������͍ς݂ł����
+	--左方向が入力済みであれば
 	if juji_left == 1 then
 		gui.image(x,y-12,arrow_left3)
 	else
@@ -958,13 +958,13 @@ function kaiten(image, x, y, address_juji, address_timer)
 end
 
 
---********�S��r�̃{�^���A�C�R����\������֐�********
---@param image			�Z���A�C�R���̉摜
---@param image_button1	�����ꂽ�Ƃ��̃{�^���A�C�R��
---@param image_button2	������Ă��Ȃ��Ƃ��̃{�^���A�C�R��
---@param x				����x���W
---@param y				����y���W
---@param address_count	�{�^�����������񐔂��Ǘ����Ă���A�h���X
+--********百裂脚のボタンアイコンを表示する関数********
+--@param image			技名アイコンの画像
+--@param image_button1	押されたときのボタンアイコン
+--@param image_button2	押されていないときのボタンアイコン
+--@param x				初期x座標
+--@param y				初期y座標
+--@param address_count	ボタンを押した回数を管理しているアドレス
 function hyakuretsu(image, image_button1, image_button2, x, y, address_count)
 	gui.image(4,y-3,image)
 	
@@ -981,9 +981,9 @@ end
 
 
 
---*******�L�[�f�B�X�v���C���̂P*******
+--*******キーディスプレイその１*******
 function keyDisplay(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2, image_s1, image_s2, x, y, buttonAddress,startAddress)
-	--���͂̓��e���A���ꂼ��̕ϐ��ɕ����Ă킩��₷������
+	--入力の内容を、それぞれの変数に分けてわかりやすくする
 	input_up = bitReturn(memory.readbyte(buttonAddress),0)
 	input_down = bitReturn(memory.readbyte(buttonAddress),1)
 	input_left = bitReturn(memory.readbyte(buttonAddress),2)
@@ -997,7 +997,7 @@ function keyDisplay(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2, 
 	
 	input_s = (memory.readbyte(startAddress) - (memory.readbyte(startAddress) % 16)) / 16
 	
-	--���͏�Ԃɂ���āA�\������摜�ԍ������肷��
+	--入力状態によって、表示する画像番号を決定する
 	if input_up == 1 then
 		if input_right == 1 then
 			reba_num = 9
@@ -1022,14 +1022,14 @@ function keyDisplay(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2, 
 		reba_num = 5
 	end
 	
-	--�摜�̓ǂݍ��݂ƕ\���𓯎��ɍs���Ă���
+	--画像の読み込みと表示を同時に行っている
 	reba = gd.createFromPng("resources/command/reba"..reba_num..".png"):gdStr()
 	
 	gui.image(x, y, reba)
 	
 	x = x + 24
 	
-	--���͂ɉ����ă{�^�������点��
+	--入力に応じてボタンを光らせる
 	if input_lp == 1 then
 		gui.image(x, y, image_l2)
 	else
@@ -1090,17 +1090,17 @@ end
 
 
 
---*******�L�[�f�B�X�v���C���̂Q�̂Q*******
+--*******キーディスプレイその２の２*******
 function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h2, image_s1, image_s2, x, y, player)
 	dispNumber=16
 	offsetX1P2P = 270
 	
 	if player == 1 then
-	--�Q�[�������Ԃ̂悤�Ȃ���
+	--ゲーム内時間のようなもの
 		before_time_in_game1P = time_in_game1P
 		time_in_game1P = memory.readbyte(0x020157CF)
 	
-		--�Q�[�����Ŏ��Ԃ��o���Ă�����A���͗������X�V������
+		--ゲーム内で時間が経っていたら、入力履歴を更新したい
 		if before_time_in_game1P ~= time_in_game1P then
 			reba_flame_from_before_input1P = reba_flame_from_before_input1P+1
 			button_flame_from_before_input1P = button_flame_from_before_input1P+1
@@ -1109,10 +1109,10 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 			startAddress = 0x0206AA8C
 			dirAddress = 0x2068C77
 			
-			--�L�����̌���
+			--キャラの向き
 			direction1P = memory.readbyte(dirAddress)
 			
-			--���͂̓��e���A���ꂼ��̕ϐ��ɕ����Ă킩��₷�����Ă���
+			--入力の内容を、それぞれの変数に分けてわかりやすくしておく
 			input_up = bitReturn(memory.readbyte(buttonAddress),0)
 			input_down = bitReturn(memory.readbyte(buttonAddress),1)
 			input_left = bitReturn(memory.readbyte(buttonAddress),2)
@@ -1157,14 +1157,14 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 				reba1P = 3
 			end
 			
-			--���݂̏�Ԃ���͂��ꎞ�I�Ɋi�[���Ă������߂̔�
+			--現在の状態や入力を一時的に格納しておくための箱
 			input_temp = {0,0,"",0}
 			input_temp[1] = reba_flame_from_before_input1P
 			input_temp[4] = button_flame_from_before_input1P
 			input_temp[2] = direction1P
 			input_temp[3] = reba1P..input_lp..input_mp..input_hp..input_lk..input_mk..input_hk
 			
-			--���������͂��ꂽ��A�z����P���炷
+			--何かが入力されたら、配列を１個ずらす
 			if (reba1P ~= before_reba1P and reba1P ~= 5)
 				or input_lp1P > before_input_lp1P
 				or input_mp1P > before_input_mp1P
@@ -1176,11 +1176,11 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 					keyDisplay2_box1P[i] = keyDisplay2_box1P[i-1]
 				end
 				
-				--���o�[�̓��͂�����Ă�����
+				--レバーの入力がされていたら
 				if (reba1P ~= before_reba1P and reba1P ~= 5) then
 					reba_flame_from_before_input1P = 0
 				end
-				--�{�^���̓��͂�����Ă�����
+				--ボタンの入力がされていたら
 				if input_lp1P > before_input_lp1P
 				or input_mp1P > before_input_mp1P
 				or input_hp1P > before_input_hp1P
@@ -1190,7 +1190,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 					button_flame_from_before_input1P = 0
 				end
 				
-				--�z��̂P�ڂɁA���݂̓��͂��i�[����
+				--配列の１個目に、現在の入力を格納する
 				keyDisplay2_box1P[1] = input_temp
 				if reba_flame_from_before_input1P ~= 0 then
 					keyDisplay2_box1P[1][1] = 0
@@ -1208,7 +1208,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 			and input_lk1P == 0
 			and input_mk1P == 0
 			and input_hk1P == 0 then
-				--�������͂���Ă��Ȃ���΁A�����͎��Ԃ𑝂₷
+				--何も入力されていなければ、無入力時間を増やす
 				no_input_time1P = no_input_time1P+1
 				if no_input_time1P > no_input_limit then
 					for i = 1, dispNumber-1, 1 do
@@ -1228,7 +1228,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 		end
 	
 	
-		--�撣���ĕ`��
+		--頑張って描画
 		offsetY=46
 	
 		if direction1P == 0 then
@@ -1238,7 +1238,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 		end
 		for i = 1, dispNumber-1, 1 do
 			reba1P = string.sub(keyDisplay2_box1P[i][3],1,1)+0
-			--���͗�������������
+			--入力履歴があったら
 			if reba1P ~= 0 then
 			
 				offsetX=2
@@ -1297,11 +1297,11 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 			end
 		end
 	else
-	--�Q�[�������Ԃ̂悤�Ȃ���
+	--ゲーム内時間のようなもの
 		before_time_in_game2P = time_in_game2P
 		time_in_game2P = memory.readbyte(0x020157CF)
 	
-		--�Q�[�����Ŏ��Ԃ��o���Ă�����A���͗������X�V������
+		--ゲーム内で時間が経っていたら、入力履歴を更新したい
 		if before_time_in_game2P ~= time_in_game2P then
 			reba_flame_from_before_input2P = reba_flame_from_before_input2P+1
 			button_flame_from_before_input2P = button_flame_from_before_input2P+1
@@ -1310,10 +1310,10 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 			startAddress = 0x0206AA90
 			dirAddress = 0x0206910F
 			
-			--�L�����̌���
+			--キャラの向き
 			direction2P = memory.readbyte(dirAddress)
 			
-			--���͂̓��e���A���ꂼ��̕ϐ��ɕ����Ă킩��₷�����Ă���
+			--入力の内容を、それぞれの変数に分けてわかりやすくしておく
 			input_up = bitReturn(memory.readbyte(buttonAddress),0)
 			input_down = bitReturn(memory.readbyte(buttonAddress),1)
 			input_left = bitReturn(memory.readbyte(buttonAddress),2)
@@ -1358,14 +1358,14 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 				reba2P = 3
 			end
 			
-			--���݂̏�Ԃ���͂��ꎞ�I�Ɋi�[���Ă������߂̔�
+			--現在の状態や入力を一時的に格納しておくための箱
 			input_temp = {0,0,"",0}
 			input_temp[1] = reba_flame_from_before_input2P
 			input_temp[4] = button_flame_from_before_input2P
 			input_temp[2] = direction2P
 			input_temp[3] = reba2P..input_lp..input_mp..input_hp..input_lk..input_mk..input_hk
 			
-			--���������͂��ꂽ��A�z����P���炷
+			--何かが入力されたら、配列を１個ずらす
 			if (reba2P ~= before_reba2P and reba2P ~= 5)
 				or input_lp2P > before_input_lp2P
 				or input_mp2P > before_input_mp2P
@@ -1377,11 +1377,11 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 					keyDisplay2_box2P[i] = keyDisplay2_box2P[i-1]
 				end
 				
-				--���o�[�̓��͂�����Ă�����
+				--レバーの入力がされていたら
 				if (reba2P ~= before_reba2P and reba2P ~= 5) then
 					reba_flame_from_before_input2P = 0
 				end
-				--�{�^���̓��͂�����Ă�����
+				--ボタンの入力がされていたら
 				if input_lp2P > before_input_lp2P
 				or input_mp2P > before_input_mp2P
 				or input_hp2P > before_input_hp2P
@@ -1391,7 +1391,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 					button_flame_from_before_input2P = 0
 				end
 				
-				--�z��̂P�ڂɁA���݂̓��͂��i�[����
+				--配列の１個目に、現在の入力を格納する
 				keyDisplay2_box2P[1] = input_temp
 				if reba_flame_from_before_input2P ~= 0 then
 					keyDisplay2_box2P[1][1] = 0
@@ -1409,7 +1409,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 			and input_lk2P == 0
 			and input_mk2P == 0
 			and input_hk2P == 0 then
-				--�������͂���Ă��Ȃ���΁A�����͎��Ԃ𑝂₷
+				--何も入力されていなければ、無入力時間を増やす
 				no_input_time2P = no_input_time2P+1
 				if no_input_time2P > no_input_limit then
 					for i = 1, dispNumber-1, 1 do
@@ -1429,7 +1429,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 		end
 	
 	
-		--�撣���ĕ`��
+		--頑張って描画
 		offsetY=46
 	
 		if direction2P == 0 then
@@ -1439,7 +1439,7 @@ function keyDisplay2_2(image_l1, image_l2, image_m1, image_m2, image_h1, image_h
 		end
 		for i = 1, dispNumber-1, 1 do
 			reba2P = string.sub(keyDisplay2_box2P[i][3],1,1)+0
-			--���͗�������������
+			--入力履歴があったら
 			if reba2P ~= 0 then
 			
 				offsetX=2+offsetX1P2P
@@ -1504,7 +1504,7 @@ end
 
 
 
---����������ƁA�w�肵�����ŉE�񂹂ɂ��Ă����
+--数字を入れると、指定した桁で右寄せにしてくれる
 function numSpaceLeft(val,keta)
 	temp=""
 	for i = 1, keta-#(val..""), 1 do
@@ -1520,24 +1520,24 @@ end
 
 
 
---********�w�肵���A�h���X�̐��l������t�H���g�ŕ\������֐�********
---@param nums	�����̓������z��
---@param x			x���W
---@param y			y���W
---@param value		���l
---@param keta		�����B�]�����ꍇ�͂O���t�������B
---@param offsetX	�����Ɛ����Ƃ̉��̊Ԋu�B
+--********指定したアドレスの数値を自作フォントで表示する関数********
+--@param nums	数字の入った配列名
+--@param x			x座標
+--@param y			y座標
+--@param value		数値
+--@param keta		桁数。余った場合は０が付加される。
+--@param offsetX	数字と数字との横の間隔。
 function drawOriginNum(nums, x, y, value, keta, offsetX)
 
 	for i = keta, 1, -1 do
 
-		--�܂��A���ׂ������ȊO�̌����O�ɂ���
+		--まず、調べたい桁以外の桁を０にする
 		num_pinpoint = ((value%(10^i))-(value%10^(i-1)))
 
-		--�����Ĉꌅ�ɂ���
+		--そして一桁にする
 		num_hitoketa = num_pinpoint / (10^(i-1))
 	
-		--�e�[�u���͔z��ƈ���ėv�f�̔ԍ����P����Ȃ̂ŁA�P����
+		--テーブルは配列と違って要素の番号が１からなので、１足す
 		gui.image(x, y, nums[num_hitoketa+1])
 		
 		value = value % (10^(i-1))
@@ -1596,8 +1596,8 @@ end
 
 
 --- Returns HEX representation of num
---10�V����16�V���ɕϊ����Ă����֐��B
---hitbox��lua����q�؁B
+--10新数を16新数に変換してくれる関数。
+--hitboxのluaから拝借。
 function num2hex(num)    
 	local hexstr = '0123456789ABCDEF'    
 	local s = ''    
@@ -1617,7 +1617,7 @@ end
 
 
 
---�D���ȃo�C�g����������ł����֐�
+--好きなバイト分書きこんでくれる関数
 function write(addr,num,byte)
 	for i=1,byte,1 do
 		memory.writebyte(addr,num)
@@ -1626,7 +1626,7 @@ function write(addr,num,byte)
 	end
 end
 
---�D���ȃo�C�g���t�����ɏ�������ł����֐�
+--好きなバイト分逆向きに書き込んでくれる関数
 function writeReverse(addr,num,byte)
 	for i=1,byte,1 do
 			memory.writebyte(addr,(num % 0x100))
@@ -1635,7 +1635,7 @@ function writeReverse(addr,num,byte)
 	end
 end
 
---�D���ȃo�C�g���ǂ݂���ł����֐�
+--好きなバイト分読みこんでくれる関数
 function read(addr,byte)
 	value = 0
 	for i=1,byte,1 do
@@ -1644,7 +1644,7 @@ function read(addr,byte)
 	return value / 0x100
 end
 
---�D���ȃo�C�g���t�����ɓǂݍ���ł����֐�
+--好きなバイト分逆向きに読み込んでくれる関数
 function readReverse(addr,byte)
 	value = 0
 	for i=1,byte,1 do
@@ -1653,8 +1653,8 @@ function readReverse(addr,byte)
 	return value
 end
 
---���������̒l�����A���^�C���������Ƃ��Ɏg���B
---�A�h���X�����ɁA�������A�h���X�̒l����͂���ƁA���̎��ӂ̒l��������B
+--メモリ内の値をリアルタイム見たいときに使う。
+--アドレス部分に、見たいアドレスの値を入力すると、その周辺の値が見える。
 function viewMemory(addr)
 	for i=0,20,1 do
 		gui.text(10,14+i*8,num2hex(addr+(i*0x10)))
@@ -1674,9 +1674,9 @@ function hex2keta(hexval,keta)
 	return hexval
 end
 
---�ʒu���W�𐔒l�ŕ\�����Ă����B
+--位置座標を数値で表示してくれる。
 function viewPosition()
-		--1P�̍��W��16�i���ŕ\��
+		--1Pの座標を16進数で表示
 		offsetX1 = 52
 		offsetY1 = 32
 		if readReverse(0x02068CD1,2) < 0x100 then
@@ -1708,7 +1708,7 @@ function viewPosition()
 		
 		
 		
-		--1P�̑��x��16�i���ŕ\��
+		--1Pの速度を16進数で表示
 		VX1 = readReverse(0x02068CEA,3)
 		if VX1 < 0x800000 then
 			gui.text(offsetX1-4,offsetY1+16,"VX: "..hex2keta(num2hex((VX1-(VX1%0x100))/0x100),2))
@@ -1742,7 +1742,7 @@ function viewPosition()
 		
 		
 		
-		--2P�̍��W��16�i���ŕ\��
+		--2Pの座標を16進数で表示
 		offsetX2 = 256
 		offsetY2 = 32
 		if readReverse(0x02069169,2) < 0x100 then
@@ -1765,7 +1765,7 @@ function viewPosition()
 		end
 		
 		
-		--2P�̑��x��16�i���ŕ\��
+		--2Pの速度を16進数で表示
 		VX2 = readReverse(0x02069182,3)
 		if VX2 < 0x800000 then
 			gui.text(offsetX2-4,offsetY2+16,"VX: "..hex2keta(num2hex((VX2-(VX2%0x100))/0x100),2))
@@ -1801,7 +1801,7 @@ function viewPosition()
 		
 		
 		
-		--������x���W��16�i���ŕ\��
+		--差分のx座標を16進数で表示
 		offsetX3 = 180
 		offsetY3 = 34
 		
@@ -1857,12 +1857,12 @@ gui.register(function()
 	--************************************************************
 	--************************************************************
 	--************************************************************
-	--�����Ƀt���[�������̒��O�Ɏ��s�������������������Ă�������
+	--ここにフレーム処理の直前に実行させたい処理を書いてください
 	--************************************************************
 	--************************************************************
 	--************************************************************
 	
-	--���Ԃ��~�߂Ă�����������
+	--時間を止めておかしくする
 	--memory.writebyte(0x020691A3,0xA0)
 	--writeReverse(0x2068AB7,0x1080,0x02)
 	--writeReverse(0x2068AB9,0x1080,0x02)
@@ -1876,25 +1876,25 @@ gui.register(function()
 	
 	--memory.writebyte(0x20695BF,0x04)
 	
-	--���[�V�����֌W�c�B�_�E���ǂ��ł��̒����Ɏg�����B
+	--モーション関係…。ダウン追い打ちの調査に使った。
 	--writeReverse(0x02068D1B,0x030005,0x03)
 	--writeReverse(0x02068C95,0x010014,0x03)
 	--viewMemory(0x02068C00)
 		
---�A���b�N�X�̃X���[�p�[�z�[���h�ő���������`�[�g
+--アレックスのスリーパーホールドで即死させるチート
 --memory.writebyte(0x02068D27,0x10)
 --memory.writebyte(0x02068DED,0x3B)
 --memory.writebyte(0x02069285,0x00)
 
-		--write(0x20259E7,0x01,1)--���C���̑��R�}���h
-		--write(0x2025A1F,0x01,1)--�����̑��R�}���h
-		--write(0x2025AAB,0x01,1)--�S�S�P�̑��R�}���h
+		--write(0x20259E7,0x01,1)--阿修羅の第一コマンド
+		--write(0x2025A1F,0x01,1)--昇竜の第一コマンド
+		--write(0x2025AAB,0x01,1)--百鬼襲の第一コマンド
 		
 		--viewMemory(0x02025A00)
 		--write(0x2069547,0x10,1)
 		--write(0x202635F,0x10,1)
 		--viewMemory(0x02015400)
-		--�W���b�W���[���g
+		--ジャッジメーント
 		--write(0x203A22B,0x01,1)
 		--viewPosition()
 
@@ -1910,23 +1910,23 @@ gui.register(function()
 --			
 --		write(0x200DCD2,0x00000000,0x04)
 		
-		--SA���o�����[�h�ɂ��Ă����B�������Ȃ��Ɖ�ʈʒu���Œ�ł��Ȃ�
+		--SA演出時モードにしておく。こうしないと画面位置が固定できない
 		--write(0x2026BD0,0x111101,0x03)
-		--SA���o���̉�ʂ̈ړ��
+		--SA演出時の画面の移動具合
 		--write(0x200DCD2,0x0000,2)
 		
-		--��ʃY�[��
+		--画面ズーム
 		--write(0x200DCBB,0x40,0x01)
-		--�J�����ʒu�ύX
+		--カメラ位置変更
 		--write(0x200DCD2,00000000,0x04)
 		--writeReverse(0x200DCD5,0x00,0x02)
 
 
-	--2P����ɋ��H�炢��
+	--2Pが常に屈食らいに
 	--memory.writebyte(0x02069312,0x10)
 
 
-	--��~���Ԃ�\��
+	--停止時間を表示
 	STOP1 = read(0x2068CB1,1)
 	if STOP1 > 127 then
 		STOP1 = 256 - STOP1
@@ -1941,7 +1941,7 @@ gui.register(function()
 	
 	
 	
-	--�s���莞�̃��o�K�`�����胂�[�h
+	--ピヨり時のレバガチャ測定モード
 	if startButton == 1 then
 		writeReverse(0x20695F9,149,2)
 		TIME = 0
@@ -1952,7 +1952,7 @@ gui.register(function()
 	end
 	--drawOriginNum(nums0, 10, 40, readReverse(0x20695F9,2), 4, 10)
 	
-	--�c��̃s�����^�C�}�[��\��
+	--残りのピヨリタイマーを表示
 	--memory.writebyte(0x02011377,0x64)
 	
 	if readReverse(0x20695F9,2) == 0 then
@@ -1965,51 +1965,51 @@ gui.register(function()
 		end
 	end
 	
-	--�s�������A�܂łɂ����������Ԃ�\��
+	--ピヨリ復帰までにかかった時間を表示
 	--drawOriginNum(nums0, 10, 60, TIME, 4, 10)
 	
 	
 	
-	--BGM����
+	--BGM音量
 	memory.writebyte(0x02078D06,0x00)
 		
-	--��Ƀu���b�L���O�\
-	--�n��O
+	--常にブロッキング可能
+	--地上前
 	--memory.writebyte(0x02026335,0x0A)
-	--�n�㉺
+	--地上下
 	--memory.writebyte(0x02026337,0x0A)
-	--��
+	--空中
 	--memory.writebyte(0x02026339,0x07)
-	--�΋�
+	--対空
 	--memory.writebyte(0x02026347,0x05)
 	
-	--1P�̑̂̌���
+	--1Pの体の向き
 	--memory.writebyte(0x02068C76,0x01)
-	--2P�̑̂̌���
+	--2Pの体の向き
 	--memory.writebyte(0x0206910E,0x00)
 	
 	
-	--�M�����g�������ꍇ�͂����00�ɂ��ď���
+	--ギルを使いたい場合はこれを00にして書く
 	--memory.writebyte(0x02011387,0x00)
 	--memory.writebyte(0x02011388,0x00)
 	
-	--�X�e�[�W���G���i�X�e�[�W�ɂ������Ƃ��͂��������
+	--ステージをエレナステージにしたいときはこれを書く
 	--memory.writebyte(0x020154F5,0x08)
 	
-	--�̗͂�160�Œ�ɂ������Ƃ��͂��������
+	--体力を160固定にしたいときはこれを書く
 	--memory.writebyte(0x020691A3,0xA0)
 	
 	
 	
-	--����F�������������ꍇ
+	--分岐：試合中だった場合
 	if memory.readbyte(0x020154A7) == 1 or  memory.readbyte(0x020154A7) == 2 or  memory.readbyte(0x020154A7) == 6 
 	or memory.readbyte(0x020154A7) == 3 or  memory.readbyte(0x020154A7) == 7 or  memory.readbyte(0x020154A7) == 8 then
 		
 		
-			--�X�^�[�g�{�^����������Ă�����
+			--スタートボタンが押されていたら
 		if memory.readbyte(0x206AA8C) == 16 then
 		
-			--�팸�l���O��	
+			--削減値を０に	
 			--memory.writebyte(0x020694C9,0)
 		
 			startButton = startButton + 1
@@ -2024,9 +2024,9 @@ gui.register(function()
 			startButton = 0
 		end
 			
-		--�X�^�[�g�{�^����30F�ԉ����ꂽ��
+		--スタートボタンが30F間押されたら
 		if startButton == 30 then
-			--�`�[�g���[�h��0�̂Ƃ���1�ɁA0�ȏ�̂Ƃ���0�ɂ���
+			--チートモードが0のときは1に、0以上のときは0にする
 			if cheatModeNum == 0 then
 				cheatModeNum = 1
 			elseif cheatModeNum >= 1 then
@@ -2035,7 +2035,7 @@ gui.register(function()
 			end
 			print("cheatModeNum = "..cheatModeNum)
 		elseif  startButton == 60 then
-			--�`�[�g���[�h��2�ɂ���
+			--チートモードを2にする
 				cheatModeNum = 2
 			print("cheatModeNum = "..cheatModeNum)
 		
@@ -2062,16 +2062,16 @@ gui.register(function()
 			if inputView == 1 then
 			
 				
-				--�L�[�f�B�X�v���C���̂P�i�PP���j
+				--キーディスプレイその１（１P側）
 				keyDisplay(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 0x206AA8D, 0x206AA8C)
 				
-				--�L�[�f�B�X�v���C���̂Q �J�v���X���i�PP���j
+				--キーディスプレイその２ カプ○ス風（１P側）
 				keyDisplay2_2(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 1)
 				
 				
-				--�L�[�f�B�X�v���C���̂P�i�QP���j
+				--キーディスプレイその１（２P側）
 				keyDisplay(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 280, 184, 0x0202568F, 0x0206AA90)
-				--�L�[�f�B�X�v���C���̂Q �J�v���X���i�QP���j
+				--キーディスプレイその２ カプ○ス風（２P側）
 				keyDisplay2_2(button_l1, button_l2, button_m1, button_m2, button_h1, button_h2, button_s1, button_s2, 40, 184, 2)
 
 			end
@@ -2079,39 +2079,39 @@ gui.register(function()
 			
 			
 			
-			--����F�g�p�L�������M����������
+			--分岐：使用キャラがギルだったら
 			if memory.readbyte(0x2011387) == 0x00 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 
 
-			--����F�g�p�L�������A���b�N�X��������
+			--分岐：使用キャラがアレックスだったら
 			if memory.readbyte(0x2011387) == 0x01 then
 
-				--�Q�[�W��摜��\�����邽�߂̍��W
+				--ゲージや画像を表示するための座標
 				offsetX = 30
 				offsetY = 50
 			
 				if tameView == 1 then
 				
-					--�X���b�V���G���{�[
+					--スラッシュエルボー
 					tameGauge(alex_1, offsetX, offsetY, 0x02025A49, 0x02025A47)
 				
 					offsetY = offsetY + 28
 					
-					--�G�A�X�^���s�[�g
+					--エアスタンピート
 					tameGauge(alex_2, offsetX, offsetY, 0x02025A2D, 0x02025A2B)
 					
 					offsetY = offsetY + 28
 					
 				end
-				----------------------�n�C�p�[�{��----------------------
+				----------------------ハイパーボム----------------------
 				
 				if kaitenView == 1 then
-					--�n�C�p�[�{����I�����Ă�����
+					--ハイパーボムを選択していたら
 					if memory.readbyte(0x020154D3) == 0 then
 						
 						kaiten(alex_3, offsetX, offsetY, 0x0202590F, 0x020258F7)
@@ -2120,7 +2120,7 @@ gui.register(function()
 				
 			end
 			
-			--����F�g�p�L����������������
+			--分岐：使用キャラが隆だったら
 			if memory.readbyte(0x2011387) == 0x02 then
 
 				offsetX = 30
@@ -2128,7 +2128,7 @@ gui.register(function()
 				
 				if denjinView == 1 then
 				
-					--�d�n�g������I�����Ă�����
+					--電刃波動拳を選択していたら
 					if memory.readbyte(0x020154D3) == 2 then
 					
 						gui.image(4,offsetY,ryu_1)
@@ -2143,8 +2143,8 @@ gui.register(function()
 						gui.drawbox(offsetX,offsetY,offsetX+96,offsetY+6,0x00000000,0x000000FF)
 						gui.drawbox(offsetX,offsetY,offsetX+160,offsetY+6,0x00000000,0x000000FF)
 						
-						--�d�n�̃��x���ɉ����Ēl���ς��ϐ�
-						--							��
+						--電刃のレベルに応じて値が変わる変数
+						--							↓
 						denjin = memory.readbyte(0x02068D2D)
 						
 						if denjin == 3 then
@@ -2160,38 +2160,38 @@ gui.register(function()
 
 						
 						if memory.readbyte(0x02068D27) ~= 0 then
-							--�d�n�̗��߂����ԂŌ���Ȃ��悤�ɂ���Ƃ��͂�����g��
+							--電刃の溜めを時間で減らないようにするときはこれを使う
 							--memory.writebyte(0x02068D27,memory.readbyte(0x02068D27)+1)
 						end
 					end
 				end
 			end
 			
-			--����F�g�p�L������������������
+			--分岐：使用キャラがユンだったら
 			if memory.readbyte(0x2011387) == 0x03 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������_�b�h���[��������
+			--分岐：使用キャラがダッドリーだったら
 			if memory.readbyte(0x2011387) == 0x04 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������l�N����������
+			--分岐：使用キャラがネクロだったら
 			if memory.readbyte(0x2011387) == 0x05 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������q���[�S�[��������
+			--分岐：使用キャラがヒューゴーだったら
 			if memory.readbyte(0x2011387) == 0x06 then
 			
 				offsetX = 30
@@ -2199,18 +2199,18 @@ gui.register(function()
 				
 				if kaitenView == 1 then
 				
-					--���[���T���g�v���X
+					--ムーンサルトプレス
 					kaiten(hugo_1, offsetX, offsetY, 0x020259EF, 0x020259D7)
 					
 					offsetY = offsetY + 30
 					
-					--�~�[�g�X�J�b�V���[
+					--ミートスカッシャー
 					kaiten(hugo_2, offsetX, offsetY, 0x02025A0B, 0x020259F3)
 					
 					offsetY = offsetY + 30
 					
-					----------------------�M�K�X�u���[�J�[----------------------
-					--�M�K�X�u���[�J�[��I�����Ă�����
+					----------------------ギガスブリーカー----------------------
+					--ギガスブリーカーを選択していたら
 					if memory.readbyte(0x020154D3) == 0 then
 						
 						gui.image(4,offsetY-3,hugo_3)
@@ -2220,31 +2220,31 @@ gui.register(function()
 						juji_right = bitReturn(memory.readbyte(0x0202590F),2);
 						juji_left = bitReturn(memory.readbyte(0x0202590F),3);
 						
-						--�P��]�ڂł����
+						--１回転目であれば
 						if memory.readbyte(0x020258FF) == 48 then
 							
-							--����������͍ς݂ł����
+							--上方向が入力済みであれば
 							if juji_up == 1 then
 								gui.image(offsetX+48,offsetY-12,arrow_up3)
 							else
 								gui.image(offsetX+48,offsetY-12,arrow_up1)
 							end
 							
-							--�����������͍ς݂ł����
+							--下方向が入力済みであれば
 							if juji_down == 1 then
 								gui.image(offsetX+24,offsetY-12,arrow_down3)
 							else
 								gui.image(offsetX+24,offsetY-12,arrow_down1)
 							end
 							
-							--�E���������͍ς݂ł����
+							--右方向が入力済みであれば
 							if juji_right == 1 then
 								gui.image(offsetX+72,offsetY-12,arrow_right3)
 							else
 								gui.image(offsetX+72,offsetY-12,arrow_right1)
 							end
 							
-							--�����������͍ς݂ł����
+							--左方向が入力済みであれば
 							if juji_left == 1 then
 								gui.image(offsetX,offsetY-12,arrow_left3)
 							else
@@ -2252,28 +2252,28 @@ gui.register(function()
 							end
 
 						else
-										--����������͍ς݂ł����
+										--上方向が入力済みであれば
 							if juji_up == 1 then
 								gui.image(offsetX+48,offsetY-12,arrow_up2)
 							else
 								gui.image(offsetX+48,offsetY-12,arrow_up3)
 							end
 							
-							--�����������͍ς݂ł����
+							--下方向が入力済みであれば
 							if juji_down == 1 then
 								gui.image(offsetX+24,offsetY-12,arrow_down2)
 							else
 								gui.image(offsetX+24,offsetY-12,arrow_down3)
 							end
 							
-							--�E���������͍ς݂ł����
+							--右方向が入力済みであれば
 							if juji_right == 1 then
 								gui.image(offsetX+72,offsetY-12,arrow_right2)
 							else
 								gui.image(offsetX+72,offsetY-12,arrow_right3)
 							end
 							
-							--�����������͍ς݂ł����
+							--左方向が入力済みであれば
 							if juji_left == 1 then
 								gui.image(offsetX,offsetY-12,arrow_left2)
 							else
@@ -2286,68 +2286,68 @@ gui.register(function()
 
 						
 					end
-					----------------------�M�K�X�u���[�J�[----------------------
+					----------------------ギガスブリーカー----------------------
 				end
 			end
 			
-			--����F�g�p�L���������Ԃ���������
+			--分岐：使用キャラがいぶきだったら
 			if memory.readbyte(0x2011387) == 0x07 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������G���i��������
+			--分岐：使用キャラがエレナだったら
 			if memory.readbyte(0x2011387) == 0x08 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������I����������
+			--分岐：使用キャラがオロだったら
 			if memory.readbyte(0x2011387) == 0x09 then
 			
 				offsetX = 30
 				offsetY = 50
 				
 				if tameView == 1 then
-					--���֏�
+					--日輪掌
 					tameGauge(oro_1, offsetX, offsetY, 0x02025A11, 0x02025A0F)
 					
 					offsetY = offsetY + 28
 					
-					--�S�����}
+					--鬼ヤンマ
 					tameGauge(oro_2, offsetX, offsetY, 0x020259D9, 0x020259D7)
 				end
 			end
 			
-			--����F�g�p�L������������������
+			--分岐：使用キャラがヤンだったら
 			if memory.readbyte(0x2011387) == 0x0A then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L����������������
+			--分岐：使用キャラが拳だったら
 			if memory.readbyte(0x2011387) == 0x0B then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������V���[����������
+			--分岐：使用キャラがショーンだったら
 			if memory.readbyte(0x2011387) == 0x0C then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�����������A����������
+			--分岐：使用キャラがユリアンだったら
 			if memory.readbyte(0x2011387) == 0x0D then
 			
 				offsetX = 30
@@ -2355,71 +2355,71 @@ gui.register(function()
 				
 				if tameView == 1 then
 					
-					--�`�����I�b�g�^�b�N��
+					--チャリオットタックル
 					tameGauge(urien_1, offsetX, offsetY, 0x020259D9, 0x020259D7)
 					
 					offsetY = offsetY + 28
 					
-					--�o�C�I�����X�j�[�h���b�v
+					--バイオレンスニードロップ
 					tameGauge(urien_2, offsetX, offsetY, 0x02025A2D, 0x02025A2B)
 					
 					offsetY = offsetY + 28
 					
-					--�f���W�����X�w�b�h�o�b�g
+					--デンジャラスヘッドバット
 					tameGauge(urien_3, offsetX, offsetY, 0x020259F5, 0x020259F3)
 					
 				end
 			end
 			
-			--����F�g�p�L���������S��������
+			--分岐：使用キャラが豪鬼だったら
 			if memory.readbyte(0x2011387) == 0x0E then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������^���S��������
+			--分岐：使用キャラが真豪鬼だったら
 			if memory.readbyte(0x2011387) == 0x0F then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L�������t�킾������
+			--分岐：使用キャラが春麗だったら
 			if memory.readbyte(0x2011387) == 0x10 then
 			
-				--�Q�[�W��摜��\�����邽�߂̍��W
+				--ゲージや画像を表示するための座標
 				offsetX = 30
 				offsetY = 50
 				
 				if rendaView == 1 then
 					
-					--��S��r
+					--弱百裂脚
 					hyakuretsu(chun_1, kick_1, kick_1_2, offsetX, offsetY, 0x02025A03)
 					
 					offsetY = offsetY + 28
 					
-					----------------------���S��r----------------------
+					----------------------中百裂脚----------------------
 					hyakuretsu(chun_2, kick_2, kick_2_2, offsetX, offsetY, 0x02025A05)
 					
 					offsetY = offsetY + 28
 					
-					----------------------���S��r----------------------
+					----------------------強百裂脚----------------------
 					hyakuretsu(chun_3, kick_3, kick_3_2, offsetX, offsetY, 0x02025A07)
 					
 					offsetY = offsetY + 28
 					
 					
-					----------------------�A�Ń^�C�}�[----------------------
+					----------------------連打タイマー----------------------
 					if memory.readbyte(0x02025A2D) ~= 0xFF then
 						gui.drawbox(offsetX,offsetY,offsetX+98,offsetY+6,0x00000000,0x000000FF)
 						gui.drawbox(offsetX,offsetY,offsetX+(memory.readbyte(0x020259f3)),offsetY+6,0xFF8080FF,0x000000FF)
 					else
 						gui.drawbox(offsetX,offsetY,offsetX+98,offsetY+6,0x00000000,0xFFFFFFFF)
 					end
-					----------------------�A�Ń^�C�}�[----------------------
+					----------------------連打タイマー----------------------
 					
 				offsetY = offsetY + 28
 				
@@ -2427,22 +2427,22 @@ gui.register(function()
 				
 				if tameView == 1 then
 				
-					--�X�s�j���O�o�[�h�L�b�N
+					--スピニングバードキック
 					tameGauge(chun_4, offsetX, offsetY, 0x020259D9, 0x020259D7)
 			
 				end
 			
 			end
 			
-			--����F�g�p�L�������܂��Ƃ�������
+			--分岐：使用キャラがまことだったら
 			if memory.readbyte(0x2011387) == 0x11 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L������Q��������
+			--分岐：使用キャラがQだったら
 			if memory.readbyte(0x2011387) == 0x12 then
 			
 				offsetX = 30
@@ -2450,27 +2450,27 @@ gui.register(function()
 				
 				if tameView == 1 then
 				
-					--�ːi�����Ō��i���j
+					--突進頭部打撃（仮）
 					tameGauge(q_1, offsetX, offsetY, 0x020259D9, 0x020259D7)
 					
 					offsetY = offsetY + 28
 					
-					--�ːi�����Ō��i���j
+					--突進下肢打撃（仮）
 					tameGauge(q_2, offsetX, offsetY, 0x020259F5, 0x020259F3)
 				
 				end
 			
 			end
 			
-			--����F�g�p�L�������g�D�G������������
+			--分岐：使用キャラがトゥエルヴだったら
 			if memory.readbyte(0x2011387) == 0x13 then
 			
-				--�����ɏ������L�q����
+				--ここに処理を記述する
 			
 			
 			end
 			
-			--����F�g�p�L���������~�[��������
+			--分岐：使用キャラがレミーだったら
 			if memory.readbyte(0x2011387) == 0x14 then
 			
 				offsetX = 30
@@ -2478,24 +2478,24 @@ gui.register(function()
 							
 				if tameView == 1 then
 					
-					--���F���e���̎c���E�I�b�g
+					--ヴェルテュの残光・オット
 					tameGauge(remy_1, offsetX, offsetY, 0x020259F5, 0x020259F3)
 					
 					offsetY = offsetY + 28
 					
-					--���F���e���̎c���E�o�X
+					--ヴェルテュの残光・バス
 					tameGauge(remy_2, offsetX, offsetY, 0x02025A11, 0x02025A0F)
 					
 					offsetY = offsetY + 28
 					
-					--�}�E�V�F���̔߈�
+					--マ・シェリの悲哀
 					tameGauge(remy_3, offsetX, offsetY, 0x020259D9, 0x020259D7)
 					
 				end
 				
 			end
 			
-			----------------------�팸�l----------------------
+			----------------------削減値----------------------
 			
 			offsetX = 240
 			offsetY = 50
@@ -2524,25 +2524,25 @@ gui.register(function()
 					end
 
 				end
-				----------------------�팸�l----------------------
+				----------------------削減値----------------------
 			end
 			
-			--�X�^���l��MAX�ɂ������Ƃ��͂�����g��
+			--スタン値をMAXにしたいときはこれを使う
 			--memory.writebyte(0x02069611,0xFF)
 			
-			--�g���[�j���O���[�h
+			--トレーニングモード
 			if trainingMode == 1 then
 				training()
 			end
 			
 			
 			
-			--�`�[�g�g�p���̓A�C�R�����\�������
+			--チート使用時はアイコンが表示される
 			if gaugeMax == 1 or airComboInf == 1 or longHitStop == 1 or zeroHitStop == 1 then
 				--gui.image(284,204,cheat_on)
 			end
 			
-			--�Q�[�WMAX�`�[�g
+			--ゲージMAXチート
 			if gaugeMax == 1 then
 				gauge = memory.readbyte(0x020286AD)
 				memory.writebyte(0x02028695,0xFF)
@@ -2563,16 +2563,16 @@ gui.register(function()
 				
 			end
 			
-			--�󒆒ǌ����Ԗ����`�[�g
+			--空中追撃時間無限チート
 			if airComboInf == 1 then
 				memory.writebyte(0x020694C7,0xFF)
 			end
 			
 			
-			--�q�b�g�X�g�b�v����`�[�g
+			--ヒットストップ増大チート
 			if longHitStop == 1 then
 				
-				--2P���Z����������
+				--2Pが技を喰らったら
 				if memory.readbyte(0x0206914B) > 0x00 then
 					hitStopCount = hitStopCount + 1
 				end
@@ -2586,10 +2586,10 @@ gui.register(function()
 				end
 			end
 			
-			--�q�b�g�X�g�b�v�[���`�[�g
+			--ヒットストップゼロチート
 			if zeroHitStop == 1 then
 			
-				--2P���Z����������
+				--2Pが技を喰らったら
 				if memory.readbyte(0x0206914B) > 0x00 then
 					zeroStopCount = zeroStopCount + 1
 				end
@@ -2623,7 +2623,7 @@ gui.register(function()
 			
 				--write(0x02026335,0x0A,1)
 				--write(0x02026337,0x0A,1)
-				--�u����t���ԕ\��
+				--ブロ受付時間表示
 				BLY = 50
 				BLoffsetY = 6
 				gui.drawtext(18,BLY-1,"FRONT")
@@ -2663,10 +2663,10 @@ gui.register(function()
 		end
 	
 	
-	--�������łȂ����
+	--試合中でなければ
 	else
-		--�ォ�瓧���ȉ摜�����Ԃ���B
-		--��������Ȃ��ƁA�o�[��摜�������Ă���Ȃ��悤���B
+		--上から透明な画像をかぶせる。
+		--これをやらないと、バーや画像が消えてくれないようだ。
 		gui.image(0,0,blank2)
 	
 	end
