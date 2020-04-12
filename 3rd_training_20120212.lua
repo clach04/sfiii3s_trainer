@@ -917,11 +917,11 @@ function bitReturn(value,bitnum)
 	re = value
 	
 	--bitnumより上位桁を切り捨てる
-Truncates the high-order digits than --bitnum
+	-- Truncates the high-order digits than --bitnum
 	re = SHIFT(re,bitnum-31)
 
 	--bitnumより下位桁を切り捨てる
-Truncate the lower digit than --bitnum
+	-- Truncate the lower digit than --bitnum
 	re = SHIFT(re,31)
 	
 	return re
@@ -1818,9 +1818,9 @@ end
 
 --- Returns HEX representation of num
 --10新数を16新数に変換してくれる関数。
---Convert --10 hexadecimal to hexadecimal me function.
+-- Convert --10 hexadecimal to hexadecimal me function.
 --hitboxのluaから拝借。
---Borrowed from lua of --hitbox.
+-- Borrowed from lua of --hitbox.
 function num2hex(num)    
 	local hexstr = '0123456789ABCDEF'    
 	local s = ''    
@@ -1940,7 +1940,7 @@ function viewPosition()
 		
 		
 		--1Pの速度を16進数で表示
-Display speed of --1P hexadecimal
+		-- Display speed of --1P hexadecimal
 		VX1 = readReverse(0x02068CEA,3)
 		if VX1 < 0x800000 then
 			gui.text(offsetX1-4,offsetY1+16,"VX: "..hex2keta(num2hex((VX1-(VX1%0x100))/0x100),2))
@@ -1975,7 +1975,7 @@ Display speed of --1P hexadecimal
 		
 		
 		--2Pの座標を16進数で表示
-Display coordinates --2P hexadecimal
+		-- Display coordinates --2P hexadecimal
 		offsetX2 = 256
 		offsetY2 = 32
 		if readReverse(0x02069169,2) < 0x100 then
@@ -1999,7 +1999,7 @@ Display coordinates --2P hexadecimal
 		
 		
 		--2Pの速度を16進数で表示
-Display speed of --2P hexadecimal
+		-- Display speed of --2P hexadecimal
 		VX2 = readReverse(0x02069182,3)
 		if VX2 < 0x800000 then
 			gui.text(offsetX2-4,offsetY2+16,"VX: "..hex2keta(num2hex((VX2-(VX2%0x100))/0x100),2))
@@ -2242,10 +2242,10 @@ To --2P always 屈食 leprosy
 	--memory.writebyte(0x02026347,0x05)
 	
 	--1Pの体の向き
-The orientation of the --1P of body
+	-- The orientation of the --1P of body
 	--memory.writebyte(0x02068C76,0x01)
 	--2Pの体の向き
-The orientation of the --2P of body
+	-- The orientation of the --2P of body
 	--memory.writebyte(0x0206910E,0x00)
 	
 	
@@ -2271,7 +2271,7 @@ The orientation of the --2P of body
 		
 		
 			--スタートボタンが押されていたら
-After the start button has been pressed -
+			-- After the start button has been pressed -
 		if memory.readbyte(0x206AA8C) == 16 then
 		
 			--削減値を０に	
@@ -2517,7 +2517,7 @@ After the start button has been pressed -
 						juji_left = bitReturn(memory.readbyte(0x0202590F),3);
 						
 						--１回転目であれば
-If --1 revolution
+						-- If 1 revolution
 						if memory.readbyte(0x020258FF) == 48 then
 							
 							--上方向が入力済みであれば
@@ -2927,7 +2927,7 @@ If --1 revolution
 			if longHitStop == 1 then
 				
 				--2Pが技を喰らったら
-Once --2P is clad tricks
+				-- Once 2P is clad tricks
 				if memory.readbyte(0x0206914B) > 0x00 then
 					hitStopCount = hitStopCount + 1
 				end
@@ -2946,7 +2946,7 @@ Once --2P is clad tricks
 			if zeroHitStop == 1 then
 			
 				--2Pが技を喰らったら
-Once --2P is clad tricks
+				-- Once 2P is clad tricks
 				if memory.readbyte(0x0206914B) > 0x00 then
 					zeroStopCount = zeroStopCount + 1
 				end
