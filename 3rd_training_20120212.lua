@@ -1,3 +1,8 @@
+-- -*- coding: utf-8 -*-
+-- vim:ts=4:sw=4:softtabstop=4:smarttab:noexpandtab
+-- Original from https://ameblo.jp/3fv/
+-- This utf-8 encoded version available from https://github.com/clach04/sfiii3s_trainer
+
 -- 3rd_training.lua
 -- auther crystal_cube99
 	TIME = 0
