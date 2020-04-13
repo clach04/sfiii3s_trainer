@@ -86,6 +86,9 @@ Reduction values ​​and visualization pursuit possible time.
 Add the key display function. Different from the guy strike 4 and Kapuesu.
 ]]
 
+print("LOADED 3rd_training.lua by crystal_cube99")
+print("Press and hold Player 1 START button to load training menu")
+print("Work in progress English translation")
 
 --他のluaファイルと連携したいときはこれを使うらしい
 -- seems to use it when you want to work with other lua files
@@ -99,9 +102,20 @@ require "gd"
 
 ------------- Hack
 text_hack = gd.create(344, 20) -- seems to match image size (at least for inputView_text.png)
+--text_hack = gd.create(400, 200) -- debug large
 white = text_hack:colorAllocate(255, 255, 255)
 black = text_hack:colorAllocate(0, 0, 0)
-text_hack:string(gd.FONT_LARGE, 10, 0, "Translation goes here", black)
+red = text_hack:colorAllocate(255, 0, 0)  -- for debug testing
+--text_hack:string(gd.FONT_LARGE, 10, 0, "Translation goes here", black)  -- works with latin-1 but not with Japanese text
+-- The string must have only ISO-8859-1 characters (you should use gd.stringFT and True Type fonts for drawing Unicode strings.
+font_name = "resources/fonts/unifont-13.0.01.ttf"  -- from http://unifoundry.com/unifont/index.html
+print(font_name)
+font_size = 15
+--llxllx, lly, lrx, lry, urx, ury, ulx, uly = text_hack:stringFT(red, font_name, 20, 0, 10, 20, "Lua-GD")  -- works
+--llxllx, lly, lrx, lry, urx, ury, ulx, uly = text_hack:stringFT(black, font_name, font_size, 0, 10, 20, "Lua-GD")  -- works
+llxllx, lly, lrx, lry, urx, ury, ulx, uly = text_hack:stringFT(black, font_name, font_size, 0, 10, 20, "画像を読み込んでおく") -- Needs unifont - does not work with vera font nor l_10646
+--text_hack:polygon({ {llx, lly}, {lrx, lry}, {urx, ury}, {ulx, uly} }, black)  -- draw a box around text
+--print("polygon")
 ------------- Hack
 
 
