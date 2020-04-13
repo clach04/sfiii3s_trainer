@@ -97,6 +97,14 @@ Add the key display function. Different from the guy strike 4 and Kapuesu.
 -- description ish necessary for image display of
 require "gd"
 
+------------- Hack
+text_hack = gd.create(344, 20) -- seems to match image size (at least for inputView_text.png)
+white = text_hack:colorAllocate(255, 255, 255)
+black = text_hack:colorAllocate(0, 0, 0)
+text_hack:string(gd.FONT_LARGE, 10, 0, "Translation goes here", black)
+------------- Hack
+
+
 --画像を読み込んでおく
 -- you should read the image
 blank = gd.createFromPng("resources/waza/blank.png"):gdStr()
@@ -194,7 +202,8 @@ button_s2 = gd.createFromPng("resources/command/button_s2.png"):gdStr()
 
 inputView_on = gd.createFromPng("resources/cheat/inputView_on.png"):gdStr()
 inputView_off = gd.createFromPng("resources/cheat/inputView_off.png"):gdStr()
-inputView_text = gd.createFromPng("resources/cheat/inputView_text.png"):gdStr()
+--inputView_text = gd.createFromPng("resources/cheat/inputView_text.png"):gdStr()
+inputView_text = text_hack:gdStr()
 tameView_on = gd.createFromPng("resources/cheat/tameView_on.png"):gdStr()
 tameView_off = gd.createFromPng("resources/cheat/tameView_off.png"):gdStr()
 tameView_text = gd.createFromPng("resources/cheat/tameView_text.png"):gdStr()
