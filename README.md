@@ -21,3 +21,27 @@ Extract fbarr and extract the dlls from lua-gd into the same directory as `fba.e
   * http://ittner.github.io/lua-gd/ has links to Sourceforge with pre-built DLLs (lua-gd-2.0.33r2-win32.zip).
 
 Load ROM, Load lua script, press and hold Player 1 START button to bring up training menu.
+
+
+## TODO
+
+Link to some tutorial videos.
+
+Translate:
+
+  * airComboInf_text.png
+  * airTimerView_text.png
+  * BLView_text.png
+  * denjinView_text.png
+  * gaugeMax_text.png
+  * inputView_text.png
+  * kaitenView_text.png
+  * longHitStop_text.png
+  * rendaView_text.png
+  * stunMax_text.png
+  * stunView_text.png
+  * tameView_text.png
+  * trainingMode_text.png
+  * zeroHitStop_text.png
+
+Alternatively replace with text display instead of image.
