@@ -1,8 +1,9 @@
 # sfiii3s_trainer
 
-"Mirror" of crystal_cube 99's Street Fighter III 3rd Strike Trainer.
+English of crystal_cube 99's Street Fighter III 3rd Strike Trainer.
 
-Original code is Shift-JIS encoded, this branch is utf8 encoded.
+Original code is Shift-JIS encoded, this branch is utf8 encoded and English
+(Japanese comments preserved in source code).
 
 crystal_cube 99's sites:
 
@@ -27,7 +28,7 @@ Load ROM, Load lua script, press and hold Player 1 START button to bring up trai
 
 Link to some tutorial videos.
 
-Translate:
+Add support for picking `en_*.png` or `jp_*.png` menu text explanations/help for:
 
   * airComboInf_text.png
   * airTimerView_text.png
@@ -44,4 +45,5 @@ Translate:
   * trainingMode_text.png
   * zeroHitStop_text.png
 
-Alternatively replace with text display instead of image.
+Alternatively replace with text display instead of image (see branch
+https://github.com/clach04/sfiii3s_trainer/tree/menu_translation ).
