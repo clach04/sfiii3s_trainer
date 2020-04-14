@@ -86,6 +86,10 @@ Reduction values ​​and visualization pursuit possible time.
 Add the key display function. Different from the guy strike 4 and Kapuesu.
 ]]
 
+print("LOADED 3rd_training.lua by crystal_cube99")
+print("Press and hold Player 1 START button to load training menu")
+print("Work in progress English translation")
+print("https://github.com/clach04/sfiii3s_trainer/tree/english_menu_gfx")
 
 --他のluaファイルと連携したいときはこれを使うらしい
 -- seems to use it when you want to work with other lua files
