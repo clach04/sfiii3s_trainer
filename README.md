@@ -44,4 +44,6 @@ Translate:
   * trainingMode_text.png
   * zeroHitStop_text.png
 
-Alternatively replace with text display instead of image.
+See initial https://github.com/clach04/sfiii3s_trainer/tree/english_menu_gfx
+
+Alternatively replace with text display instead of image, see https://github.com/clach04/sfiii3s_trainer/tree/menu_translation.
